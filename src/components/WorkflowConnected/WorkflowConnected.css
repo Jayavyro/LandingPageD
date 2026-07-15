@@ -31,7 +31,7 @@
   z-index: 4;
   height: var(--section-transition-h);
   pointer-events: none;
-  bottom: 3px;
+
 }
 
 .workflow-connected__transition:not(.workflow-connected__transition--bottom) {
@@ -39,7 +39,7 @@
 }
 
 .workflow-connected__transition--bottom {
-  bottom: 0;
+  bottom: 2px;
   z-index: 5;
 }
 
