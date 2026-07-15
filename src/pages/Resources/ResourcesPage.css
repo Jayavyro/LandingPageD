@@ -131,8 +131,18 @@
   color: var(--res-ink-soft);
 }
 
+@media (max-width: 1024px) {
+  .resources-page {
+    padding-top: calc(var(--mobile-page-top) + 1.25rem);
+  }
+}
+
 @media (max-width: 768px) {
   .resources-page__container {
     width: min(76rem, calc(100% - 1.5rem));
+  }
+
+  .resources-page {
+    padding-top: calc(var(--mobile-page-top) + 1.5rem);
   }
 }

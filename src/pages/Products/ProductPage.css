@@ -723,6 +723,12 @@
   }
 }
 
+@media (max-width: 1024px) {
+  .product-page {
+    padding-top: calc(var(--mobile-page-top) + 1.25rem);
+  }
+}
+
 @media (max-width: 768px) {
   .product-page__container,
   .product-page__strip-inner {
@@ -731,5 +737,9 @@
 
   .product-page__feature-grid {
     grid-template-columns: 1fr;
+  }
+
+  .product-page {
+    padding-top: calc(var(--mobile-page-top) + 1.5rem);
   }
 }
