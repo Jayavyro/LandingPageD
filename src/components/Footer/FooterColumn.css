@@ -1,0 +1,31 @@
+.footer-column__title {
+  margin: 0;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #a855f7;
+}
+
+.footer-column__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-column__link {
+  display: inline-block;
+  font-size: 0.875rem;
+  line-height: 1.45;
+  color: rgb(244 246 255 / 0.72);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-column__link:hover,
+.footer-column__link:focus-visible {
+  color: #ffffff;
+}

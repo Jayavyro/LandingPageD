@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" role="img" aria-label="Microsoft Outlook">
+  <rect width="40" height="40" rx="8" fill="#0078d4"/>
+  <rect x="8" y="11" width="24" height="18" rx="2" fill="#ffffff"/>
+  <path d="M8 14 L20 22 L32 14" fill="none" stroke="#0078d4" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="10" y="24" width="20" height="3" rx="1.5" fill="#deecf9"/>
+</svg>

@@ -1,0 +1,243 @@
+.workflow-connected {
+  --wf-blue: #4b6ef5;
+  --wf-purple: #a855f7;
+  --wf-ink: #12162a;
+  --wf-ink-soft: #4b5066;
+  --wf-grad: linear-gradient(120deg, var(--wf-blue) 0%, var(--wf-purple) 55%, #ff6584 100%);
+
+  position: relative;
+  overflow: hidden;
+  margin-top: -5.5rem;
+  padding: clamp(7.5rem, 11vw, 9rem) 0 clamp(6.5rem, 10vw, 8rem);
+  background: transparent;
+  color: #ffffff;
+}
+
+.workflow-connected::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: var(--section-transition-h);
+  z-index: 0;
+  background: #060816;
+}
+
+.workflow-connected__transition {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 4;
+  height: var(--section-transition-h);
+  pointer-events: none;
+}
+
+.workflow-connected__transition:not(.workflow-connected__transition--bottom) {
+  top: 0;
+}
+
+.workflow-connected__transition--bottom {
+  bottom: 0;
+  z-index: 5;
+}
+
+.workflow-connected__curve {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.workflow-connected__curve--white {
+  z-index: 2;
+  filter: drop-shadow(0 10px 24px rgb(6 8 22 / 0.08));
+}
+
+.workflow-connected__curve--dark {
+  z-index: 1;
+}
+
+.workflow-connected__curve--dark-bottom {
+  z-index: 1;
+}
+
+.workflow-connected__curve-shine {
+  position: absolute;
+  left: 50%;
+  z-index: 3;
+  width: min(42rem, 72%);
+  height: 2.5rem;
+  transform: translateX(-50%);
+  background: radial-gradient(
+    ellipse,
+    rgb(75 110 245 / 0.14) 0%,
+    rgb(168 85 247 / 0.06) 38%,
+    transparent 72%
+  );
+  filter: blur(12px);
+}
+
+.workflow-connected__transition:not(.workflow-connected__transition--bottom) .workflow-connected__curve-shine {
+  top: 58%;
+}
+
+.workflow-connected__ambient {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  mask-image: linear-gradient(to bottom, #000 0%, #000 72%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 72%, transparent 100%);
+}
+
+.workflow-connected__grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgb(75 110 245 / 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(75 110 245 / 0.04) 1px, transparent 1px);
+  background-size: 3.5rem 3.5rem;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 15%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 15%, transparent 75%);
+}
+
+.workflow-connected__glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(88px);
+}
+
+.workflow-connected__glow--blue {
+  top: 12%;
+  left: 8%;
+  width: 26rem;
+  height: 18rem;
+  background: radial-gradient(circle, rgb(75 110 245 / 0.12) 0%, transparent 72%);
+}
+
+.workflow-connected__glow--purple {
+  right: 4%;
+  bottom: 8%;
+  width: 22rem;
+  height: 22rem;
+  background: radial-gradient(circle, rgb(168 85 247 / 0.1) 0%, transparent 72%);
+}
+
+.workflow-connected__container {
+  position: relative;
+  z-index: 2;
+  width: min(88rem, calc(100% - 2.5rem));
+  margin-inline: auto;
+}
+
+.workflow-connected__layout {
+  display: grid;
+  align-items: center;
+  gap: clamp(2.5rem, 5vw, 4rem);
+}
+
+.workflow-connected__content {
+  max-width: 36rem;
+}
+
+.workflow-connected__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4375rem;
+  padding: 0.4375rem 0.875rem;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgb(255 255 255 / 0.72);
+  background: rgb(255 255 255 / 0.05);
+  border: 1px solid rgb(255 255 255 / 0.1);
+  border-radius: 9999px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.workflow-connected__badge-icon {
+  width: 0.8125rem;
+  height: 0.8125rem;
+  color: var(--wf-blue);
+}
+
+.workflow-connected__title {
+  margin-top: 1.75rem;
+  font-size: clamp(2.5rem, 5.4vw, 3.1rem);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  color: #ffffff;
+}
+
+.workflow-connected__title-line {
+  display: block;
+}
+
+.workflow-connected__gradient {
+  background: var(--wf-grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.workflow-connected__subtitle {
+  margin-top: 1.375rem;
+  max-width: 32rem;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: rgb(255 255 255 / 0.52);
+}
+
+.workflow-connected__features {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem 1rem;
+  margin-top: 2rem;
+}
+
+.workflow-connected__visual {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+@media (min-width: 1024px) {
+  .workflow-connected__layout {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: clamp(2rem, 4vw, 3.5rem);
+  }
+
+  .workflow-connected__content {
+    padding-right: 1rem;
+  }
+
+  .workflow-connected__visual {
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 1023px) {
+  .workflow-connected__content {
+    max-width: none;
+  }
+
+  .workflow-connected__visual {
+    display: none;
+  }
+
+  .workflow-connected__features {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 36rem;
+  }
+}
+
+@media (max-width: 540px) {
+  .workflow-connected__features {
+    grid-template-columns: 1fr;
+    max-width: none;
+  }
+}

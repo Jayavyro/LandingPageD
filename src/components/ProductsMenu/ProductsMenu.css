@@ -1,0 +1,80 @@
+.projects-menu {
+  left: 0;
+  right: 0;
+  width: 100%;
+  transform: none;
+}
+
+.projects-menu .nav-dropdown__grid--3-featured {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.projects-menu .nav-dropdown__col {
+  display: flex;
+  flex-direction: column;
+  padding: 1.75rem 1.625rem 1.625rem;
+}
+
+.projects-menu .nav-dropdown__list {
+  flex: 1;
+}
+
+.projects-menu .nav-dropdown__list > li {
+  width: 100%;
+}
+
+.projects-menu .nav-dropdown-item {
+  width: 100%;
+  margin: 0;
+  padding: 0.625rem 0.75rem;
+}
+
+.projects-menu__featured-col {
+  display: flex;
+  flex-direction: column;
+  padding: 1.75rem 1.625rem 1.625rem !important;
+  border-right: none !important;
+}
+
+.projects-menu__sidebar {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+.projects-menu__featured-col .projects-featured,
+.projects-menu__featured-col .projects-scheduler {
+  flex: 1;
+  padding: 0;
+}
+
+.projects-menu__featured-col .projects-featured__promo,
+.projects-menu__featured-col .projects-scheduler__promo {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.projects-menu__featured-col .projects-featured__cta,
+.projects-menu__featured-col .projects-scheduler__cta {
+  margin-top: auto;
+}
+
+@media (max-width: 900px) {
+  .projects-menu .nav-dropdown__grid--3-featured {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .projects-menu__featured-col {
+    grid-column: 1 / -1;
+    padding: 1.25rem !important;
+    border-top: 1px solid var(--menu-line);
+  }
+}
+
+@media (max-width: 640px) {
+  .projects-menu .nav-dropdown__grid--3-featured {
+    grid-template-columns: 1fr;
+  }
+}

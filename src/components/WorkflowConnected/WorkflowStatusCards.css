@@ -1,0 +1,33 @@
+.workflow-status-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.875rem;
+  width: 100%;
+}
+
+.workflow-status-card {
+  padding: 1rem 0.75rem;
+  text-align: center;
+  background: rgb(255 255 255 / 0.045);
+  border: 1px solid rgb(255 255 255 / 0.1);
+  border-radius: 1.25rem;
+  box-shadow:
+    0 0 0 1px rgb(255 255 255 / 0.02) inset,
+    0 12px 32px -14px rgb(0 0 0 / 0.5);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.workflow-status-card__value {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+}
+
+.workflow-status-card__label {
+  margin-top: 0.4375rem;
+  font-size: 0.6875rem;
+  line-height: 1.35;
+  color: rgb(255 255 255 / 0.44);
+}

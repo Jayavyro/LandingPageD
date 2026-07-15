@@ -1,0 +1,164 @@
+---
+alwaysApply: true
+---
+# React Rules
+
+## Components
+
+- Use functional components only.
+- Keep components focused on a single responsibility.
+- Prefer composition over prop drilling.
+- Extract reusable UI immediately when repeated more than once.
+- Avoid components larger than ~200 lines.
+- Keep JSX clean and readable.
+
+---
+
+## File Structure
+
+- One component per file.
+- Group related files together.
+- Keep assets, hooks, constants and utilities separate.
+- Avoid dumping everything into one folder.
+
+---
+
+## State
+
+- Keep state as local as possible.
+- Do not lift state unless multiple components truly need it.
+- Avoid unnecessary useState.
+- Derive values instead of storing derived state.
+- Prefer useMemo/useCallback only when they provide measurable benefit.
+
+---
+
+## Props
+
+- Keep props minimal.
+- Avoid passing unused props.
+- Use descriptive prop names.
+- Avoid deeply nested props.
+
+---
+
+## Rendering
+
+- Avoid unnecessary re-renders.
+- Never create components inside another component unless required.
+- Move repeated JSX into reusable components.
+
+---
+
+## JSX
+
+- Keep JSX declarative.
+- Avoid deeply nested ternaries.
+- Prefer early returns.
+- Break large JSX into smaller components.
+
+---
+
+## Imports
+
+- Remove unused imports.
+- Group imports consistently.
+- Prefer absolute imports if configured.
+
+---
+
+## Styling
+
+- Do not use inline styles unless dynamic.
+- Keep styling consistent across components.
+- Reuse utility classes instead of repeating long class lists.
+
+---
+
+## Performance
+
+- Lazy load large sections when appropriate.
+- Optimize images.
+- Prefer SVG icons.
+- Avoid unnecessary dependencies.
+
+---
+
+## Code Quality
+
+- Use meaningful variable names.
+- Use descriptive component names.
+- Avoid magic numbers.
+- Extract repeated constants.
+- Remove dead code.
+- Remove console.log before completion.
+
+---
+
+## Accessibility
+
+- Use semantic HTML.
+- Add aria-labels where required.
+- Always include alt text.
+- Ensure keyboard accessibility.
+- Maintain proper heading hierarchy.
+
+---
+
+## Animations
+
+- Keep animations subtle.
+- Animate only meaningful interactions.
+- Avoid animation-heavy interfaces.
+- Respect prefers-reduced-motion when possible.
+
+---
+
+## Forms
+
+- Use controlled components.
+- Validate inputs cleanly.
+- Keep form state organized.
+
+---
+
+## Hooks
+
+- Follow Rules of Hooks.
+- Keep custom hooks reusable.
+- Extract complex logic into hooks.
+
+---
+
+## Project Standards
+
+- Prefer reusable components over duplicated JSX.
+- Keep files small.
+- Keep logic separate from presentation when complexity grows.
+- Write production-ready code only.
+
+---
+
+## Before Finishing
+
+Verify:
+
+□ No unused code
+
+□ No console logs
+
+□ No duplicate JSX
+
+□ Clean component structure
+
+□ Responsive layout
+
+□ Accessible markup
+
+□ Readable code
+
+□ Reusable components
+
+□ Consistent naming
+
+□ Production-ready implementation

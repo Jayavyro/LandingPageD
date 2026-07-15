@@ -1,0 +1,70 @@
+.why-avyro-result-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  height: 100%;
+  min-height: 11.5rem;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  background: rgb(255 255 255 / 0.94);
+  border: 1px solid var(--why-line, #eae8e2);
+  border-radius: 1.25rem;
+  box-shadow:
+    0 1px 2px rgb(18 22 42 / 0.03),
+    0 8px 28px -12px rgb(18 22 42 / 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition:
+    transform 0.32s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.32s ease,
+    box-shadow 0.32s ease;
+}
+
+.why-avyro-result-card:hover {
+  transform: translateY(-6px);
+  border-color: rgb(75 110 245 / 0.22);
+  box-shadow:
+    0 1px 2px rgb(18 22 42 / 0.03),
+    0 24px 48px -16px rgb(75 110 245 / 0.16);
+}
+
+.why-avyro-result-card__title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  color: #12162a;
+}
+
+.why-avyro-result-card__metric {
+  font-size: clamp(2.5rem, 5vw, 3.25rem);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.why-avyro-result-card--purple .why-avyro-result-card__metric {
+  color: #a855f7;
+}
+
+.why-avyro-result-card--blue .why-avyro-result-card__metric {
+  color: #4b6ef5;
+}
+
+.why-avyro-result-card__caption {
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: #4b5066;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .why-avyro-result-card {
+    transition: none;
+  }
+
+  .why-avyro-result-card:hover {
+    transform: none;
+  }
+}

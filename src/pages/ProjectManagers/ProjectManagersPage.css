@@ -1,0 +1,132 @@
+.project-managers {
+  --pm-blue: #4b6ef5;
+  --pm-purple: #6366f1;
+  --pm-ink: #12162a;
+  --pm-ink-soft: #4b5066;
+  --pm-line: #eae8e2;
+  --pm-grad: linear-gradient(135deg, #6366f1 0%, #4b6ef5 55%, #a855f7 100%);
+
+  position: relative;
+  overflow-x: clip;
+  overflow-y: visible;
+  min-height: 100vh;
+  padding: clamp(6.5rem, 10vw, 7.5rem) 0 clamp(5rem, 8vw, 6.5rem);
+  background: #ffffff;
+  color: var(--pm-ink);
+}
+
+.project-managers__ambient {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.project-managers__grid-pattern {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgb(75 110 245 / 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(75 110 245 / 0.035) 1px, transparent 1px);
+  background-size: 3.5rem 3.5rem;
+  mask-image: radial-gradient(ellipse 100% 72% at 50% -4%, #000 0%, transparent 82%);
+  -webkit-mask-image: radial-gradient(ellipse 100% 72% at 50% -4%, #000 0%, transparent 82%);
+}
+
+.project-managers__glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(88px);
+}
+
+.project-managers__glow--center {
+  top: 1.5rem;
+  left: 50%;
+  width: 48rem;
+  height: 20rem;
+  transform: translateX(-50%);
+  background: radial-gradient(
+    ellipse,
+    rgb(99 102 241 / 0.08) 0%,
+    rgb(75 110 245 / 0.04) 45%,
+    transparent 74%
+  );
+}
+
+.project-managers__container {
+  position: relative;
+  z-index: 1;
+  width: min(88rem, calc(100% - 2.5rem));
+  margin-inline: auto;
+}
+
+.project-managers__intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.project-managers__eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--pm-purple);
+}
+
+.project-managers__title {
+  max-width: 52rem;
+  margin-top: 1.25rem;
+  font-size: clamp(2.125rem, 4.8vw, 3.25rem);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+  color: var(--pm-ink);
+}
+
+.project-managers__subtitle {
+  max-width: 42rem;
+  margin-top: 1.25rem;
+  font-size: clamp(1rem, 1.8vw, 1.125rem);
+  line-height: 1.7;
+  color: var(--pm-ink-soft);
+}
+
+.project-managers__cta-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: clamp(2.5rem, 5vw, 3.5rem);
+}
+
+.project-managers__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8125rem 1.5rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--pm-grad);
+  border-radius: 9999px;
+  box-shadow: 0 8px 24px rgb(99 102 241 / 0.28);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-managers__cta:hover,
+.project-managers__cta:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 28px rgb(99 102 241 / 0.34);
+  outline: none;
+}
+
+@media (max-width: 768px) {
+  .project-managers {
+    padding-top: 5.5rem;
+  }
+
+  .project-managers__container {
+    width: min(76rem, calc(100% - 1.5rem));
+  }
+}
