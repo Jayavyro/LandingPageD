@@ -1,5 +1,15 @@
 /* Mobile spacing — line-height, margins, and padding for ≤768px */
 
+@media (max-width: 1024px) {
+  .product-page,
+  .industry-page,
+  .pricing-page,
+  .resources-page,
+  .project-managers {
+    padding-top: var(--mobile-page-top);
+  }
+}
+
 @media (max-width: 768px) {
   :root {
     --mobile-page-x: 1.25rem;
@@ -42,7 +52,7 @@
   .pricing-page,
   .resources-page,
   .project-managers {
-    padding-top: 6rem;
+    padding-top: var(--mobile-page-top);
     padding-bottom: 3.5rem;
   }
 

@@ -122,10 +122,6 @@
 }
 
 @media (max-width: 768px) {
-  .project-managers {
-    padding-top: 5.5rem;
-  }
-
   .project-managers__container {
     width: min(76rem, calc(100% - 1.5rem));
   }

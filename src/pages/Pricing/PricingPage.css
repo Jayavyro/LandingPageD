@@ -368,10 +368,6 @@
 }
 
 @media (max-width: 768px) {
-  .pricing-page {
-    padding-top: 5.5rem;
-  }
-
   .pricing-page__container {
     width: min(76rem, calc(100% - 1.5rem));
   }

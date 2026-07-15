@@ -83,9 +83,18 @@ ul {
   list-style: none;
 }
 
+@media (max-width: 1024px) {
+  :root {
+    --mobile-page-top: 7.5rem;
+    --navbar-scroll-offset: 7.75rem;
+  }
+}
+
 @media (max-width: 768px) {
   :root {
     --container-padding: 1.25rem;
+    --mobile-page-top: 8.25rem;
+    --navbar-scroll-offset: 8.5rem;
   }
 
   html,

@@ -132,10 +132,6 @@
 }
 
 @media (max-width: 768px) {
-  .resources-page {
-    padding-top: 5.5rem;
-  }
-
   .resources-page__container {
     width: min(76rem, calc(100% - 1.5rem));
   }
