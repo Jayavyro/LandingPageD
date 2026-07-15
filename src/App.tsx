@@ -1,4 +1,5 @@
 import { Route, Routes, Navigate } from 'react-router-dom'
+import GoToTopButton from './components/GoToTopButton/GoToTopButton'
 import ScrollToTop from './components/ScrollToTop'
 import LandingPage from './pages/LandingPage'
 import ProjectManagersPage from './pages/ProjectManagers/ProjectManagersPage'
@@ -18,6 +19,7 @@ function App() {
   return (
     <>
       <ScrollToTop />
+      <GoToTopButton />
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/use-case/project-managers" element={<ProjectManagersPage />} />
