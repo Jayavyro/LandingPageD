@@ -93,7 +93,7 @@ function ContactForm() {
           <textarea
             name="message"
             placeholder="How can we help you?"
-            rows={4}
+            rows={3}
             required
             value={form.message}
             onChange={(event) => updateField('message', event.target.value)}

@@ -43,25 +43,25 @@ function ContactUs() {
 
       <div className="contact-us__container">
         <div className="contact-us__hero">
-          <motion.div className="contact-us__left" {...fadeLeft(0)}>
-            <header className="contact-us__intro">
-              <span className="contact-us__badge">
-                <Mail className="contact-us__badge-icon" aria-hidden="true" />
-                {CONTACT_BADGE}
-              </span>
+          <motion.header className="contact-us__intro" {...fadeLeft(0)}>
+            <span className="contact-us__badge">
+              <Mail className="contact-us__badge-icon" aria-hidden="true" />
+              {CONTACT_BADGE}
+            </span>
 
-              <h2 id="contact-us-heading" className="contact-us__title">
-                {CONTACT_TITLE}
-              </h2>
+            <h2 id="contact-us-heading" className="contact-us__title">
+              {CONTACT_TITLE}
+            </h2>
 
-              <p className="contact-us__subtitle">{CONTACT_SUBTITLE}</p>
-            </header>
-
-            <ContactChannels />
-          </motion.div>
+            <p className="contact-us__subtitle">{CONTACT_SUBTITLE}</p>
+          </motion.header>
 
           <motion.div className="contact-us__form-column" {...fadeRight(0.08)}>
             <ContactForm />
+          </motion.div>
+
+          <motion.div className="contact-us__channels-column" {...fadeLeft(0.12)}>
+            <ContactChannels />
           </motion.div>
         </div>
       </div>

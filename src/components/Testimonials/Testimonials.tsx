@@ -52,7 +52,7 @@ function Testimonials() {
 
       <div className="testimonials__container">
         <div className="testimonials__layout">
-          <motion.aside className="testimonials__rail" {...fadeIn(0)}>
+          <motion.div className="testimonials__intro" {...fadeIn(0)}>
             <p className="testimonials__eyebrow">Customer voices</p>
 
             <h2 id="testimonials-heading" className="testimonials__title">
@@ -75,15 +75,7 @@ function Testimonials() {
                 <strong>5.0</strong> from teams at FivD
               </p>
             </div>
-
-            <TestimonialAuthorNav
-              testimonials={TESTIMONIALS}
-              activeIndex={carousel.activeIndex}
-              onSelect={(index) =>
-                carousel.goTo(index, index > carousel.activeIndex ? 1 : -1)
-              }
-            />
-          </motion.aside>
+          </motion.div>
 
           <motion.div className="testimonials__stage-wrap" {...fadeInRight(0.08)}>
             <TestimonialStage
@@ -98,6 +90,16 @@ function Testimonials() {
               onResume={carousel.resume}
               onTouchStart={carousel.handleTouchStart}
               onTouchEnd={carousel.handleTouchEnd}
+            />
+          </motion.div>
+
+          <motion.div className="testimonials__nav-wrap" {...fadeIn(0.12)}>
+            <TestimonialAuthorNav
+              testimonials={TESTIMONIALS}
+              activeIndex={carousel.activeIndex}
+              onSelect={(index) =>
+                carousel.goTo(index, index > carousel.activeIndex ? 1 : -1)
+              }
             />
           </motion.div>
         </div>

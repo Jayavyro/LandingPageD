@@ -82,6 +82,8 @@
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
+  min-width: 0;
+  overflow: hidden;
 }
 
 .testimonial-stage__name {
@@ -161,24 +163,122 @@
   background: var(--testimonials-blue, #4b6ef5);
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
+  .testimonial-stage {
+    gap: 0.625rem;
+    height: auto;
+  }
+
   .testimonial-stage__panel {
-    min-height: 24rem;
-    padding: 1.75rem 1.5rem;
+    min-height: 0;
+    padding: 1.25rem 1.125rem 1.125rem;
+    border-radius: 1.125rem;
+    box-shadow:
+      0 1px 2px rgb(18 22 42 / 0.03),
+      0 12px 32px -20px rgb(75 110 245 / 0.2);
+  }
+
+  .testimonial-stage__content {
+    min-height: 0;
+    justify-content: flex-start;
+    gap: 0.875rem;
+  }
+
+  .testimonial-stage__watermark {
+    top: 0.125rem;
+    left: 0.75rem;
+    font-size: clamp(2.75rem, 11vw, 3.75rem);
+  }
+
+  .testimonial-stage__stars {
+    gap: 0.25rem;
+  }
+
+  .testimonial-stage__star {
+    width: 0.8125rem;
+    height: 0.8125rem;
+  }
+
+  .testimonial-stage__quote p {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.68;
+    letter-spacing: -0.01em;
   }
 
   .testimonial-stage__footer {
-    flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    gap: 0.75rem;
+    padding-top: 0.75rem;
+    margin-top: 0.125rem;
+  }
+
+  .testimonial-stage__name {
+    font-size: 0.9375rem;
+  }
+
+  .testimonial-stage__role {
+    font-size: 0.8125rem;
+    line-height: 1.45;
   }
 
   .testimonial-stage__controls {
-    width: 100%;
-    justify-content: space-between;
+    gap: 0.375rem;
+  }
+
+  .testimonial-stage__arrow {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+
+  .testimonial-stage__arrow svg {
+    width: 1rem;
+    height: 1rem;
   }
 
   .testimonial-stage__dots {
     justify-content: center;
+    gap: 0.375rem;
+  }
+
+  .testimonial-stage__dot {
+    width: 0.375rem;
+    height: 0.375rem;
+  }
+
+  .testimonial-stage__dot--active {
+    width: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonial-stage__panel {
+    padding: 1.125rem 1rem;
+    border-radius: 1rem;
+  }
+
+  .testimonial-stage__content {
+    gap: 0.75rem;
+  }
+
+  .testimonial-stage__quote p {
+    font-size: 0.96875rem;
+    line-height: 1.65;
+  }
+
+  .testimonial-stage__footer {
+    padding-top: 0.625rem;
+  }
+
+  .testimonial-stage__author {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .testimonial-stage__role {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 }
 

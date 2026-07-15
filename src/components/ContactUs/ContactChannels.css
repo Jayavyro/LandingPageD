@@ -83,16 +83,58 @@
 
 @media (max-width: 640px) {
   .contact-channels {
-    grid-auto-rows: 6.5rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: auto;
+    gap: 0.5rem;
   }
 
   .contact-channels__card {
-    min-height: 6.5rem;
-    padding: 0.75rem 0.8125rem;
+    min-height: 0;
+    height: auto;
+    padding: 0.5625rem 0.625rem;
+    border-radius: 0.625rem;
+    grid-template-columns: 1.5rem 1fr;
+    column-gap: 0.5rem;
+  }
+
+  .contact-channels__icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 0.375rem;
+  }
+
+  .contact-channels__icon svg {
+    width: 0.8125rem;
+    height: 0.8125rem;
+  }
+
+  .contact-channels__copy {
+    min-height: 0;
+    gap: 0.125rem;
+  }
+
+  .contact-channels__label {
+    font-size: 0.5625rem;
+    letter-spacing: 0.04em;
   }
 
   .contact-channels__value {
-    font-size: 0.75rem;
+    font-size: 0.6875rem;
+    line-height: 1.35;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-channels {
+    gap: 0.4375rem;
+  }
+
+  .contact-channels__card {
+    padding: 0.5rem 0.5625rem;
   }
 }
 
