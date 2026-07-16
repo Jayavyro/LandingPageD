@@ -88,7 +88,7 @@ function ProductModulePage() {
 
 
 
-  const heroImage = PRODUCT_HERO_IMAGES[content.id as Exclude<typeof content.id, 'platform'>]
+  const heroImage = PRODUCT_HERO_IMAGES[content.id]
 
 
 

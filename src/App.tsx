@@ -9,6 +9,7 @@ import AccountantsCfosPage from './pages/AccountantsCfos/AccountantsCfosPage'
 import ResourcesPage from './pages/Resources/ResourcesPage'
 import ProductModulePage from './pages/Products/ProductModulePage'
 import PlatformProductPage from './pages/Products/PlatformProductPage'
+import FeaturePage from './pages/Features/FeaturePage'
 import IndustryPage from './pages/Industry/IndustryPage'
 import PricingPage from './pages/Pricing/PricingPage'
 import { DEFAULT_RESOURCE_TAB } from './constants/resourcesPage'
@@ -29,6 +30,8 @@ function App() {
         <Route path="/resources" element={<Navigate to={`/resources/${DEFAULT_RESOURCE_TAB}`} replace />} />
         <Route path="/resources/:tabId" element={<ResourcesPage />} />
         <Route path={PRODUCT_ROUTES.platform} element={<PlatformProductPage />} />
+        <Route path={PRODUCT_ROUTES['auto-mapping']} element={<FeaturePage />} />
+        <Route path={PRODUCT_ROUTES['gantt-chart']} element={<FeaturePage />} />
         <Route path="/products/:productId" element={<ProductModulePage />} />
         <Route path="/industry/:industryId" element={<IndustryPage />} />
         <Route path={PRICING_ROUTE} element={<PricingPage />} />

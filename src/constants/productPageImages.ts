@@ -1,14 +1,11 @@
-import type { ProductRouteId } from './productRoutes'
+import type { ModuleProductId } from './productRoutes'
 
 const unsplash = (id: string, alt: string) => ({
   src: `https://images.unsplash.com/${id}?auto=format&fit=crop&w=1400&q=80`,
   alt,
 })
 
-export const PRODUCT_HERO_IMAGES: Record<
-  Exclude<ProductRouteId, 'platform'>,
-  { src: string; alt: string }
-> = {
+export const PRODUCT_HERO_IMAGES: Record<ModuleProductId, { src: string; alt: string }> = {
   crm: unsplash(
     'photo-1460925895917-afdab827c52f',
     'Project pipeline and client data viewed on a laptop dashboard',

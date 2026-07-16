@@ -6,10 +6,16 @@ export const PRODUCT_ROUTES = {
   resource: '/products/resource',
   activity: '/products/activity',
   timesheets: '/products/timesheets',
+  'auto-mapping': '/products/auto-mapping',
+  'gantt-chart': '/products/gantt-chart',
   platform: '/products/platform',
 } as const
 
 export type ProductRouteId = keyof typeof PRODUCT_ROUTES
+
+export type ModuleProductId = Exclude<ProductRouteId, 'platform' | 'auto-mapping' | 'gantt-chart'>
+
+export type RelatedModuleId = ModuleProductId | 'platform'
 
 export const PLATFORM_MODULE_ANCHORS = {
   approvals: 'approvals',

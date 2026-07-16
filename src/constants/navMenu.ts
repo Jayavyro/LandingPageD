@@ -121,7 +121,7 @@ export const FEATURED_OFFERING = {
   description:
     'Timesheet entries route straight to the right project, no manual tagging.',
   ctaLabel: 'Learn more',
-  ctaHref: PRODUCT_ROUTES.timesheets,
+  ctaHref: PRODUCT_ROUTES['auto-mapping'],
 }
 
 export const SCHEDULER_OFFERING = {
@@ -130,7 +130,7 @@ export const SCHEDULER_OFFERING = {
   description:
     'Visual planning built for AEC project delivery.',
   ctaLabel: 'Explore scheduler',
-  ctaHref: PRODUCT_ROUTES.resource,
+  ctaHref: PRODUCT_ROUTES['gantt-chart'],
 }
 
 export const NAV_LINKS = [

@@ -1,4 +1,4 @@
-import type { ProductRouteId } from './productRoutes'
+import type { ModuleProductId, ProductRouteId, RelatedModuleId } from './productRoutes'
 
 export interface ProductFeature {
   title: string
@@ -18,7 +18,7 @@ export interface ProductWorkflow {
 }
 
 export interface ProductPageContent {
-  id: ProductRouteId
+  id: ModuleProductId
   category: string
   headline: string
   subtitle: string
@@ -28,7 +28,7 @@ export interface ProductPageContent {
   pains: string[]
   features: ProductFeature[]
   workflow: ProductWorkflow
-  relatedIds: ProductRouteId[]
+  relatedIds: RelatedModuleId[]
   faqs: ProductFaq[]
 }
 
@@ -113,10 +113,7 @@ export const PLATFORM_PAGE = {
   },
 }
 
-export const PRODUCT_PAGES: Record<
-  Exclude<ProductRouteId, 'platform'>,
-  ProductPageContent
-> = {
+export const PRODUCT_PAGES: Record<ModuleProductId, ProductPageContent> = {
   crm: {
     id: 'crm',
     category: 'Business Operations',
@@ -538,6 +535,8 @@ export const PRODUCT_PAGE_LABELS: Record<ProductRouteId, string> = {
   resource: 'Resource Allocation',
   activity: 'Activity Tracker',
   timesheets: 'Smart Timesheets',
+  'auto-mapping': 'Auto-mapping',
+  'gantt-chart': 'Gantt Chart',
   platform: 'Platform',
 }
 
@@ -546,5 +545,5 @@ export function getProductPage(id: string | undefined): ProductPageContent | nul
     return null
   }
 
-  return PRODUCT_PAGES[id as Exclude<ProductRouteId, 'platform'>]
+  return PRODUCT_PAGES[id as ModuleProductId]
 }
