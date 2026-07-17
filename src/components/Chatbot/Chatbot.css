@@ -233,67 +233,64 @@
   40% { transform: scale(1); opacity: 1; }
 }
 
-/* Chat Input Area */
-.chatbot-input-area {
-  padding: 1rem;
-  background: #ffffff;
-  border-top: 1px solid var(--color-border, #e5e7eb);
-}
-
-.chatbot-input-container {
+.chatbot-header-actions {
   display: flex;
   align-items: center;
-  background: #ffffff;
-  border: 1px solid var(--color-border, #e5e7eb);
-  border-radius: 1.5rem;
-  padding: 0.25rem 0.25rem 0.25rem 1rem;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  gap: 0.25rem;
 }
 
-.chatbot-input-container:focus-within {
-  border-color: var(--color-accent, #1d4ed8);
-  box-shadow: 0 0 0 3px var(--color-accent-bg, #eff6ff);
-}
-
-.chatbot-input {
-  flex: 1;
+.chatbot-reset {
+  color: var(--color-text-muted, #4b5563);
   background: transparent;
   border: none;
-  color: var(--color-text, #0f172a);
-  font-size: 0.875rem;
-  padding: 0.5rem 0;
-  outline: none;
-}
-
-.chatbot-input::placeholder {
-  color: #94a3b8;
-}
-
-.chatbot-send-btn {
-  background: var(--color-accent, #1d4ed8);
-  color: white;
-  border: none;
-  width: 32px;
-  height: 32px;
+  cursor: pointer;
+  padding: 0.5rem;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  transition: background 0.2s, transform 0.2s;
-  margin-left: 0.5rem;
+  transition: background 0.2s, color 0.2s;
 }
 
-.chatbot-send-btn:hover:not(:disabled) {
-  background: #1e40af;
-  transform: scale(1.05);
+.chatbot-reset:hover {
+  background: rgba(15, 23, 42, 0.05);
+  color: var(--color-text, #0f172a);
 }
 
-.chatbot-send-btn:disabled {
-  background: #cbd5e1;
+.chat-message--typing {
+  width: fit-content;
+}
+
+.chat-options__label {
+  margin: 0 0  0.125rem;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #94a3b8;
+}
+
+.chat-option-btn:disabled {
+  opacity: 0.55;
   cursor: not-allowed;
   transform: none;
 }
+
+.chatbot-footer {
+  padding: 0.75rem 1rem;
+  background: #f8fafc;
+  border-top: 1px solid var(--color-border, #e5e7eb);
+}
+
+.chatbot-footer p {
+  margin: 0;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  text-align: center;
+  color: var(--color-text-muted, #4b5563);
+}
+
+/* Legacy input styles removed — options-only chatbot */
 
 /* Responsive */
 @media (max-width: 480px) {
