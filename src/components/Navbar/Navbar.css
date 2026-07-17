@@ -48,11 +48,19 @@
   flex-shrink: 0;
 }
 
-.navbar__logo {
+.navbar__logo--desktop {
   width: 2rem;
   height: 2rem;
   border-radius: 0.5rem;
   object-fit: cover;
+}
+
+.navbar__logo--mobile {
+  display: none;
+  width: auto;
+  height: 1.75rem;
+  max-width: min(8.5rem, 42vw);
+  object-fit: contain;
 }
 
 .navbar__brand-name {
@@ -190,12 +198,18 @@
     border-radius: 1.25rem;
   }
 
-  .navbar__logo {
+  .navbar__logo--desktop,
+  .navbar__brand-name {
     display: none;
+  }
+
+  .navbar__logo--mobile {
+    display: block;
   }
 
   .navbar__brand {
     gap: 0;
+    min-width: 0;
   }
 
   .navbar__bar--menu-open {
@@ -215,12 +229,6 @@
     border-bottom: 1px solid rgb(15 23 42 / 0.06);
     margin-bottom: 0.25rem;
     width: calc(100% - 3.25rem);
-  }
-
-  .navbar__bar--menu-open .navbar__brand-name {
-    font-size: 1rem;
-    font-weight: 600;
-    color: #64748b;
   }
 
   .navbar__menu-toggle {
@@ -252,11 +260,5 @@
 @media (min-width: 1025px) {
   #mobile-navigation {
     display: none;
-  }
-}
-
-@media (max-width: 768px) {
-  .navbar__brand-name {
-    font-size: 1rem;
   }
 }

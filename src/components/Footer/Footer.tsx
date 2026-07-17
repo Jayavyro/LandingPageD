@@ -1,5 +1,5 @@
 import { Shield } from 'lucide-react'
-import logo from '../../logoNew.jpg'
+import { FOOTER_LOGO } from '../../constants/brandAssets'
 import {
   FOOTER_COLUMNS,
   FOOTER_COPYRIGHT,
@@ -25,12 +25,12 @@ function Footer() {
       <div className="footer__container">
         <div className="footer__top">
           <div className="footer__brand">
-            <a href="#" className="footer__brand-link" aria-label="Avyro home">
+            <a href="/" className="footer__brand-link" aria-label="Avyro home">
               <img
-                src={logo}
+                src={FOOTER_LOGO}
                 alt="Avyro"
                 className="footer__logo"
-                width={40}
+                width={160}
                 height={40}
                 loading="lazy"
                 decoding="async"

@@ -1,6 +1,6 @@
 import { Link, useLocation } from 'react-router-dom'
 import { useEffect, useRef, useState } from 'react'
-import logo from '../../logoNew.jpg'
+import { NAVBAR_LOGO_ICON, MOBILE_NAVBAR_LOGO } from '../../constants/brandAssets'
 import { NAV_LINKS, WHY_AVYRO_LINK, BOOK_DEMO_HREF } from '../../constants/navMenu'
 import ProductsMenu from '../ProductsMenu/ProductsMenu'
 import ResourcesMenu from '../ResourcesMenu/ResourcesMenu'
@@ -123,7 +123,20 @@ function Navbar() {
     >
       <div className={`navbar__bar${isMobileMenuOpen ? ' navbar__bar--menu-open' : ''}`}>
         <Link to="/" className="navbar__brand" aria-label="Avyro home" onClick={closeMenus}>
-          <img src={logo} alt="" className="navbar__logo" width={32} height={32} />
+          <img
+            src={NAVBAR_LOGO_ICON}
+            alt=""
+            className="navbar__logo navbar__logo--desktop"
+            width={32}
+            height={32}
+          />
+          <img
+            src={MOBILE_NAVBAR_LOGO}
+            alt="Avyro"
+            className="navbar__logo navbar__logo--mobile"
+            width={132}
+            height={32}
+          />
           <span className="navbar__brand-name">Avyro</span>
         </Link>
 
