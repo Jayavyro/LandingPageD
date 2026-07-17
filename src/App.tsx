@@ -1,6 +1,7 @@
 import { Route, Routes, Navigate } from 'react-router-dom'
 import GoToTopButton from './components/GoToTopButton/GoToTopButton'
 import ScrollToTop from './components/ScrollToTop'
+import SeoHead from './components/SeoHead/SeoHead'
 import LandingPage from './pages/LandingPage'
 import ProjectManagersPage from './pages/ProjectManagers/ProjectManagersPage'
 import PrincipalsOwnersPage from './pages/PrincipalOwners/PrincipalsOwnersPage'
@@ -20,6 +21,7 @@ function App() {
   return (
     <>
       <ScrollToTop />
+      <SeoHead />
       <GoToTopButton />
       <Routes>
         <Route path="/" element={<LandingPage />} />
