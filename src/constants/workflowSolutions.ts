@@ -24,8 +24,8 @@ export const WORKFLOW_SOLUTIONS: WorkflowSolution[] = [
   {
     id: 'win-the-work',
     step: '01',
-    quality: 'Connected',
-    title: 'Win more work without retyping client data',
+    quality: 'WIN WORK',
+    title: 'Grow Your Pipeline Without Growing Administrative Work',
     description:
       'Stop copying lead details into spreadsheets and proposals. Capture opportunities in AI-Powered CRM, pre-fill proposal forms, and move from intake to project setup without duplicate entry.',
     ctaLabel: 'Get started',
@@ -38,8 +38,8 @@ export const WORKFLOW_SOLUTIONS: WorkflowSolution[] = [
   {
     id: 'run-the-project',
     step: '02',
-    quality: 'Intuitive',
-    title: 'Save time with a streamlined planning process',
+    quality: 'PLAN & DELIVER',
+    title: 'Deliver More Projects With the Same Team',
     description:
       'Eliminate scattered schedules and manual staffing updates. Build project plans on Gantt timelines, assign people in Resource Allocation, and see utilization across phases before deadlines slip.',
     ctaLabel: 'Get started',
@@ -52,10 +52,10 @@ export const WORKFLOW_SOLUTIONS: WorkflowSolution[] = [
   {
     id: 'capture-the-time',
     step: '03',
-    quality: 'Accurate',
-    title: 'Capture billable hours without the Friday chase',
+    quality: 'TRACK & APPROVE',
+    title: 'Capture Every Billable Hour Without the Friday Timesheet Chase',
     description:
-      'Eliminate manual project selection on timesheets. Activity Tracker logs work during the day; Smart Timesheets map activities to the right project using keyword mapping—then route through approvals.',
+      'Eliminate manual project selection on timesheets. Activity Tracker captures work automatically while Smart Timesheets map activities to the correct project and route them for approval.',
     ctaLabel: 'Get started',
     href: PRODUCT_ROUTES.timesheets,
     accent: 'orange',
@@ -66,10 +66,10 @@ export const WORKFLOW_SOLUTIONS: WorkflowSolution[] = [
   {
     id: 'get-paid',
     step: '04',
-    quality: 'Faster',
-    title: 'Turn approved work into invoices in fewer steps',
+    quality: 'BILL & ANALYZE',
+    title: 'Get Invoices Out Faster. Improve Cash Flow.',
     description:
-      'Stop waiting on late timesheets and disconnected billing. Approved hours flow into Billing & Invoice with budget and variance visibility in Analytics—so cash moves faster.',
+      'Approved work flows directly into billing, budgets, analytics, and financial reporting—eliminating manual reconciliation and reducing invoicing delays.',
     ctaLabel: 'Get started',
     href: PRODUCT_ROUTES.billing,
     accent: 'pink',

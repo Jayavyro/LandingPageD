@@ -21,12 +21,12 @@ function WorkflowStatusCards() {
 
         return (
           <motion.div
-            key={stat.label}
+            key={stat.id}
             className="workflow-status-card"
             {...motionProps}
           >
-            <p className="workflow-status-card__value">{stat.value}</p>
-            <p className="workflow-status-card__label">{stat.label}</p>
+            <p className="workflow-status-card__title">{stat.title}</p>
+            <p className="workflow-status-card__description">{stat.description}</p>
           </motion.div>
         )
       })}

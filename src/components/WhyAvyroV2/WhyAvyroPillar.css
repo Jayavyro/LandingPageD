@@ -1,0 +1,117 @@
+.why-v2-pillar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.125rem;
+  padding: clamp(1.5rem, 2.8vw, 1.875rem);
+  border: 1px solid var(--why-line, #eae8e2);
+  border-radius: 1.125rem;
+  background: #fff;
+  box-shadow: 0 12px 32px -24px rgb(75 110 245 / 0.18);
+  transition:
+    border-color 0.28s ease,
+    box-shadow 0.28s ease;
+}
+
+.why-v2-pillar:hover {
+  border-color: rgb(75 110 245 / 0.2);
+  box-shadow: 0 18px 40px -22px rgb(75 110 245 / 0.22);
+}
+
+.why-v2-pillar__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 3rem;
+}
+
+.why-v2-pillar__step {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: rgb(75 110 245 / 0.32);
+}
+
+.why-v2-pillar__icon-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.875rem;
+}
+
+.why-v2-pillar--blue .why-v2-pillar__icon-wrap {
+  color: #4b6ef5;
+  background: rgb(75 110 245 / 0.1);
+}
+
+.why-v2-pillar--purple .why-v2-pillar__icon-wrap {
+  color: #7c3aed;
+  background: rgb(168 85 247 / 0.1);
+}
+
+.why-v2-pillar__icon {
+  width: 1.375rem;
+  height: 1.375rem;
+}
+
+.why-v2-pillar__flow {
+  display: none;
+}
+
+.why-v2-pillar__title {
+  font-size: clamp(1.1875rem, 2.1vw, 1.4375rem);
+  font-weight: 600;
+  letter-spacing: -0.022em;
+  line-height: 1.28;
+  color: #12162a;
+}
+
+.why-v2-pillar__description {
+  margin: 0;
+  font-size: clamp(0.9375rem, 1.55vw, 1rem);
+  line-height: 1.65;
+  color: #4b5066;
+}
+
+.why-v2-pillar__points {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6875rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.why-v2-pillar__point {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  font-size: clamp(0.9375rem, 1.55vw, 1rem);
+  line-height: 1.65;
+  color: #4b5066;
+}
+
+.why-v2-pillar__marker {
+  flex-shrink: 0;
+  width: 0.4375rem;
+  height: 0.4375rem;
+  margin-top: 0.55rem;
+  border-radius: 50%;
+}
+
+.why-v2-pillar--blue .why-v2-pillar__marker {
+  background: linear-gradient(135deg, #4b6ef5 0%, #6366f1 100%);
+  box-shadow: 0 0 0 3px rgb(75 110 245 / 0.12);
+}
+
+.why-v2-pillar--purple .why-v2-pillar__marker {
+  background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+  box-shadow: 0 0 0 3px rgb(168 85 247 / 0.12);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .why-v2-pillar {
+    transition: none;
+  }
+}

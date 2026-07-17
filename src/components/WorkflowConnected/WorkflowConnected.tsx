@@ -2,7 +2,9 @@ import { useState } from 'react'
 import { motion, useReducedMotion } from 'framer-motion'
 import { Sparkles } from 'lucide-react'
 import {
+  WORKFLOW_CONNECTED_BADGE,
   WORKFLOW_CONNECTED_DESCRIPTION,
+  WORKFLOW_CONNECTED_SUBTITLE,
   WORKFLOW_FEATURES,
 } from '../../constants/workflowConnected'
 import WorkflowEcosystemPanel from './WorkflowEcosystemPanel'
@@ -75,7 +77,7 @@ function WorkflowConnected() {
             <motion.div {...fadeUp(0)}>
               <span className="workflow-connected__badge">
                 <Sparkles className="workflow-connected__badge-icon" aria-hidden="true" />
-                Connected Ecosystem
+                {WORKFLOW_CONNECTED_BADGE}
               </span>
             </motion.div>
 
@@ -84,11 +86,15 @@ function WorkflowConnected() {
               className="workflow-connected__title"
               {...fadeUp(0.06)}
             >
-              <span className="workflow-connected__title-line">One Platform.</span>
+              <span className="workflow-connected__title-line">One Business.</span>
               <span className="workflow-connected__title-line">
-                <span className="workflow-connected__gradient">Every Workflow Connected.</span>
+                <span className="workflow-connected__gradient">One Continuous Workflow.</span>
               </span>
             </motion.h2>
+
+            <motion.p className="workflow-connected__tagline" {...fadeUp(0.09)}>
+              {WORKFLOW_CONNECTED_SUBTITLE}
+            </motion.p>
 
             <motion.p className="workflow-connected__subtitle" {...fadeUp(0.12)}>
               {WORKFLOW_CONNECTED_DESCRIPTION}

@@ -51,7 +51,7 @@
 }
 
 .workflow-feature-row__title {
-  font-size: 0.875rem;
+  font-size: 0.975rem;
   font-weight: 600;
   letter-spacing: -0.02em;
   color: #ffffff;
@@ -59,7 +59,7 @@
 
 .workflow-feature-row__copy {
   margin-top: 0.25rem;
-  font-size: 0.8125rem;
+  font-size: 0.9125rem;
   line-height: 1.5;
   color: rgb(255 255 255 / 0.45);
 }

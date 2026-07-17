@@ -1,10 +1,15 @@
 import { motion, useReducedMotion } from 'framer-motion'
 import { Sparkles } from 'lucide-react'
 import {
+  WHY_AVYRO_V2_BADGE,
+  WHY_AVYRO_V2_CLOSING,
   WHY_AVYRO_V2_FEATURES,
-  WHY_AVYRO_V2_SUBTITLE,
+  WHY_AVYRO_V2_HEADLINE_LINES,
+  WHY_AVYRO_V2_INTRO,
+  WHY_AVYRO_V2_OUTCOMES_LABEL,
 } from '../../constants/whyAvyroV2'
-import WhyAvyroFeatureCard from './WhyAvyroFeatureCard'
+import WhyAvyroPillar from './WhyAvyroPillar'
+import WhyAvyroStory from './WhyAvyroStory'
 import './WhyAvyroV2.css'
 
 const EASE = [0.22, 1, 0.36, 1] as const
@@ -40,7 +45,7 @@ function WhyAvyroV2() {
           <motion.div {...fadeUp(0)}>
             <span className="why-avyro-v2__badge">
               <Sparkles className="why-avyro-v2__badge-icon" aria-hidden="true" />
-              Why AVYRO
+              {WHY_AVYRO_V2_BADGE}
             </span>
           </motion.div>
 
@@ -49,24 +54,28 @@ function WhyAvyroV2() {
             className="why-avyro-v2__title"
             {...fadeUp(0.06)}
           >
-            <span className="why-avyro-v2__title-line">
-              Built for <span className="why-avyro-v2__gradient">AEC</span>. Purpose-driven.
-            </span>
-            <span className="why-avyro-v2__title-line">
-              Every workflow connected — not complicated.
-            </span>
+            {WHY_AVYRO_V2_HEADLINE_LINES.map((line) => (
+              <span key={line} className="why-avyro-v2__title-line">
+                {line}
+              </span>
+            ))}
           </motion.h2>
 
           <motion.p className="why-avyro-v2__subtitle" {...fadeUp(0.12)}>
-            {WHY_AVYRO_V2_SUBTITLE}
+            {WHY_AVYRO_V2_INTRO}
           </motion.p>
         </header>
 
-        <div className="why-avyro-v2__grid">
-          {WHY_AVYRO_V2_FEATURES.map((feature, index) => (
-            <WhyAvyroFeatureCard key={feature.title} feature={feature} index={index} />
-          ))}
-        </div>
+
+        <motion.div className="why-avyro-v2__outcomes" {...fadeUp(0.2)}>
+          <p className="why-avyro-v2__outcomes-label">{WHY_AVYRO_V2_OUTCOMES_LABEL}</p>
+
+          <div className="why-avyro-v2__pillars">
+            {WHY_AVYRO_V2_FEATURES.map((feature, index) => (
+              <WhyAvyroPillar key={feature.title} feature={feature} index={index} />
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   )

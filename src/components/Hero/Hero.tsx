@@ -40,21 +40,24 @@ function Hero() {
       style={{ backgroundImage: `url(${heroBg})` }}
     >
       <div className="hero__content">
-        <p className="hero__badge">AI-NATIVE OPERATING SYSTEM FOR AEC</p>
-
+        <p className="hero__badge">OPERATING SYSTEM FOR AEC</p>
+        
         <h1 className="hero__headline">
-          <span className="hero__headline-line">Run Every Project.</span>
-          <span className="hero__headline-line">Empower Every Team.</span>
+          {/* <span className="hero__headline-line">Pursuit to Project</span>
+          <span className="hero__headline-line">Planning to Delivery.</span>
           <span className="hero__headline-line hero__headline-line--gradient">
-            Build the Future.
+          People to Performance.
+           </span> */}
+          <span className="hero__headline-line">Run Your Entire AEC Business.</span>
+          <span className="hero__headline-line">From Opportunity to Profit.</span>
+
+          <span className="hero__headline-line hero__headline-line--gradient">
+          One Platform.
           </span>
         </h1>
 
         <p className="hero__description">
-          The AI-native operating system built for architecture, engineering, and
-          construction. Unify projects, teams, and operations in one intelligent
-          platform.
-        </p>
+        AVYRO connects every stage of your AEC business—from winning new work and planning projects to delivering successful outcomes and improving business performance.</p>
 
         <div className="hero__actions">
           <form className="hero__email-form" onSubmit={handleEmailSubmit}>

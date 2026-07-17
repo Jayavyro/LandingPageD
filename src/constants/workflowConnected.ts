@@ -2,12 +2,12 @@ import type { LucideIcon } from 'lucide-react'
 import {
   Activity,
   BarChart3,
+  Briefcase,
   CircleDollarSign,
   Clock,
-  Database,
   FileText,
   FolderKanban,
-  Sparkles,
+  Settings,
   SquareCheck,
   UserCog,
   Users,
@@ -28,60 +28,77 @@ export interface WorkflowModule {
 }
 
 export interface WorkflowStatusStat {
-  value: string
-  label: string
+  id: string
+  title: string
+  description: string
 }
 
-export const WORKFLOW_CONNECTED_DESCRIPTION =
-  'From winning new projects to final invoicing, every department works together through one connected platform with shared data, automated workflows, and AI-powered insights.'
+export const WORKFLOW_CONNECTED_BADGE = 'HOW AVYRO WORKS'
 
-export const WORKFLOW_FEATURES: WorkflowFeature[] = [
+export const WORKFLOW_CONNECTED_SUBTITLE = 'Every Team Moving Forward.'
+
+export const WORKFLOW_CONNECTED_DESCRIPTION =
+  'Every opportunity, project, resource, document, approval, and financial workflow moves through one connected platform—keeping every team aligned from business development to project delivery.'
+  export const WORKFLOW_FEATURES: WorkflowFeature[] = [
   {
-    id: 'truth',
-    title: 'One Source of Truth',
-    description: 'Shared business data.',
-    icon: Database,
+    id: 'win-more-work',
+    title: 'Win More Work',
+    description: 'Opportunities and clients from first conversation to project award.',
+    icon: Briefcase,
   },
   {
-    id: 'duplicate',
-    title: 'Zero Duplicate Entry',
-    description: 'Information flows automatically.',
-    icon: FileText,
+    id: 'deliver-better-projects',
+    title: 'Plan & Deliver Projects',
+    description: 'Allocate the right people and keep projects on track with teams and schedules.',
+    icon: FolderKanban,
   },
   {
-    id: 'visibility',
-    title: 'Real-Time Visibility',
-    description: 'Live project intelligence.',
-    icon: Activity,
+    id: 'simplify-operations',
+    title: 'Simplify Operations',
+    description: 'Resources, time, approvals, and billing—one flow.',
+    icon: Settings,
   },
   {
-    id: 'ai',
-    title: 'AI Across Every Workflow',
-    description: 'Automation built into every module.',
-    icon: Sparkles,
+    id: 'measure-performance',
+    title: 'Measure Performance',
+    description: 'Live project health and business insights.',
+    icon: BarChart3,
   },
 ]
 
 export const WORKFLOW_TOP_MODULES: WorkflowModule[] = [
-  { id: 'crm', label: 'CRM', icon: Users },
-  { id: 'resource', label: 'Resource Planning', icon: UserCog },
-  { id: 'projects', label: 'Projects', icon: FolderKanban },
-  { id: 'activity', label: 'Activity Tracking', icon: Activity },
-  { id: 'timesheets', label: 'Smart Timesheets', icon: Clock },
+  { id: 'crm', label: 'Win Work', icon: Users },
+  { id: 'resource', label: 'Plan Resources', icon: UserCog },
+  { id: 'projects', label: 'Deliver Projects', icon: FolderKanban },
+  { id: 'activity', label: 'Track Progress', icon: Activity },
+
 ]
 
 export const WORKFLOW_BOTTOM_MODULES: WorkflowModule[] = [
-  { id: 'insights', label: 'Insights', icon: Sparkles },
-  { id: 'financials', label: 'Financials', icon: BarChart3 },
-  { id: 'analytics', label: 'Analytics', icon: FileText },
-  { id: 'billing', label: 'Billing & Invoice', icon: CircleDollarSign },
-  { id: 'approvals', label: 'Approvals', icon: SquareCheck },
+
+
+  { id: 'analytics', label: 'Analyze Results', icon: FileText },
+  { id: 'billing', label: 'Bill Clients', icon: CircleDollarSign },
+  { id: 'approvals', label: 'Approve work', icon: SquareCheck },
+  { id: 'timesheets', label: 'Manage Time ', icon: Clock },
 ]
 
 export const WORKFLOW_STATUS_STATS: WorkflowStatusStat[] = [
-  { value: '99.9%', label: 'Platform Connectivity' },
-  { value: 'Real-Time', label: 'Business Visibility' },
-  { value: 'Zero', label: 'Duplicate Data Entry' },
+  {
+    id: 'one-platform',
+    title: 'One Platform',
+    description: 'Every team works together in one system.',
+  },
+  {
+    id: 'one-information-flow',
+    title: 'One Information Flow',
+    description: 'Capture information once. Use it across every workflow.',
+  },
+  {
+    id: 'one-business-view',
+    title: 'One Business View',
+    description: 'Track projects, people, and performance in real time.',
+  },
 ]
 
 export function getConnectedModuleIds(moduleId: string): string[] {
