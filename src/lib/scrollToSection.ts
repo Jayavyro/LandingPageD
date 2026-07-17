@@ -46,7 +46,7 @@ export function scrollToHashWhenReady(
   hash: string,
   options?: { maxAttempts?: number; behavior?: ScrollBehavior },
 ): void {
-  const maxAttempts = options?.maxAttempts ?? 24
+  const maxAttempts = options?.maxAttempts ?? 48
   const behavior =
     options?.behavior ??
     (window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth')

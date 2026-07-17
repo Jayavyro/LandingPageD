@@ -1,6 +1,7 @@
 import { Check } from 'lucide-react'
 import { motion, useReducedMotion } from 'framer-motion'
 import { Link } from 'react-router-dom'
+import LandingHashLink from '../../components/LandingHashLink/LandingHashLink'
 import Navbar from '../../components/Navbar/Navbar'
 import Footer from '../../components/Footer/Footer'
 import Chatbot from '../../components/Chatbot/Chatbot'
@@ -22,12 +23,12 @@ function PricingCta({ href, label, featured }: { href: string; label: string; fe
 
   if (isExternalAnchor) {
     return (
-      <Link
+      <LandingHashLink
         to={href}
         className={`pricing-card__cta${featured ? ' pricing-card__cta--featured' : ''}`}
       >
         {label}
-      </Link>
+      </LandingHashLink>
     )
   }
 

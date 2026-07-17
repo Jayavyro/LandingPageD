@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { NAV_LINKS, PROJECTS_MENU, WHY_AVYRO_LINK, BOOK_DEMO_HREF } from '../../constants/navMenu'
+import LandingHashLink from '../LandingHashLink/LandingHashLink'
 import { RESOURCES_LINKS } from '../../constants/resourcesMenu'
 import { USE_CASE_MENU } from '../../constants/useCaseMenu'
 import './MobileNav.css'
@@ -23,9 +24,9 @@ function MobileNav({ isOpen, onClose }: MobileNavProps) {
 
   return (
     <nav className="mobile-nav" aria-label="Mobile navigation">
-      <Link to={WHY_AVYRO_LINK.href} className="mobile-nav__link" onClick={onClose}>
+      <LandingHashLink to={WHY_AVYRO_LINK.href} className="mobile-nav__link" onClick={onClose}>
         {WHY_AVYRO_LINK.label}
-      </Link>
+      </LandingHashLink>
 
       <div className="mobile-nav__section">
         <button
@@ -118,9 +119,9 @@ function MobileNav({ isOpen, onClose }: MobileNavProps) {
 
         if (isInternalRoute) {
           return (
-            <Link key={link.label} to={link.href} className="mobile-nav__link" onClick={onClose}>
+            <LandingHashLink key={link.label} to={link.href} className="mobile-nav__link" onClick={onClose}>
               {link.label}
-            </Link>
+            </LandingHashLink>
           )
         }
 
@@ -131,9 +132,9 @@ function MobileNav({ isOpen, onClose }: MobileNavProps) {
         )
       })}
 
-      <Link to={BOOK_DEMO_HREF} className="mobile-nav__cta" onClick={onClose}>
+      <LandingHashLink to={BOOK_DEMO_HREF} className="mobile-nav__cta" onClick={onClose}>
         Book a demo
-      </Link>
+      </LandingHashLink>
     </nav>
   )
 }

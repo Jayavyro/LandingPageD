@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect, useCallback } from 'react'
 import { MessageSquare, X, Bot, RotateCcw } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 import type { ChatMessage, ChatOption } from '../../constants/chatbot'
 import {
   CHAT_ROOT_ID,
@@ -10,13 +10,14 @@ import {
 } from '../../constants/chatbot'
 import { LANDING_CONTACT_HREF } from '../../constants/navMenu'
 import { PRICING_ROUTE } from '../../constants/pricingPage'
-import { scrollToHashWhenReady } from '../../lib/scrollToSection'
+import { navigateToLandingSection } from '../../lib/landingSectionNav'
 import './Chatbot.css'
 
 const TYPING_DELAY_MS = 700
 
 function Chatbot() {
   const navigate = useNavigate()
+  const location = useLocation()
   const [isOpen, setIsOpen] = useState(false)
   const [messages, setMessages] = useState<ChatMessage[]>([createRootBotMessage()])
   const [currentNodeId, setCurrentNodeId] = useState(CHAT_ROOT_ID)
@@ -59,8 +60,7 @@ function Chatbot() {
       const node = getChatNode(nodeId)
 
       if (node.action === 'contact') {
-        navigate(LANDING_CONTACT_HREF)
-        scrollToHashWhenReady('#contact-us')
+        navigateToLandingSection(LANDING_CONTACT_HREF, location, navigate)
         window.setTimeout(() => setIsOpen(false), 1400)
       }
 
@@ -69,7 +69,7 @@ function Chatbot() {
         window.setTimeout(() => setIsOpen(false), 900)
       }
     },
-    [navigate],
+    [location, navigate],
   )
 
   const resetConversation = () => {

@@ -1,6 +1,8 @@
 import { motion, useReducedMotion } from 'framer-motion'
 import { ArrowRight, CheckCircle2, GitBranch } from 'lucide-react'
 import { Link, Navigate, useLocation } from 'react-router-dom'
+import LandingHashLink from '../../components/LandingHashLink/LandingHashLink'
+import { isLandingSectionHref } from '../../lib/landingSectionNav'
 import Navbar from '../../components/Navbar/Navbar'
 import Footer from '../../components/Footer/Footer'
 import Chatbot from '../../components/Chatbot/Chatbot'
@@ -53,9 +55,18 @@ function FeaturePage() {
                 <p className="feature-page__subtitle">{content.subtitle}</p>
 
                 <div className="feature-page__hero-actions">
-                  <Link to={content.heroCta.href} className="feature-page__cta feature-page__cta--primary">
-                    {content.heroCta.label}
-                  </Link>
+                  {isLandingSectionHref(content.heroCta.href) ? (
+                    <LandingHashLink
+                      to={content.heroCta.href}
+                      className="feature-page__cta feature-page__cta--primary"
+                    >
+                      {content.heroCta.label}
+                    </LandingHashLink>
+                  ) : (
+                    <Link to={content.heroCta.href} className="feature-page__cta feature-page__cta--primary">
+                      {content.heroCta.label}
+                    </Link>
+                  )}
                   <Link to={content.secondaryCta.href} className="feature-page__cta feature-page__cta--secondary">
                     {content.secondaryCta.label}
                     <ArrowRight aria-hidden="true" />

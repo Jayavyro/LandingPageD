@@ -2,6 +2,7 @@ import { Link, useLocation } from 'react-router-dom'
 import { useEffect, useRef, useState } from 'react'
 import { NAVBAR_LOGO_ICON, MOBILE_NAVBAR_LOGO } from '../../constants/brandAssets'
 import { NAV_LINKS, WHY_AVYRO_LINK, BOOK_DEMO_HREF } from '../../constants/navMenu'
+import LandingHashLink from '../LandingHashLink/LandingHashLink'
 import ProductsMenu from '../ProductsMenu/ProductsMenu'
 import ResourcesMenu from '../ResourcesMenu/ResourcesMenu'
 import SolutionsMenu from '../SolutionsMenu/SolutionsMenu'
@@ -161,9 +162,9 @@ function Navbar() {
         </button>
 
         <nav className="navbar__nav navbar__nav--desktop" aria-label="Main navigation">
-          <Link to={WHY_AVYRO_LINK.href} className="navbar__nav-item" onClick={closeMenus}>
+          <LandingHashLink to={WHY_AVYRO_LINK.href} className="navbar__nav-item" onClick={closeMenus}>
             {WHY_AVYRO_LINK.label}
-          </Link>
+          </LandingHashLink>
 
           <div className="navbar__dropdown navbar__dropdown--products">
             <button
@@ -209,15 +210,15 @@ function Navbar() {
           </div>
 
           {NAV_LINKS.map((link) => (
-            <Link key={link.label} to={link.href} className="navbar__nav-item" onClick={closeMenus}>
+            <LandingHashLink key={link.label} to={link.href} className="navbar__nav-item" onClick={closeMenus}>
               {link.label}
-            </Link>
+            </LandingHashLink>
           ))}
         </nav>
 
-        <Link to={BOOK_DEMO_HREF} className="navbar__cta navbar__cta--desktop" onClick={closeMenus}>
+        <LandingHashLink to={BOOK_DEMO_HREF} className="navbar__cta navbar__cta--desktop" onClick={closeMenus}>
           Book a demo
-        </Link>
+        </LandingHashLink>
 
         {activeMenu === 'products' && <ProductsMenu />}
 
