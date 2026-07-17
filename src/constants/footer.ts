@@ -4,8 +4,8 @@ import {
   PROJECTS_MENU,
   WHY_AVYRO_LINK,
 } from './navMenu'
+import { PRODUCT_ROUTES } from './productRoutes'
 import { RESOURCES_LINKS } from './resourcesMenu'
-import { SOLUTION_STORIES } from './solutions'
 import { USE_CASE_MENU } from './useCaseMenu'
 
 export interface FooterLink {
@@ -63,10 +63,13 @@ const platformLinks: FooterLink[] = PROJECTS_MENU.flatMap((section) =>
   })),
 )
 
-const solutionLinks: FooterLink[] = SOLUTION_STORIES.map((story) => ({
-  label: story.title,
-  href: story.href,
-}))
+const solutionLinks: FooterLink[] = [
+  { label: 'Win More Projects', href: PRODUCT_ROUTES.crm },
+  { label: 'Plan & Deliver Projects', href: PRODUCT_ROUTES.resource },
+  { label: 'Capture Every Billable Hour', href: PRODUCT_ROUTES.timesheets },
+  { label: 'Accelerate Billing & Cash Flow', href: PRODUCT_ROUTES.billing },
+  { label: 'Enterprise Operations', href: PRODUCT_ROUTES.platform },
+]
 
 const industryLinks: FooterLink[] = INDUSTRY_ITEMS.map((item) => ({
   label: item.title,
