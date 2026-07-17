@@ -86,9 +86,9 @@ function WorkflowConnected() {
               className="workflow-connected__title"
               {...fadeUp(0.06)}
             >
-              <span className="workflow-connected__title-line">One Business.</span>
+              <span className="workflow-connected__title-line">One Platform.</span>
               <span className="workflow-connected__title-line">
-                <span className="workflow-connected__gradient">One Continuous Workflow.</span>
+                <span className="workflow-connected__gradient">One Connected Workflow.</span>
               </span>
             </motion.h2>
 

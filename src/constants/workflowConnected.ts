@@ -35,7 +35,7 @@ export interface WorkflowStatusStat {
 
 export const WORKFLOW_CONNECTED_BADGE = 'HOW AVYRO WORKS'
 
-export const WORKFLOW_CONNECTED_SUBTITLE = 'Every Team Moving Forward.'
+export const WORKFLOW_CONNECTED_SUBTITLE = 'Complete Business Visibility.'
 
 export const WORKFLOW_CONNECTED_DESCRIPTION =
   'Every opportunity, project, resource, document, approval, and financial workflow moves through one connected platform—keeping every team aligned from business development to project delivery.'
