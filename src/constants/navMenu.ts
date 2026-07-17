@@ -133,13 +133,17 @@ export const SCHEDULER_OFFERING = {
   ctaHref: PRODUCT_ROUTES['gantt-chart'],
 }
 
+export const LANDING_CONTACT_HREF = '/#contact-us'
+
 export const NAV_LINKS = [
   { label: 'Pricing', href: PRICING_ROUTE },
   { label: 'FAQ', href: '/#faq' },
-  { label: 'Contact Us', href: '/#contact-us' },
+  { label: 'Contact Us', href: LANDING_CONTACT_HREF },
 ]
 
 export const WHY_AVYRO_LINK = {
   label: 'Why Avyro?',
   href: '/#why-avyro',
 }
+
+export const BOOK_DEMO_HREF = LANDING_CONTACT_HREF

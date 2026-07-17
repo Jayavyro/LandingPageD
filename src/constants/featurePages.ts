@@ -89,7 +89,7 @@ export const FEATURE_PAGES: Record<FeatureId, FeaturePageContent> = {
     headlineAccent: 'right project',
     subtitle:
       'Auto-mapping uses keyword mapping to route timesheet entries to the correct project and phase—no manual tagging, no code hunting, and no Friday reconstruction from memory.',
-    heroCta: { label: 'Book a demo', href: '/#demo' },
+    heroCta: { label: 'Book a demo', href: '/#contact-us' },
     secondaryCta: { label: 'Full Smart Timesheets module', href: PRODUCT_ROUTES.timesheets },
     heroImage: {
       src: timesheetHero,
@@ -223,7 +223,7 @@ export const FEATURE_PAGES: Record<FeatureId, FeaturePageContent> = {
     headlineAccent: 'PMs maintain',
     subtitle:
       'Plan phases, milestones, and staffing on a visual Gantt chart built for AEC delivery—so capacity reflects reality before deadlines slip.',
-    heroCta: { label: 'Book a demo', href: '/#demo' },
+    heroCta: { label: 'Book a demo', href: '/#contact-us' },
     secondaryCta: { label: 'Full Resource Allocation module', href: PRODUCT_ROUTES.resource },
     heroImage: {
       src: workplanHero,

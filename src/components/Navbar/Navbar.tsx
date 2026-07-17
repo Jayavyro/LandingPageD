@@ -1,7 +1,7 @@
 import { Link, useLocation } from 'react-router-dom'
 import { useEffect, useRef, useState } from 'react'
 import logo from '../../logoNew.jpg'
-import { NAV_LINKS, WHY_AVYRO_LINK } from '../../constants/navMenu'
+import { NAV_LINKS, WHY_AVYRO_LINK, BOOK_DEMO_HREF } from '../../constants/navMenu'
 import ProductsMenu from '../ProductsMenu/ProductsMenu'
 import ResourcesMenu from '../ResourcesMenu/ResourcesMenu'
 import SolutionsMenu from '../SolutionsMenu/SolutionsMenu'
@@ -202,9 +202,9 @@ function Navbar() {
           ))}
         </nav>
 
-        <a href="/#demo" className="navbar__cta navbar__cta--desktop" onClick={closeMenus}>
+        <Link to={BOOK_DEMO_HREF} className="navbar__cta navbar__cta--desktop" onClick={closeMenus}>
           Book a demo
-        </a>
+        </Link>
 
         {activeMenu === 'products' && <ProductsMenu />}
 

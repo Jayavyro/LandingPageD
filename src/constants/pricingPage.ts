@@ -52,7 +52,7 @@ export const PRICING_TIERS: PricingTier[] = [
       'Integrations',
     ],
     ctaLabel: 'Book a demo',
-    ctaHref: '/#demo',
+    ctaHref: '/#contact-us',
     featured: true,
   },
   {

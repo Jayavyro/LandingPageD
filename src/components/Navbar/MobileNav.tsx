@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { NAV_LINKS, PROJECTS_MENU, WHY_AVYRO_LINK } from '../../constants/navMenu'
+import { NAV_LINKS, PROJECTS_MENU, WHY_AVYRO_LINK, BOOK_DEMO_HREF } from '../../constants/navMenu'
 import { RESOURCES_LINKS } from '../../constants/resourcesMenu'
 import { USE_CASE_MENU } from '../../constants/useCaseMenu'
 import './MobileNav.css'
@@ -131,9 +131,9 @@ function MobileNav({ isOpen, onClose }: MobileNavProps) {
         )
       })}
 
-      <a href="/#demo" className="mobile-nav__cta" onClick={onClose}>
+      <Link to={BOOK_DEMO_HREF} className="mobile-nav__cta" onClick={onClose}>
         Book a demo
-      </a>
+      </Link>
     </nav>
   )
 }

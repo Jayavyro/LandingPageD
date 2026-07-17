@@ -53,9 +53,9 @@ function FeaturePage() {
                 <p className="feature-page__subtitle">{content.subtitle}</p>
 
                 <div className="feature-page__hero-actions">
-                  <a href={content.heroCta.href} className="feature-page__cta feature-page__cta--primary">
+                  <Link to={content.heroCta.href} className="feature-page__cta feature-page__cta--primary">
                     {content.heroCta.label}
-                  </a>
+                  </Link>
                   <Link to={content.secondaryCta.href} className="feature-page__cta feature-page__cta--secondary">
                     {content.secondaryCta.label}
                     <ArrowRight aria-hidden="true" />

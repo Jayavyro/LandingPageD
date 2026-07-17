@@ -22,12 +22,12 @@ function PricingCta({ href, label, featured }: { href: string; label: string; fe
 
   if (isExternalAnchor) {
     return (
-      <a
-        href={href}
+      <Link
+        to={href}
         className={`pricing-card__cta${featured ? ' pricing-card__cta--featured' : ''}`}
       >
         {label}
-      </a>
+      </Link>
     )
   }
 
