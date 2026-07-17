@@ -2,14 +2,12 @@ import { motion, useReducedMotion } from 'framer-motion'
 import { Sparkles } from 'lucide-react'
 import {
   WHY_AVYRO_V2_BADGE,
-  WHY_AVYRO_V2_CLOSING,
   WHY_AVYRO_V2_FEATURES,
   WHY_AVYRO_V2_HEADLINE_LINES,
   WHY_AVYRO_V2_INTRO,
   WHY_AVYRO_V2_OUTCOMES_LABEL,
 } from '../../constants/whyAvyroV2'
 import WhyAvyroPillar from './WhyAvyroPillar'
-import WhyAvyroStory from './WhyAvyroStory'
 import './WhyAvyroV2.css'
 
 const EASE = [0.22, 1, 0.36, 1] as const
