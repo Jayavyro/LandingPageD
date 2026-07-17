@@ -1,5 +1,6 @@
 import { useState, type FormEvent } from 'react'
 import { CONTACT_PRIVACY_NOTE } from '../../constants/contactUs'
+import { submitFormLead } from '../../lib/submitFormLead'
 import './ContactForm.css'
 
 interface ContactFormState {
@@ -9,6 +10,8 @@ interface ContactFormState {
   phoneNumber: string
   message: string
 }
+
+type SubmitStatus = 'idle' | 'submitting' | 'success' | 'error'
 
 const INITIAL_FORM: ContactFormState = {
   fullName: '',
@@ -20,14 +23,40 @@ const INITIAL_FORM: ContactFormState = {
 
 function ContactForm() {
   const [form, setForm] = useState<ContactFormState>(INITIAL_FORM)
+  const [status, setStatus] = useState<SubmitStatus>('idle')
+  const [errorMessage, setErrorMessage] = useState('')
 
   const updateField = (field: keyof ContactFormState, value: string) => {
     setForm((current) => ({ ...current, [field]: value }))
+    if (status === 'success' || status === 'error') {
+      setStatus('idle')
+    }
   }
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
+    if (status === 'submitting') return
+
+    setStatus('submitting')
+    setErrorMessage('')
+
+    const result = await submitFormLead({
+      source: 'contact',
+      fullName: form.fullName,
+      companyName: form.companyName,
+      workEmail: form.workEmail,
+      phoneNumber: form.phoneNumber,
+      message: form.message,
+    })
+
+    if (!result.ok) {
+      setStatus('error')
+      setErrorMessage(result.error || 'Something went wrong. Please try again.')
+      return
+    }
+
     setForm(INITIAL_FORM)
+    setStatus('success')
   }
 
   return (
@@ -44,6 +73,7 @@ function ContactForm() {
               required
               value={form.fullName}
               onChange={(event) => updateField('fullName', event.target.value)}
+              disabled={status === 'submitting'}
             />
           </label>
 
@@ -57,6 +87,7 @@ function ContactForm() {
               required
               value={form.companyName}
               onChange={(event) => updateField('companyName', event.target.value)}
+              disabled={status === 'submitting'}
             />
           </label>
         </div>
@@ -72,6 +103,7 @@ function ContactForm() {
               required
               value={form.workEmail}
               onChange={(event) => updateField('workEmail', event.target.value)}
+              disabled={status === 'submitting'}
             />
           </label>
 
@@ -84,6 +116,7 @@ function ContactForm() {
               autoComplete="tel"
               value={form.phoneNumber}
               onChange={(event) => updateField('phoneNumber', event.target.value)}
+              disabled={status === 'submitting'}
             />
           </label>
         </div>
@@ -97,15 +130,32 @@ function ContactForm() {
             required
             value={form.message}
             onChange={(event) => updateField('message', event.target.value)}
+            disabled={status === 'submitting'}
           />
         </label>
 
         <div className="contact-form__actions">
-          <button type="submit" className="contact-form__submit">
-            Submit Request
+          <button
+            type="submit"
+            className="contact-form__submit"
+            disabled={status === 'submitting'}
+          >
+            {status === 'submitting' ? 'Sending…' : 'Submit Request'}
           </button>
           <p className="contact-form__privacy">{CONTACT_PRIVACY_NOTE}</p>
         </div>
+
+        {status === 'success' ? (
+          <p className="contact-form__status contact-form__status--success" role="status">
+            Thanks — your request was sent. We&apos;ll follow up soon.
+          </p>
+        ) : null}
+
+        {status === 'error' ? (
+          <p className="contact-form__status contact-form__status--error" role="alert">
+            {errorMessage}
+          </p>
+        ) : null}
       </form>
     </div>
   )

@@ -1,14 +1,36 @@
 import { type FormEvent, useState } from 'react'
 import heroBg from '../../ChatGPT Image Jul 9, 2026, 11_48_31 AM.png'
 import fivdLogo from '../../695775c397e9ba97edd85611_26faefd428f8a4efc1b4b947dd0a2003_FivD white logo 2.webp'
+import { submitFormLead } from '../../lib/submitFormLead'
 import './Hero.css'
+
+type SubmitStatus = 'idle' | 'submitting' | 'success' | 'error'
 
 function Hero() {
   const [email, setEmail] = useState('')
+  const [status, setStatus] = useState<SubmitStatus>('idle')
+  const [errorMessage, setErrorMessage] = useState('')
 
-  const handleEmailSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleEmailSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
+    if (status === 'submitting') return
+
+    setStatus('submitting')
+    setErrorMessage('')
+
+    const result = await submitFormLead({
+      source: 'hero',
+      workEmail: email,
+    })
+
+    if (!result.ok) {
+      setStatus('error')
+      setErrorMessage(result.error || 'Something went wrong. Please try again.')
+      return
+    }
+
     setEmail('')
+    setStatus('success')
   }
 
   return (
@@ -44,18 +66,38 @@ function Hero() {
               type="email"
               name="email"
               value={email}
-              onChange={(event) => setEmail(event.target.value)}
+              onChange={(event) => {
+                setEmail(event.target.value)
+                if (status === 'success' || status === 'error') {
+                  setStatus('idle')
+                }
+              }}
               placeholder="Enter your email"
               className="hero__email-input"
               autoComplete="email"
               required
+              disabled={status === 'submitting'}
             />
-            <button type="submit" className="hero__cta hero__cta--primary">
-              Get Started
+            <button
+              type="submit"
+              className="hero__cta hero__cta--primary"
+              disabled={status === 'submitting'}
+            >
+              {status === 'submitting' ? 'Sending…' : 'Get Started'}
             </button>
           </form>
 
-  
+          {status === 'success' ? (
+            <p className="hero__form-status hero__form-status--success" role="status">
+              Thanks — we&apos;ll be in touch shortly.
+            </p>
+          ) : null}
+
+          {status === 'error' ? (
+            <p className="hero__form-status hero__form-status--error" role="alert">
+              {errorMessage}
+            </p>
+          ) : null}
         </div>
 
         <div className="hero__trusted">

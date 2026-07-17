@@ -119,6 +119,28 @@
   cursor: pointer;
 }
 
+.hero__email-form .hero__cta--primary:disabled,
+.hero__email-input:disabled {
+  cursor: not-allowed;
+  opacity: 0.72;
+}
+
+.hero__form-status {
+  margin: 0.75rem 0 0;
+  width: min(100%, 26rem);
+  font-size: 0.875rem;
+  line-height: 1.45;
+  text-align: center;
+}
+
+.hero__form-status--success {
+  color: #d7ffe8;
+}
+
+.hero__form-status--error {
+  color: #ffd0d0;
+}
+
 .hero__trusted {
   display: flex;
   flex-direction: column;

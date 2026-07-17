@@ -161,7 +161,7 @@
 }
 
 .workflow-solutions__cell .workflow-card {
-  width: min(60%, 22.5rem);
+  width: min(70%, 25.5rem);
   height: 90%;
   align-self: center;
 }

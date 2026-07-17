@@ -103,6 +103,27 @@
   color: var(--contact-ink-soft, #4b5066);
 }
 
+.contact-form__submit:disabled,
+.contact-form__field input:disabled,
+.contact-form__field textarea:disabled {
+  cursor: not-allowed;
+  opacity: 0.72;
+}
+
+.contact-form__status {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.45;
+}
+
+.contact-form__status--success {
+  color: #1f7a4d;
+}
+
+.contact-form__status--error {
+  color: #b42318;
+}
+
 @media (max-width: 640px) {
   .contact-form {
     padding: 1rem;
