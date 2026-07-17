@@ -83,6 +83,12 @@ ul {
   list-style: none;
 }
 
+#why-avyro,
+#faq,
+#contact-us {
+  scroll-margin-top: var(--navbar-scroll-offset);
+}
+
 @media (max-width: 1024px) {
   :root {
     --mobile-page-top: 7.5rem;
