@@ -6,6 +6,8 @@ import {
   Wallet,
 } from 'lucide-react'
 import capabilitiesVisual from '../assets/use-case/accountants-cfos-capabilities.jpg'
+import cfoAfterImage from '../Account_image.png'
+import cfoBeforeImage from '../Accountant.png'
 import type { AfterCard, BeforeCard, CapabilitiesVisual, ProjectCapability } from './projectManagers'
 
 export const ACCOUNTANTS_CFOS_EYEBROW = 'For accountants & CFOs'
@@ -19,8 +21,9 @@ export const ACCOUNTANTS_CFOS_SUBTITLE =
 export const CFO_BEFORE_CARD: BeforeCard = {
   title: 'Before Avyro',
   subtitle: 'Disconnected billing, manual reconciliation, and financial data you cannot trust.',
+  image: cfoBeforeImage,
   imageAlt:
-    'Manual finance workflow with spreadsheets, printed invoices, timesheets, and reconciliation notes',
+    'Manual finance workflow with spreadsheets, email threads, printed invoices, timesheets, and reconciliation notes',
   points: [
     'Timesheets and invoices in separate systems',
     'Hours spent on manual reconciliation',
@@ -32,8 +35,9 @@ export const CFO_BEFORE_CARD: BeforeCard = {
 export const CFO_AFTER_CARD: AfterCard = {
   title: 'After Avyro',
   subtitle: 'Unified financial data, automated billing, and real-time profitability insights.',
+  image: cfoAfterImage,
   imageAlt:
-    'Avyro finance dashboard showing consolidated timesheets, invoicing, payments, and project profitability',
+    'Avyro billing dashboard showing invoiced totals, collections, AR aging, project profitability, and billing workflow',
 }
 
 export const CFO_CAPABILITIES_EYEBROW = 'Run finance with confidence'

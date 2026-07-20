@@ -7,6 +7,8 @@ import {
   Users,
 } from 'lucide-react'
 import capabilitiesVisual from '../assets/use-case/operations-leaders-capabilities.jpg'
+import opsAfterImage from '../Screenshot 2026-07-20 104755.png'
+import opsBeforeImage from '../Screenshot 2026-07-20 105056.png'
 import type { AfterCard, BeforeCard, CapabilitiesVisual, ProjectCapability } from './projectManagers'
 
 export const OPERATIONS_LEADERS_EYEBROW = 'For operations leaders'
@@ -20,8 +22,9 @@ export const OPERATIONS_LEADERS_SUBTITLE =
 export const OPS_BEFORE_CARD: BeforeCard = {
   title: 'Before Avyro',
   subtitle: 'Siloed teams, manual handoffs, and performance gaps you only see too late.',
+  image: opsBeforeImage,
   imageAlt:
-    'Fragmented operations workflow with disconnected tools, spreadsheets, and manual status updates',
+    'Fragmented operations workflow with disconnected tools, spreadsheets, email threads, and manual status updates',
   points: [
     'No unified view of team utilization',
     'Manual coordination between departments',
@@ -33,8 +36,9 @@ export const OPS_BEFORE_CARD: BeforeCard = {
 export const OPS_AFTER_CARD: AfterCard = {
   title: 'After Avyro',
   subtitle: 'Connected workflows, live performance metrics, and proactive optimization.',
+  image: opsAfterImage,
   imageAlt:
-    'Avyro operations dashboard showing resource utilization, workflow status, and firm-wide performance metrics',
+    'Avyro project dashboard showing stage progress, team utilization, milestones, and performance metrics',
 }
 
 export const OPS_CAPABILITIES_EYEBROW = 'Optimize how your firm runs'
