@@ -4,15 +4,9 @@ import {
   HOW_AVYRO_V2_BADGE,
   HOW_AVYRO_V2_HEADLINE_LINES,
   HOW_AVYRO_V2_SUBTITLE,
-  HOW_CLOSING_EMPHASIS,
-  HOW_CLOSING_LINES,
-  HOW_COMPARE_TITLE,
   HOW_JOURNEY_STAGES,
 } from '../../constants/howAvyroV2'
-import HowAutomations from './HowAutomations'
 import HowCeoView from './HowCeoView'
-import HowCompare from './HowCompare'
-import HowFriction from './HowFriction'
 import HowJourney from './HowJourney'
 import './HowAvyroV2.css'
 

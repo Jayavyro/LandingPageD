@@ -3,7 +3,7 @@ import projectImage from '../Screenshot 2026-07-20 104755.png'
 import autoMappingImage from '../Screenshot 2026-07-14 154441.png'
 import billingImage from '../Account_image.png'
 
-export const WHY_AVYRO_BADGE = 'What AVYRO does'
+export const WHY_AVYRO_BADGE = 'How AVYRO Connects Your Business'
 
 export const WHY_AVYRO_HEADLINE_LINES = [
   'Every project. Every person.',

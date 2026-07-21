@@ -1,7 +1,6 @@
 import Navbar from '../components/Navbar/Navbar'
 import Hero from '../components/Hero/Hero'
 import WhyAvyroV2 from '../components/WhyAvyroV2/WhyAvyroV2'
-import WorkflowConnected from '../components/WorkflowConnected/WorkflowConnected'
 import WhyAvyro from '../components/WhyAvyro/WhyAvyro'
 import HowAvyroV2 from '../components/HowAvyroV2/HowAvyroV2'
 import WhatWeDo from '../components/WhatWeDo/WhatWeDo'
