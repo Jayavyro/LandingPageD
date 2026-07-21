@@ -1,0 +1,130 @@
+.how-autos__intro {
+  max-width: 32rem;
+  margin: 0 auto 2rem;
+  text-align: center;
+}
+
+.how-autos__title {
+  margin: 0;
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  color: var(--how-ink, #12162a);
+}
+
+.how-autos__subtitle {
+  margin: 0.625rem 0 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--how-ink-soft, #4b5066);
+}
+
+.how-autos__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.how-autos__card {
+  padding: 1.375rem 1.375rem 1.25rem;
+  background: #fff;
+  border: 1px solid var(--how-line, #eae8e2);
+  border-radius: 1.125rem;
+  box-shadow: 0 12px 32px -20px rgb(75 110 245 / 0.2);
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+.how-autos__card:hover {
+  border-color: rgb(75 110 245 / 0.22);
+  box-shadow: 0 16px 36px -16px rgb(75 110 245 / 0.28);
+  transform: translateY(-2px);
+}
+
+.how-autos__trigger {
+  margin: 0;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--how-ink, #12162a);
+}
+
+.how-autos__connector {
+  display: flex;
+  justify-content: flex-start;
+  padding: 0.625rem 0;
+}
+
+.how-autos__connector-line {
+  width: 2px;
+  height: 1.375rem;
+  margin-left: 0.55rem;
+  background: linear-gradient(
+    180deg,
+    rgb(75 110 245 / 0.55) 0%,
+    rgb(168 85 247 / 0.35) 100%
+  );
+  border-radius: 9999px;
+}
+
+.how-autos__action {
+  margin: 0;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--how-blue, #4b6ef5);
+}
+
+.how-autos__outcomes {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  margin: 0.875rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.how-autos__outcomes li {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--how-ink-soft, #4b5066);
+}
+
+.how-autos__check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.1875rem;
+  height: 1.1875rem;
+  color: var(--how-blue, #4b6ef5);
+  background: rgb(75 110 245 / 0.1);
+  border-radius: 50%;
+}
+
+.how-autos__check svg {
+  width: 0.65rem;
+  height: 0.65rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .how-autos__card {
+    transition: none;
+  }
+
+  .how-autos__card:hover {
+    transform: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .how-autos__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+}

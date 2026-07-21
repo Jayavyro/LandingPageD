@@ -4,6 +4,7 @@ import { Sparkles } from 'lucide-react'
 import {
   WORKFLOW_CONNECTED_BADGE,
   WORKFLOW_CONNECTED_DESCRIPTION,
+  WORKFLOW_CONNECTED_HEADLINE_LINES,
   WORKFLOW_CONNECTED_SUBTITLE,
   WORKFLOW_FEATURES,
 } from '../../constants/workflowConnected'
@@ -86,9 +87,13 @@ function WorkflowConnected() {
               className="workflow-connected__title"
               {...fadeUp(0.06)}
             >
-              <span className="workflow-connected__title-line">One Platform.</span>
               <span className="workflow-connected__title-line">
-                <span className="workflow-connected__gradient">One Connected Workflow.</span>
+                {WORKFLOW_CONNECTED_HEADLINE_LINES[0]}
+              </span>
+              <span className="workflow-connected__title-line">
+                <span className="workflow-connected__gradient">
+                  {WORKFLOW_CONNECTED_HEADLINE_LINES[1]}
+                </span>
               </span>
             </motion.h2>
 

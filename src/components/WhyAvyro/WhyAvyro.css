@@ -1,29 +1,32 @@
 .why-avyro {
   --why-blue: #4b6ef5;
   --why-purple: #a855f7;
-  --why-ink: #12162a;
-  --why-ink-soft: #4b5066;
-  --why-line: #eae8e2;
+  --why-ink: #ffffff;
+  --why-ink-soft: rgb(255 255 255 / 0.62);
+  --why-line: rgb(255 255 255 / 0.1);
   --why-grad: linear-gradient(120deg, var(--why-blue) 0%, var(--why-purple) 55%, #ff6584 100%);
+  --why-steps: 4;
 
   position: relative;
-  overflow: hidden;
-  padding: clamp(5.5rem, 10vw, 8.5rem) 0 clamp(6rem, 11vw, 9.5rem);
-  background: #ffffff;
+  padding: clamp(3.5rem, 6vw, 4.5rem) 0 0;
+  background: #060816;
+  color: #ffffff;
+  overflow: clip;
 }
 
 .why-avyro__ambient {
   pointer-events: none;
   position: absolute;
   inset: 0;
+  z-index: 0;
 }
 
 .why-avyro__grid-pattern {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgb(75 110 245 / 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgb(75 110 245 / 0.035) 1px, transparent 1px);
+    linear-gradient(rgb(75 110 245 / 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(75 110 245 / 0.06) 1px, transparent 1px);
   background-size: 3.5rem 3.5rem;
   mask-image: radial-gradient(ellipse 72% 52% at 50% 8%, #000 18%, transparent 78%);
   -webkit-mask-image: radial-gradient(ellipse 72% 52% at 50% 8%, #000 18%, transparent 78%);
@@ -43,26 +46,26 @@
   transform: translateX(-50%);
   background: radial-gradient(
     ellipse,
-    rgb(75 110 245 / 0.11) 0%,
-    rgb(168 85 247 / 0.05) 42%,
+    rgb(75 110 245 / 0.18) 0%,
+    rgb(168 85 247 / 0.08) 42%,
     transparent 72%
   );
 }
 
 .why-avyro__glow--left {
-  bottom: 4rem;
+  bottom: 20%;
   left: -10rem;
   width: 20rem;
   height: 20rem;
-  background: radial-gradient(circle, rgb(75 110 245 / 0.06) 0%, transparent 70%);
+  background: radial-gradient(circle, rgb(75 110 245 / 0.12) 0%, transparent 70%);
 }
 
 .why-avyro__glow--right {
   right: -8rem;
-  top: 38%;
+  top: 30%;
   width: 18rem;
   height: 18rem;
-  background: radial-gradient(circle, rgb(168 85 247 / 0.07) 0%, transparent 70%);
+  background: radial-gradient(circle, rgb(168 85 247 / 0.12) 0%, transparent 70%);
 }
 
 .why-avyro__container {
@@ -72,10 +75,16 @@
   margin-inline: auto;
 }
 
+.why-avyro__container--intro {
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
 .why-avyro__intro {
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: 42rem;
+  margin-inline: auto;
   text-align: center;
 }
 
@@ -88,9 +97,9 @@
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #2a3aa0;
-  background: #e7ecfe;
-  border: 1px solid rgb(75 110 245 / 0.18);
+  color: #c7d2fe;
+  background: rgb(75 110 245 / 0.16);
+  border: 1px solid rgb(75 110 245 / 0.28);
   border-radius: 9999px;
 }
 
@@ -101,8 +110,8 @@
 }
 
 .why-avyro__title {
-  margin-top: 1.75rem;
-  font-size: clamp(2.5rem, 5.4vw, 3.5rem);
+  margin-top: 1.5rem;
+  font-size: clamp(2.25rem, 4.8vw, 3.25rem);
   font-weight: 600;
   line-height: 1.06;
   letter-spacing: -0.04em;
@@ -121,29 +130,259 @@
 }
 
 .why-avyro__subtitle {
-  max-width: 43.75rem;
-  margin-top: 1.375rem;
+  max-width: 36rem;
+  margin-top: 1.125rem;
   font-size: 1.0625rem;
-  line-height: 1.7;
+  line-height: 1.65;
   color: var(--why-ink-soft);
 }
 
-.why-avyro__flow {
+/* Tall scroll runway — longer per step = slower, more premium scrub */
+.why-avyro__runway {
   position: relative;
+  z-index: 1;
+  height: calc(var(--why-steps) * 145vh);
+}
+
+.why-avyro__pin {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.why-avyro__stage {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.25fr);
+  gap: clamp(1.5rem, 3.5vw, 3.5rem);
+  align-items: center;
+  width: min(88rem, calc(100% - 2.5rem));
+  margin-inline: auto;
+}
+
+.why-avyro__copy-col {
   display: flex;
   flex-direction: column;
-  gap: clamp(3.5rem, 7vw, 5.5rem);
-  margin-top: clamp(3.5rem, 7vw, 5.5rem);
-  padding: clamp(2rem, 4vw, 3rem);
+  gap: 1.375rem;
+  min-width: 0;
+}
+
+.why-avyro__copy-card {
+  position: relative;
+  padding: 1.75rem 1.625rem 1.875rem;
   background: linear-gradient(
-    180deg,
-    rgb(75 110 245 / 0.03) 0%,
-    rgb(255 255 255 / 0.6) 18%,
-    rgb(168 85 247 / 0.03) 50%,
-    rgb(255 255 255 / 0.6) 82%,
-    rgb(75 110 245 / 0.03) 100%
+    165deg,
+    rgb(75 110 245 / 0.14) 0%,
+    rgb(255 255 255 / 0.04) 45%
   );
-  border: 1px solid rgb(75 110 245 / 0.08);
-  border-radius: 1.75rem;
-  box-shadow: 0 12px 40px -20px rgb(75 110 245 / 0.12);
+  border: 1px solid rgb(255 255 255 / 0.1);
+  border-radius: 1.25rem;
+  box-shadow: 0 20px 48px -28px rgb(0 0 0 / 0.55);
+  overflow: hidden;
+  min-height: 18rem;
+  backdrop-filter: blur(12px);
+}
+
+.why-avyro__copy-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  transform-origin: left center;
+  background: linear-gradient(90deg, var(--why-blue), var(--why-purple));
+  will-change: transform;
+}
+
+.why-avyro__module {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+  margin: 0 0 1rem;
+}
+
+.why-avyro__module-label {
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgb(255 255 255 / 0.45);
+}
+
+.why-avyro__module-name {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #c7d2fe;
+  background: rgb(75 110 245 / 0.18);
+  border: 1px solid rgb(75 110 245 / 0.3);
+  border-radius: 9999px;
+}
+
+.why-avyro__item-title {
+  margin: 0;
+  font-size: clamp(1.5rem, 2.4vw, 1.875rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  color: var(--why-ink);
+}
+
+.why-avyro__item-copy {
+  margin: 0.875rem 0 0;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--why-ink-soft);
+}
+
+.why-avyro__highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.why-avyro__highlight {
+  position: relative;
+  padding-left: 1.125rem;
+  font-size: 0.9375rem;
+  line-height: 1.45;
+  color: rgb(255 255 255 / 0.82);
+}
+
+.why-avyro__highlight::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 0.375rem;
+  height: 0.375rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--why-blue), var(--why-purple));
+}
+
+.why-avyro__media {
+  position: relative;
+  min-width: 0;
+}
+
+.why-avyro__media-frame {
+  --why-slide-gap: clamp(5.5rem, 22vh, 11rem);
+
+  position: relative;
+  aspect-ratio: 16 / 10.5;
+  width: 100%;
+  border-radius: 1.35rem;
+  background: linear-gradient(145deg, #0f1528 0%, #12182c 55%, #0b1020 100%);
+  border: 1px solid rgb(255 255 255 / 0.1);
+  box-shadow:
+    0 1px 2px rgb(0 0 0 / 0.2),
+    0 32px 72px -24px rgb(0 0 0 / 0.55);
+  overflow: hidden;
+  container-type: size;
+}
+
+.why-avyro__media-glow {
+  pointer-events: none;
+  position: absolute;
+  inset: 20% -10% -22%;
+  background: radial-gradient(
+    ellipse at center,
+    rgb(75 110 245 / 0.2) 0%,
+    transparent 70%
+  );
+  filter: blur(32px);
+  z-index: -1;
+}
+
+/* Solid stack: images move straight up/down with large gaps between */
+.why-avyro__track {
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--why-slide-gap);
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.why-avyro__shot {
+  position: relative;
+  flex: 0 0 100cqh;
+  width: 100%;
+  height: 100cqh;
+  margin: 0;
+  padding: 0.7rem;
+  box-sizing: border-box;
+}
+
+.why-avyro__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: top center;
+
+  user-select: none;
+  pointer-events: none;
+
+}
+
+@media (max-width: 959px) {
+  .why-avyro {
+    padding: clamp(4rem, 8vw, 5.5rem) 0 clamp(4rem, 8vw, 5.5rem);
+    overflow: visible;
+  }
+
+  .why-avyro__runway {
+    height: auto;
+  }
+
+  .why-avyro__pin {
+    position: relative;
+    height: auto;
+    overflow: visible;
+  }
+
+  .why-avyro__stage {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .why-avyro__copy-card {
+    min-height: 0;
+  }
+
+  .why-avyro__media-frame {
+    aspect-ratio: 16 / 12;
+  }
+
+  .why-avyro__track {
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .why-avyro__runway {
+    height: auto;
+  }
+
+  .why-avyro__pin {
+    position: relative;
+    height: auto;
+  }
+
+  .why-avyro__track {
+    will-change: auto;
+    transition: none;
+  }
 }

@@ -15,21 +15,21 @@ export interface WorkflowSolution {
   imageAlt: string
 }
 
-export const WORKFLOW_SOLUTIONS_BADGE = 'What We Do'
+export const WHAT_WE_DO_BADGE = 'Products'
 
-export const WORKFLOW_SOLUTIONS_HEADLINE = 'What AVYRO actually does.'
-export const WORKFLOW_SOLUTIONS_HEADLINE_ACCENT = 'For AEC firms that want clarity.'
-export const WORKFLOW_SOLUTIONS_SUBTITLE =
+export const WHAT_WE_DO_HEADLINE = 'What AVYRO actually does.'
+export const WHAT_WE_DO_HEADLINE_ACCENT = 'For AEC firms that want clarity.'
+export const WHAT_WE_DO_SUBTITLE =
   'Win work. Staff projects. Capture time. Bill clients. Lead the firm—with capabilities built for how architecture and engineering businesses operate.'
 
-export const WORKFLOW_SOLUTIONS: WorkflowSolution[] = [
+export const WHAT_WE_DO_SOLUTIONS: WorkflowSolution[] = [
   {
     id: 'ai-crm',
     step: '01',
     quality: 'AI CRM',
-    title: 'Win more projects with AI-assisted opportunity and proposal tracking.',
+    title: 'Win more projects with AI-assisted opportunity management and proposal tracking.',
     description:
-      'Know which deals need attention. Create proposals faster. Convert wins into projects without rebuilding. Outcome: More wins. Less administration.',
+      'Know which deals need attention, create proposals faster, and convert opportunities into projects without rebuilding information. Outcome: More wins. Less administration.',
     ctaLabel: 'Explore CRM',
     href: PRODUCT_ROUTES.crm,
     accent: 'purple',
@@ -43,7 +43,7 @@ export const WORKFLOW_SOLUTIONS: WorkflowSolution[] = [
     quality: 'RESOURCE PLANNING',
     title: 'Always know who should work on what.',
     description:
-      'Assign the right people, balance capacity, and avoid overbooking before delivery suffers. Outcome: More productive, billable teams.',
+      'Balance workloads, avoid overbooking, and maximize billable utilization across every project. Outcome: More productive teams.',
     ctaLabel: 'Explore resourcing',
     href: PRODUCT_ROUTES.resource,
     accent: 'blue',
@@ -57,7 +57,7 @@ export const WORKFLOW_SOLUTIONS: WorkflowSolution[] = [
     quality: 'PROJECT DELIVERY',
     title: 'Manage projects from kickoff to completion.',
     description:
-      'Plan milestones, track progress, collaborate, and keep documents with the job. Outcome: Predictable delivery on schedule.',
+      'Track progress, collaborate with teams, manage documents, and deliver projects on schedule. Outcome: Predictable delivery.',
     ctaLabel: 'Explore projects',
     href: PRODUCT_ROUTES['gantt-chart'],
     accent: 'orange',
@@ -71,7 +71,7 @@ export const WORKFLOW_SOLUTIONS: WorkflowSolution[] = [
     quality: 'INTELLIGENT TIMESHEETS',
     title: 'Turn daily work into accurate timesheets automatically.',
     description:
-      'Activity tracking and smart suggestions cut manual entry, improve billable accuracy, and speed approvals. Outcome: Higher utilization. Faster billing.',
+      'Reduce manual entry, improve billable accuracy, and speed up approvals without chasing employees. Outcome: Higher utilization and faster billing.',
     ctaLabel: 'Explore timesheets',
     href: PRODUCT_ROUTES.timesheets,
     accent: 'pink',
@@ -85,7 +85,7 @@ export const WORKFLOW_SOLUTIONS: WorkflowSolution[] = [
     quality: 'BILLING & INVOICING',
     title: 'Convert approved work into invoices.',
     description:
-      'Generate invoices from approved time and cut the manual billing grind. Outcome: Fewer delays. Get paid faster.',
+      'Reduce billing delays and improve cash flow. Outcome: Get paid faster.',
     ctaLabel: 'Explore billing',
     href: PRODUCT_ROUTES.billing,
     accent: 'purple',
@@ -99,7 +99,7 @@ export const WORKFLOW_SOLUTIONS: WorkflowSolution[] = [
     quality: 'EXECUTIVE INSIGHTS',
     title: 'See the health of your business in real time.',
     description:
-      'Track utilization, project profitability, revenue, and performance from one leadership view. Outcome: Better decisions, sooner.',
+      'Track profitability, utilization, revenue, and project performance from one dashboard. Outcome: Better decisions.',
     ctaLabel: 'Explore insights',
     href: `${PRODUCT_ROUTES.platform}#analytics`,
     accent: 'blue',

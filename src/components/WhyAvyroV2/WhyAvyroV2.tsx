@@ -1,11 +1,10 @@
 import { motion, useReducedMotion } from 'framer-motion'
-import { Sparkles } from 'lucide-react'
 import {
   WHY_AVYRO_V2_BADGE,
   WHY_AVYRO_V2_FEATURES,
+  WHY_AVYRO_V2_HEADLINE_ACCENT,
   WHY_AVYRO_V2_HEADLINE_LINES,
-  WHY_AVYRO_V2_INTRO,
-  WHY_AVYRO_V2_OUTCOMES_LABEL,
+  WHY_AVYRO_V2_SUBTITLE_PARAS,
 } from '../../constants/whyAvyroV2'
 import WhyAvyroPillar from './WhyAvyroPillar'
 import './WhyAvyroV2.css'
@@ -19,7 +18,7 @@ function WhyAvyroV2() {
     prefersReducedMotion
       ? {}
       : {
-          initial: { opacity: 0, y: 18 },
+          initial: { opacity: 0, y: 14 },
           whileInView: { opacity: 1, y: 0 },
           viewport: { once: true, margin: '-72px' },
           transition: { duration: 0.4, delay, ease: EASE },
@@ -32,48 +31,44 @@ function WhyAvyroV2() {
       aria-labelledby="why-avyro-v2-heading"
     >
       <div className="why-avyro-v2__ambient" aria-hidden="true">
-        <div className="why-avyro-v2__grid-pattern" />
-        <div className="why-avyro-v2__glow why-avyro-v2__glow--center" />
-        <div className="why-avyro-v2__glow why-avyro-v2__glow--left" />
-        <div className="why-avyro-v2__glow why-avyro-v2__glow--right" />
+        <div className="why-avyro-v2__glow why-avyro-v2__glow--top" />
+      
       </div>
 
       <div className="why-avyro-v2__container">
         <header className="why-avyro-v2__intro">
-          <motion.div {...fadeUp(0)}>
-            <span className="why-avyro-v2__badge">
-              <Sparkles className="why-avyro-v2__badge-icon" aria-hidden="true" />
-              {WHY_AVYRO_V2_BADGE}
-            </span>
-          </motion.div>
+          <motion.p className="why-avyro-v2__badge" {...fadeUp(0)}>
+            {WHY_AVYRO_V2_BADGE}
+          </motion.p>
 
           <motion.h2
             id="why-avyro-v2-heading"
             className="why-avyro-v2__title"
-            {...fadeUp(0.06)}
+            {...fadeUp(0.05)}
           >
-            {WHY_AVYRO_V2_HEADLINE_LINES.map((line) => (
-              <span key={line} className="why-avyro-v2__title-line">
-                {line}
-              </span>
-            ))}
+            <span className="why-avyro-v2__title-line">
+              {WHY_AVYRO_V2_HEADLINE_LINES[0]}
+            </span>
+            <span className="why-avyro-v2__title-line">
+              {WHY_AVYRO_V2_HEADLINE_LINES[1]}
+            </span>
+            <span className="why-avyro-v2__title-line why-avyro-v2__title-line--gradient">
+              {WHY_AVYRO_V2_HEADLINE_ACCENT}
+            </span>
           </motion.h2>
 
-          <motion.p className="why-avyro-v2__subtitle" {...fadeUp(0.12)}>
-            {WHY_AVYRO_V2_INTRO}
-          </motion.p>
+          <motion.div className="why-avyro-v2__subtitle" {...fadeUp(0.1)}>
+            {WHY_AVYRO_V2_SUBTITLE_PARAS.map((para) => (
+              <p key={para}>{para}</p>
+            ))}
+          </motion.div>
         </header>
 
-
-        <motion.div className="why-avyro-v2__outcomes" {...fadeUp(0.2)}>
-          <p className="why-avyro-v2__outcomes-label">{WHY_AVYRO_V2_OUTCOMES_LABEL}</p>
-
-          <div className="why-avyro-v2__pillars">
-            {WHY_AVYRO_V2_FEATURES.map((feature, index) => (
-              <WhyAvyroPillar key={feature.title} feature={feature} index={index} />
-            ))}
-          </div>
-        </motion.div>
+        <div className="why-avyro-v2__grid">
+          {WHY_AVYRO_V2_FEATURES.map((feature, index) => (
+            <WhyAvyroPillar key={feature.title} feature={feature} index={index} />
+          ))}
+        </div>
       </div>
     </section>
   )

@@ -1,0 +1,172 @@
+.how-avyro-v2 {
+  --how-blue: #4b6ef5;
+  --how-purple: #a855f7;
+  --how-ink: #12162a;
+  --how-ink-soft: #4b5066;
+  --how-line: #eae8e2;
+  --how-soft: #f7f8fc;
+  --how-grad: linear-gradient(120deg, var(--how-blue) 0%, var(--how-purple) 55%, #ff6584 100%);
+
+  position: relative;
+  overflow: hidden;
+  padding: clamp(5.5rem, 10vw, 8.5rem) 0 clamp(6.5rem, 11vw, 9.5rem);
+  background: #ffffff;
+}
+
+.how-avyro-v2__ambient {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+}
+
+.how-avyro-v2__grid-pattern {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgb(75 110 245 / 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(75 110 245 / 0.03) 1px, transparent 1px);
+  background-size: 3.5rem 3.5rem;
+  mask-image: radial-gradient(ellipse 70% 50% at 50% 0%, #000 20%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 50% at 50% 0%, #000 20%, transparent 75%);
+}
+
+.how-avyro-v2__glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+}
+
+.how-avyro-v2__glow--center {
+  top: -6rem;
+  left: 50%;
+  width: 40rem;
+  height: 20rem;
+  transform: translateX(-50%);
+  background: radial-gradient(
+    ellipse,
+    rgb(75 110 245 / 0.12) 0%,
+    rgb(168 85 247 / 0.06) 45%,
+    transparent 70%
+  );
+}
+
+.how-avyro-v2__glow--left {
+  bottom: 20%;
+  left: -8rem;
+  width: 18rem;
+  height: 18rem;
+  background: radial-gradient(circle, rgb(75 110 245 / 0.06) 0%, transparent 70%);
+}
+
+.how-avyro-v2__glow--right {
+  top: 40%;
+  right: -6rem;
+  width: 16rem;
+  height: 16rem;
+  background: radial-gradient(circle, rgb(168 85 247 / 0.07) 0%, transparent 70%);
+}
+
+.how-avyro-v2__container {
+  position: relative;
+  z-index: 1;
+  width: min(84rem, calc(100% - 2.5rem));
+  margin-inline: auto;
+}
+
+.how-avyro-v2__intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 42rem;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.how-avyro-v2__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4375rem;
+  padding: 0.4375rem 0.875rem;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #2a3aa0;
+  background: #e7ecfe;
+  border: 1px solid rgb(75 110 245 / 0.18);
+  border-radius: 9999px;
+}
+
+.how-avyro-v2__badge-icon {
+  width: 0.8125rem;
+  height: 0.8125rem;
+  color: var(--how-blue);
+}
+
+.how-avyro-v2__title {
+  margin: 1.75rem 0 0;
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: -0.04em;
+  color: var(--how-ink);
+}
+
+.how-avyro-v2__title-line {
+  display: block;
+}
+
+.how-avyro-v2__title-accent {
+  background: var(--how-grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.how-avyro-v2__subtitle {
+  margin: 1.25rem 0 0;
+  font-size: clamp(1.0625rem, 1.6vw, 1.1875rem);
+  line-height: 1.55;
+  color: var(--how-ink-soft);
+}
+
+.how-avyro-v2__block {
+  margin-top: clamp(3.75rem, 7vw, 5.5rem);
+}
+
+.how-avyro-v2__block-title {
+  margin: 0 0 1.75rem;
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  text-align: center;
+  color: var(--how-ink);
+}
+
+.how-avyro-v2__closing {
+  max-width: 40rem;
+  margin: clamp(4rem, 8vw, 5.5rem) auto 0;
+  text-align: center;
+}
+
+.how-avyro-v2__closing-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  margin: 0 0 1.25rem;
+  padding: 0;
+  list-style: none;
+  font-size: clamp(1.0625rem, 1.8vw, 1.25rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--how-ink-soft);
+}
+
+.how-avyro-v2__closing-emphasis {
+  margin: 0;
+  font-size: clamp(1.25rem, 2.4vw, 1.625rem);
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.03em;
+  color: var(--how-ink);
+}

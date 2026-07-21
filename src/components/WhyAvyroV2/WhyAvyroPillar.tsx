@@ -12,42 +12,33 @@ interface WhyAvyroPillarProps {
 function WhyAvyroPillar({ feature, index }: WhyAvyroPillarProps) {
   const prefersReducedMotion = useReducedMotion()
   const Icon = feature.icon
+  const step = String(index + 1).padStart(2, '0')
 
   const motionProps = prefersReducedMotion
     ? {}
     : {
-        initial: { opacity: 0, y: 22 },
+        initial: { opacity: 0, y: 16 },
         whileInView: { opacity: 1, y: 0 },
         viewport: { once: true, margin: '-48px' },
-        transition: { duration: 0.45, delay: 0.08 + index * 0.1, ease: EASE },
+        transition: { duration: 0.4, delay: 0.06 + index * 0.08, ease: EASE },
       }
 
   return (
-    <motion.article
-      className={`why-v2-pillar why-v2-pillar--${feature.accent}`}
-      {...motionProps}
-    >
-      <div className="why-v2-pillar__head">
-        <span className="why-v2-pillar__step" aria-hidden="true">
-          {String(index + 1).padStart(2, '0')}
-        </span>
-        <span className="why-v2-pillar__icon-wrap" aria-hidden="true">
-          <Icon className="why-v2-pillar__icon" />
-        </span>
-      </div>
+    <motion.article className="why-v2-pillar" {...motionProps}>
+      <header className="why-v2-pillar__header">
+        <div className="why-v2-pillar__meta">
+          <span className="why-v2-pillar__step">{step}</span>
+          <span className="why-v2-pillar__icon" aria-hidden="true">
+            <Icon strokeWidth={1.75} />
+          </span>
+        </div>
 
-      <h3 className="why-v2-pillar__title">{feature.title}</h3>
+        <h3 className="why-v2-pillar__title">{feature.title}</h3>
+        <p className="why-v2-pillar__metric">{feature.metric}</p>
+        <p className="why-v2-pillar__metric-label">{feature.metricLabel}</p>
+      </header>
 
-      <p className="why-v2-pillar__description">{feature.description}</p>
-
-      <ul className="why-v2-pillar__points">
-        {feature.bullets.map((bullet) => (
-          <li key={bullet} className="why-v2-pillar__point">
-            <span className="why-v2-pillar__marker" aria-hidden="true" />
-            <span>{bullet}</span>
-          </li>
-        ))}
-      </ul>
+      
     </motion.article>
   )
 }

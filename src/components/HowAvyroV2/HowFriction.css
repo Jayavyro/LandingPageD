@@ -1,0 +1,43 @@
+.how-friction {
+  padding: 2rem 1.5rem;
+  text-align: center;
+  background: linear-gradient(180deg, #fafafa 0%, #f7f8fc 100%);
+  border: 1px solid var(--how-line, #eae8e2);
+  border-radius: 1.25rem;
+}
+
+.how-friction__title {
+  margin: 0 0 1.5rem;
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  color: var(--how-ink, #12162a);
+}
+
+.how-friction__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.how-friction__item {
+  padding: 0.7rem 1.125rem;
+  background: #fff;
+  border: 1px solid rgb(225 29 72 / 0.12);
+  border-radius: 9999px;
+  box-shadow: 0 4px 12px -8px rgb(18 22 42 / 0.12);
+}
+
+.how-friction__strike {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #9f1239;
+  text-decoration: line-through;
+  text-decoration-thickness: 1.5px;
+  text-decoration-color: rgb(190 18 60 / 0.55);
+  opacity: 0.7;
+}

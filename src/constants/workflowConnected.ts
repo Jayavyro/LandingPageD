@@ -35,33 +35,42 @@ export interface WorkflowStatusStat {
 
 export const WORKFLOW_CONNECTED_BADGE = 'HOW AVYRO WORKS'
 
-export const WORKFLOW_CONNECTED_SUBTITLE = 'Complete Business Visibility.'
+export const WORKFLOW_CONNECTED_HEADLINE_LINES = [
+  'One System.',
+  'One Flow of Information.',
+] as const
+
+export const WORKFLOW_CONNECTED_SUBTITLE = 'From opportunity to profit—on the same records.'
 
 export const WORKFLOW_CONNECTED_DESCRIPTION =
-  'Every opportunity, project, resource, document, approval, and financial workflow moves through one connected platform—keeping every team aligned from business development to project delivery.'
+  'Instead of separate tools that each hold their own copy of the truth, every team works on the same records. Enter information once and it carries forward—so no one re-keys data or chases another system for an update.'
   export const WORKFLOW_FEATURES: WorkflowFeature[] = [
   {
     id: 'win-more-work',
-    title: 'Win More Work',
-    description: 'Opportunities and clients from first conversation to project award.',
+    title: 'Win Work',
+    description:
+      'Opportunities and clients live in the CRM. When a deal is won, it becomes a project—no re-entry, no rebuilding the scope elsewhere.',
     icon: Briefcase,
   },
   {
     id: 'deliver-better-projects',
-    title: 'Plan & Deliver Projects',
-    description: 'Allocate the right people and keep projects on track with teams and schedules.',
+    title: 'Plan & Deliver',
+    description:
+      'Resourcing and schedules run on the same project records, so assignments, phases, and timelines always reflect the live plan.',
     icon: FolderKanban,
   },
   {
     id: 'simplify-operations',
-    title: 'Simplify Operations',
-    description: 'Resources, time, approvals, and billing—one flow.',
+    title: 'Operate',
+    description:
+      'Time, approvals, and billing post against the same projects and people—work logged during the week feeds invoicing directly.',
     icon: Settings,
   },
   {
     id: 'measure-performance',
-    title: 'Measure Performance',
-    description: 'Live project health and business insights.',
+    title: 'Measure',
+    description:
+      'Because every workflow shares one source of data, project health and firm performance update in real time—no exports or reconciliation.',
     icon: BarChart3,
   },
 ]
@@ -86,18 +95,18 @@ export const WORKFLOW_BOTTOM_MODULES: WorkflowModule[] = [
 export const WORKFLOW_STATUS_STATS: WorkflowStatusStat[] = [
   {
     id: 'one-platform',
-    title: 'One Platform',
-    description: 'Every team works together in one system.',
+    title: 'One System, Not Tool Islands',
+    description: 'Teams share one platform instead of syncing separate apps.',
   },
   {
     id: 'one-information-flow',
-    title: 'One Information Flow',
-    description: 'Capture information once. Use it across every workflow.',
+    title: 'Enter Once, Flows Everywhere',
+    description: 'Data captured in one workflow carries into all the others.',
   },
   {
     id: 'one-business-view',
-    title: 'One Business View',
-    description: 'Track projects, people, and performance in real time.',
+    title: 'One Source of Truth',
+    description: 'People, projects, and performance read from the same data.',
   },
 ]
 
