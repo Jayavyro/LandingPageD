@@ -20,7 +20,7 @@ export const THE_SOLUTION_HEADLINE = 'The revenue leak doesn’t happen inside y
 export const THE_SOLUTION_HEADLINE_ACCENT = 'It happens between them.'
 
 export const THE_SOLUTION_JOURNEY_INTRO =
-  'Every project follows the same journey—from winning work to getting paid.'
+  'Every project follows the same business journey—from winning work to getting paid.'
 
 export const THE_SOLUTION_JOURNEY: SolutionJourneyStep[] = [
   {

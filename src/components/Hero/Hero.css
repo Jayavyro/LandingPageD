@@ -6,7 +6,7 @@
   justify-content: flex-start;
   min-height: min(100vh, 52rem);
   margin-top: -1rem;
-  padding: clamp(5.5rem, 10vh, 7rem) var(--container-padding)
+  padding: clamp(10.5rem, 10vh, 7rem) var(--container-padding)
     clamp(1.25rem, 3vh, 2rem);
   background-color: #fff;
   background-size: cover;
@@ -76,10 +76,10 @@
 }
 
 .hero__subhead {
-  max-width: 34rem;
+  max-width: 41rem;
   margin: 0 0 2rem;
-  font-size: clamp(1rem, 1.6vw, 1.125rem);
-  font-weight: 400;
+  font-size: clamp(1rem, 1.6vw, 1.05rem);
+  font-weight: 350;
   line-height: 1.6;
   color: var(--color-text-muted);
 }

@@ -2,7 +2,7 @@ import { motion, useReducedMotion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import {
   THE_SOLUTION_BADGE,
-  THE_SOLUTION_BRIDGE,
+
   THE_SOLUTION_CLOSING,
   THE_SOLUTION_CONSEQUENCES,
   THE_SOLUTION_CTA,
@@ -97,7 +97,7 @@ function TheSolution() {
 
         <motion.div className="the-solution__footer" {...fadeUp(0.26)}>
           <p className="the-solution__closing">{THE_SOLUTION_CLOSING}</p>
-          <p className="the-solution__bridge">{THE_SOLUTION_BRIDGE}</p>
+      
           <LandingHashLink
             to={THE_SOLUTION_CTA.href}
             className="the-solution__cta"

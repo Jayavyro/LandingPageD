@@ -2,8 +2,7 @@ import Navbar from '../components/Navbar/Navbar'
 import Hero from '../components/Hero/Hero'
 import DoAndOutcome from '../components/DoAndOutcome/DoAndOutcome'
 import OneRecordWeek from '../components/OneRecordWeek/OneRecordWeek'
-import LandingDarkStack from '../components/LandingDarkStack/LandingDarkStack'
-import ProductModules from '../components/ProductModules/ProductModules'
+import ExplorePlatform from '../components/ExplorePlatform/ExplorePlatform'
 import CaseStudy from '../components/CaseStudy/CaseStudy'
 import FinancialCalculator from '../components/FinancialCalculator/FinancialCalculator'
 import Testimonials from '../components/Testimonials/Testimonials'
@@ -27,9 +26,7 @@ function LandingPage() {
         <TheSolution />
         <DoAndOutcome />
         <OneRecordWeek />
-        <LandingDarkStack>
-          <ProductModules />
-        </LandingDarkStack>
+        <ExplorePlatform />
         <CompetitiveTable />
         
         <CaseStudy />

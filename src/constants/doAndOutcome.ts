@@ -1,9 +1,9 @@
 import type { LucideIcon } from 'lucide-react'
 import {
+  ChartNoAxesCombined,
   ClipboardList,
   Clock3,
   Handshake,
-  Package,
   ReceiptText,
   UsersRound,
 } from 'lucide-react'
@@ -41,12 +41,12 @@ export const DO_AND_OUTCOME_HEADLINE_ACCENT =
 export const DO_AND_OUTCOME_SUBTITLE =
   'Most tools optimize a department. Avyro helps AEC firms run the whole business — so every team executes with clarity, every handoff stays intact, and leadership decides with full control. The capabilities below are proof of that one idea.'
 
-export const DO_AND_OUTCOME_DO_LABEL = 'Avyro does this'
-export const DO_AND_OUTCOME_GET_LABEL = 'You get this'
+export const DO_AND_OUTCOME_DO_LABEL = 'How this stage improves'
+export const DO_AND_OUTCOME_GET_LABEL = 'What the firm gains'
 
 export const DO_AND_OUTCOME_ROLLUP =
-  'Six capabilities. One operational foundation. Next: see it as a single record through the week.'
-
+  'Every stage. One shared record. One operating system.'   
+  export const DO_AND_OUTCOME_ROLLUP_ACCENT = 'See how the entire firm runs from a single connected workflow.'
 export const DO_AND_OUTCOME_FOOTNOTE = OUTCOME_FOOTNOTE
 
 export const DO_AND_OUTCOME_PRIMARY_CTA = {
@@ -61,16 +61,16 @@ export const DO_AND_OUTCOME_SECONDARY_CTA = {
 
 export const DO_AND_OUTCOME_ITEMS: DoAndOutcomeItem[] = [
   {
-    id: 'crm',
+    id: 'win-business',
     step: OUTCOME_METRICS.winWork.step,
     label: OUTCOME_METRICS.winWork.label,
-    doTitle: 'Win work without re-typing client data.',
+    doTitle: 'Start every project ready to deliver.',
     doDescription:
-      'Opportunities, proposals, and client records stay linked. A signed deal opens the project — budget and contacts included.',
+      'Avyro keeps pursuits, proposals, and clients on one record. A signed deal becomes a live project with contacts and budget already in place.',
     features: [
-      'AI-assisted client and opportunity forms',
-      'Proposals built from live data',
-      'Won deal → live project, automatically',
+      'No duplicate setup',
+      'Connected proposals',
+      'Live pipeline visibility',
     ],
     outcomeMetric: OUTCOME_METRICS.winWork.metric,
     outcomeLabel: OUTCOME_METRICS.winWork.outcomeLabel,
@@ -79,16 +79,16 @@ export const DO_AND_OUTCOME_ITEMS: DoAndOutcomeItem[] = [
     icon: Handshake,
   },
   {
-    id: 'resource',
+    id: 'plan-team',
     step: OUTCOME_METRICS.resourcing.step,
     label: OUTCOME_METRICS.resourcing.label,
-    doTitle: 'Know who is free — and who is overbooked.',
+    doTitle: 'Put the right people on the right work.',
     doDescription:
-      'One view of your team across every project. Staff the right people before the week is wasted.',
+      'Avyro shows live firm-wide availability. Assign the right team by skill and workload so utilization rises and idle time falls.',
     features: [
-      'Live workload across all projects',
-      'Assign by project and phase',
-      'Catch double-bookings early',
+      'Live capacity across projects',
+      'Assign by skill and load',
+      'Catch overbooking early',
     ],
     outcomeMetric: OUTCOME_METRICS.resourcing.metric,
     outcomeLabel: OUTCOME_METRICS.resourcing.outcomeLabel,
@@ -97,16 +97,16 @@ export const DO_AND_OUTCOME_ITEMS: DoAndOutcomeItem[] = [
     icon: UsersRound,
   },
   {
-    id: 'delivery',
+    id: 'deliver-project',
     step: OUTCOME_METRICS.workPlans.step,
     label: OUTCOME_METRICS.workPlans.label,
-    doTitle: 'One live plan — not five stale copies.',
+    doTitle: 'Deliver from one live plan shared by everyone.',
     doDescription:
-      'Schedule, budget, and files sit on the project everyone shares. Changes show up for the whole team.',
+      'Schedule, budget, and progress sit on the same project record. Teams execute with clarity; leadership spots risk while it can still be fixed.',
     features: [
-      'Phases, milestones, and timelines',
-      'Budget next to the work',
-      'No exported spreadsheet copies',
+      'Plan and budget together',
+      'Scope updates stay live',
+      'At-risk jobs surface early',
     ],
     outcomeMetric: OUTCOME_METRICS.workPlans.metric,
     outcomeLabel: OUTCOME_METRICS.workPlans.outcomeLabel,
@@ -115,16 +115,16 @@ export const DO_AND_OUTCOME_ITEMS: DoAndOutcomeItem[] = [
     icon: ClipboardList,
   },
   {
-    id: 'time',
+    id: 'capture-hours',
     step: OUTCOME_METRICS.timeCapture.step,
     label: OUTCOME_METRICS.timeCapture.label,
-    doTitle: 'Review hours — don’t rebuild Friday from memory.',
+    doTitle: 'Capture billable work as the day happens.',
     doDescription:
-      'Work maps to the right project as it happens. Your team approves — they don’t invent.',
+      'Avyro maps activity to the right project in real time. Teams review and approve hours — they don’t rebuild the week from memory.',
     features: [
-      'Activity tracked during the day',
-      'Smart project mapping',
-      'Review and approve, not recall',
+      'Hours map to projects',
+      'Review instead of recall',
+      'Clean effort for finance',
     ],
     outcomeMetric: OUTCOME_METRICS.timeCapture.metric,
     outcomeLabel: OUTCOME_METRICS.timeCapture.outcomeLabel,
@@ -133,16 +133,16 @@ export const DO_AND_OUTCOME_ITEMS: DoAndOutcomeItem[] = [
     icon: Clock3,
   },
   {
-    id: 'billing',
+    id: 'turn-revenue',
     step: OUTCOME_METRICS.billing.step,
     label: OUTCOME_METRICS.billing.label,
-    doTitle: 'Bill from approved work — not a month-end rebuild.',
+    doTitle: 'Turn completed work into revenue faster.',
     doDescription:
-      'Approved timesheets flow into invoices. Finance stops chasing PMs and rebuilding spreadsheets.',
+      'Approved time and scope flow straight into billing. Finance invoices faster, collections stay visible, and revenue follows the work already delivered.',
     features: [
-      'Invoices from approved time',
-      'Open balances and collections in one view',
-      'Profitability by project, live',
+      'Invoice from approved work',
+      'Collections stay visible',
+      'Live project profitability',
     ],
     outcomeMetric: OUTCOME_METRICS.billing.metric,
     outcomeLabel: OUTCOME_METRICS.billing.outcomeLabel,
@@ -151,21 +151,21 @@ export const DO_AND_OUTCOME_ITEMS: DoAndOutcomeItem[] = [
     icon: ReceiptText,
   },
   {
-    id: 'assets',
+    id: 'measure-performance',
     step: OUTCOME_METRICS.assets.step,
     label: OUTCOME_METRICS.assets.label,
-    doTitle: 'Keep seats and licenses visible while the firm delivers.',
+    doTitle: 'See the whole business in real time.',
     doDescription:
-      'While projects run, renewals and seat assignments stay on the firm record — so you stop paying for tools you cannot see.',
+      'Utilization, delivery, and revenue live in one leadership view. Owners decide from how the firm is running now — not last month’s report.',
     features: [
-      'Licenses and renewals in one register',
-      'Assign the right seats to the right people',
-      'Catch ghost seats before they renew',
+      'One leadership performance view',
+      'Overhead stays visible',
+      'Decide on live data',
     ],
     outcomeMetric: OUTCOME_METRICS.assets.metric,
     outcomeLabel: OUTCOME_METRICS.assets.outcomeLabel,
     outcomeCaption: OUTCOME_METRICS.assets.caption,
     accent: 'blue',
-    icon: Package,
+    icon: ChartNoAxesCombined,
   },
 ]

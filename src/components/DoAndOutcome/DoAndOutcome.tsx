@@ -4,12 +4,12 @@ import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react'
 import {
   DO_AND_OUTCOME_BADGE,
   DO_AND_OUTCOME_DO_LABEL,
-  DO_AND_OUTCOME_FOOTNOTE,
   DO_AND_OUTCOME_GET_LABEL,
   DO_AND_OUTCOME_HEADLINE,
   DO_AND_OUTCOME_HEADLINE_ACCENT,
   DO_AND_OUTCOME_ITEMS,
   DO_AND_OUTCOME_ROLLUP,
+  DO_AND_OUTCOME_ROLLUP_ACCENT,
   DO_AND_OUTCOME_SUBTITLE,
   DO_OUTCOME_ACCENTS,
 } from '../../constants/doAndOutcome'
@@ -362,8 +362,8 @@ function DoAndOutcome() {
 
         <motion.footer className="do-outcome__rollup" {...fadeUp(0.2)}>
           <p className="do-outcome__rollup-text">{DO_AND_OUTCOME_ROLLUP}</p>
-
-          <p className="do-outcome__footnote">{DO_AND_OUTCOME_FOOTNOTE}</p>
+          <p className='do-outcome__rollup-accent'>{DO_AND_OUTCOME_ROLLUP_ACCENT}</p>
+       
         </motion.footer>
       </div>
     </section>

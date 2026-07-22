@@ -17,7 +17,7 @@ export const HERO_HEADLINE_ACCENT_LINE = 'AEC Firms Actually Operate.'
 export const HERO_HEADLINE_ACCENT = HERO_HEADLINE_ACCENT_LINE
 
 export const HERO_SUBHEAD =
-  'One AI-native platform to win work, plan resources, manage projects, capture time, bill accurately, and run your entire AEC firm with complete visibility.'
+  'Run your entire AEC firm with complete visibility and operational control. Every department works from the same operational foundation, so projects move faster, teams stay aligned, and revenue no longer slips through the gaps.'
 
 export const HERO_CALCULATOR_CTA = 'Or calculate your firm’s uncaptured revenue'
 

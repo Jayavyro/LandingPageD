@@ -1,10 +1,10 @@
 .case-study {
-  --case-blue: #4b6ef5;
+  --case-blue: #60a5fa;
   --case-warm: #f59e0b;
-  --case-ink: #12162a;
-  --case-ink-soft: #4b5066;
-  --case-line: #e8ebf4;
-  --case-surface: #f7f8fc;
+  --case-ink: #f8fafc;
+  --case-ink-soft: rgb(226 232 240 / 0.78);
+  --case-line: rgb(248 250 252 / 0.1);
+  --case-surface: rgb(248 250 252 / 0.04);
   --case-grad: linear-gradient(
     90deg,
     #f97316 0%,
@@ -16,7 +16,7 @@
   position: relative;
   overflow: hidden;
   padding: clamp(4rem, 7vw, 5.5rem) 0;
-  background: #ffffff;
+  background: #0b1220;
   color: var(--case-ink);
 }
 
@@ -30,8 +30,8 @@
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgb(75 110 245 / 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgb(75 110 245 / 0.035) 1px, transparent 1px);
+    linear-gradient(rgb(248 250 252 / 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(248 250 252 / 0.04) 1px, transparent 1px);
   background-size: 3.5rem 3.5rem;
   mask-image: radial-gradient(ellipse 100% 72% at 50% -4%, #000 0%, transparent 82%);
   -webkit-mask-image: radial-gradient(ellipse 100% 72% at 50% -4%, #000 0%, transparent 82%);
@@ -51,8 +51,8 @@
   transform: translateX(-50%);
   background: radial-gradient(
     ellipse,
-    rgb(75 110 245 / 0.06) 0%,
-    rgb(168 85 247 / 0.03) 45%,
+    rgb(59 130 246 / 0.18) 0%,
+    rgb(249 115 22 / 0.08) 45%,
     transparent 74%
   );
 }
@@ -62,7 +62,7 @@
   left: -8rem;
   width: 18rem;
   height: 18rem;
-  background: radial-gradient(circle, rgb(75 110 245 / 0.05) 0%, transparent 70%);
+  background: radial-gradient(circle, rgb(59 130 246 / 0.14) 0%, transparent 70%);
 }
 
 .case-study__glow--right {
@@ -70,7 +70,7 @@
   top: 36%;
   width: 16rem;
   height: 16rem;
-  background: radial-gradient(circle, rgb(236 72 153 / 0.04) 0%, transparent 70%);
+  background: radial-gradient(circle, rgb(236 72 153 / 0.12) 0%, transparent 70%);
 }
 
 .case-study__container {
@@ -78,7 +78,7 @@
   z-index: 1;
   width: min(78rem, calc(100% - 2.5rem));
   margin-inline: auto;
-  margin-bottom: 10rem
+  margin-bottom: 10rem;
 }
 
 .case-study__intro {
@@ -100,9 +100,9 @@
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #2a3aa0;
-  background: #e7ecfe;
-  border: 1px solid rgb(75 110 245 / 0.18);
+  color: rgb(226 232 240 / 0.85);
+  background: rgb(248 250 252 / 0.06);
+  border: 1px solid rgb(248 250 252 / 0.12);
   border-radius: 9999px;
 }
 
@@ -162,7 +162,7 @@
   font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.06em;
-  color: #2a3aa0;
+  color: rgb(147 197 253 / 0.9);
 }
 
 .case-study__block {
@@ -178,7 +178,7 @@
   font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #6b7289;
+  color: rgb(148 163 184 / 0.9);
 }
 
 .case-study__block-copy {
@@ -193,6 +193,7 @@
   margin: 0.5rem 0 0;
   padding: 1.5rem 1.75rem 1.625rem;
   background: var(--case-surface);
+  border: 1px solid var(--case-line);
   border-left: 3px solid var(--case-warm);
   border-radius: 0 1rem 1rem 0;
 }
@@ -297,13 +298,13 @@
 
 .case-study__cta--primary {
   padding: 0.8rem 1.25rem;
-  color: #ffffff;
-  background: var(--case-ink);
+  color: #0b1220;
+  background: #f8fafc;
   border: 1px solid transparent;
 }
 
 .case-study__cta--primary:hover {
-  background: #1c2340;
+  background: #e2e8f0;
   transform: translateY(-1px);
 }
 
@@ -333,7 +334,7 @@
   margin: 1.25rem 0 0;
   font-size: 0.75rem;
   line-height: 1.5;
-  color: #6b7289;
+  color: rgb(148 163 184 / 0.85);
 }
 
 @media (min-width: 900px) {

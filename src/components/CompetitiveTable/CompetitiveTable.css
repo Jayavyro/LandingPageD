@@ -10,7 +10,7 @@
   --ct-strong: #16a34a;
 
   position: relative;
-  padding: clamp(4rem, 8vw, 6rem) 0 clamp(5rem, 9vw, 7.5rem);
+  padding: clamp(4rem, 8vw, 4rem) 0 clamp(5rem, 9vw, 7.5rem);
   background: #fff;
   color: var(--ct-ink);
 }
@@ -21,7 +21,7 @@
 }
 
 .competitive-table__intro {
-  max-width: 42rem;
+  max-width: 60rem;
   margin: 0 auto clamp(2.25rem, 5vw, 3.25rem);
   text-align: center;
 }
@@ -61,7 +61,7 @@
 }
 
 .competitive-table__subtitle {
-  max-width: 38rem;
+  max-width: 42rem;
   margin: 1rem auto 0;
   font-size: 1.0625rem;
   line-height: 1.65;
