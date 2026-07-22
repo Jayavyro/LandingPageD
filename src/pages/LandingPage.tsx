@@ -16,6 +16,7 @@ import '../App.css'
 import WorkflowSolutions from '../components/WorkflowSolutions/WorkflowSolutions'
 import CompetitiveTable from '../components/CompetitiveTable/CompetitiveTable'
 import PricingSection from '../components/PricingSection/PricingSection'
+import Industry from '../components/Industry/Industry'
 
 function LandingPage() {
   return (
@@ -24,8 +25,9 @@ function LandingPage() {
       <main className="app__main">
         <Hero />
         <RevenueLeaks />
-        <CompetitiveTable />
+       
         <DoAndOutcome />
+      
        
        
         <LandingDarkStack>
@@ -33,14 +35,14 @@ function LandingPage() {
           
           <WhyAvyro />
           
-          
+          <Industry />     
         </LandingDarkStack>
         
         <HowAvyroWorks />
         
         <WorkflowSolutions />
         <CaseStudy />
-        
+        <CompetitiveTable />
         <FinancialCalculator />
         
        
