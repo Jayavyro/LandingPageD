@@ -1,37 +1,33 @@
-import { type FormEvent, useState } from 'react'
+import { motion, useReducedMotion } from 'framer-motion'
 import heroBg from '../../ChatGPT Image Jul 9, 2026, 11_48_31 AM.png'
 import fivdLogo from '../../695775c397e9ba97edd85611_26faefd428f8a4efc1b4b947dd0a2003_FivD white logo 2.webp'
-import { submitFormLead } from '../../lib/submitFormLead'
+import { ArrowRight } from 'lucide-react'
+import {
+  HERO_BADGE,
+  HERO_CALCULATOR_CTA,
+  HERO_CALCULATOR_HREF,
+  HERO_HEADLINE_ACCENT_LINE,
+  HERO_HEADLINE_LINE,
+  HERO_SUBHEAD,
+} from '../../constants/hero'
+import { TRUST_BAR_STATS } from '../../constants/trustBar'
+import HeroLeadForm from './HeroLeadForm'
+import HeroPositionGraph from './HeroPositionGraph'
 import './Hero.css'
 
-type SubmitStatus = 'idle' | 'submitting' | 'success' | 'error'
+const EASE = [0.22, 1, 0.36, 1] as const
 
 function Hero() {
-  const [email, setEmail] = useState('')
-  const [status, setStatus] = useState<SubmitStatus>('idle')
-  const [errorMessage, setErrorMessage] = useState('')
+  const prefersReducedMotion = useReducedMotion()
 
-  const handleEmailSubmit = async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
-    if (status === 'submitting') return
-
-    setStatus('submitting')
-    setErrorMessage('')
-
-    const result = await submitFormLead({
-      source: 'hero',
-      workEmail: email,
-    })
-
-    if (!result.ok) {
-      setStatus('error')
-      setErrorMessage(result.error || 'Something went wrong. Please try again.')
-      return
-    }
-
-    setEmail('')
-    setStatus('success')
-  }
+  const fadeUp = (delay = 0) =>
+    prefersReducedMotion
+      ? {}
+      : {
+          initial: { opacity: 0, y: 16 },
+          animate: { opacity: 1, y: 0 },
+          transition: { duration: 0.5, delay, ease: EASE },
+        }
 
   return (
     <section
@@ -40,79 +36,72 @@ function Hero() {
       style={{ backgroundImage: `url(${heroBg})` }}
     >
       <div className="hero__content">
-        <p className="hero__badge">OPERATING SYSTEM FOR AEC</p>
-        
-        <h1 className="hero__headline">
-          {/* <span className="hero__headline-line">Pursuit to Project</span>
-          <span className="hero__headline-line">Planning to Delivery.</span>
-          <span className="hero__headline-line hero__headline-line--gradient">
-          People to Performance.
-           </span> */}
-          <span className="hero__headline-line">Run Your Entire AEC Business.</span>
-          <span className="hero__headline-line">From Opportunity to Profit.</span>
+        <div className="hero__copy">
+          <motion.p className="hero__badge" {...fadeUp(0)}>
+            {HERO_BADGE}
+          </motion.p>
 
-          <span className="hero__headline-line hero__headline-line--gradient">
-          One Platform.
-          </span>
-        </h1>
-
-        <p className="hero__description">
-        AVYRO connects every stage of your AEC business—from winning new work and planning projects to delivering successful outcomes and improving business performance.</p>
-
-        <div className="hero__actions">
-          <form className="hero__email-form" onSubmit={handleEmailSubmit}>
-            <label htmlFor="hero-email" className="hero__email-label">
-              Email address
-            </label>
-            <input
-              id="hero-email"
-              type="email"
-              name="email"
-              value={email}
-              onChange={(event) => {
-                setEmail(event.target.value)
-                if (status === 'success' || status === 'error') {
-                  setStatus('idle')
-                }
-              }}
-              placeholder="Enter your email"
-              className="hero__email-input"
-              autoComplete="email"
-              required
-              disabled={status === 'submitting'}
-            />
-            <button
-              type="submit"
-              className="hero__cta hero__cta--primary"
-              disabled={status === 'submitting'}
-            >
-              {status === 'submitting' ? 'Sending…' : 'Get Started'}
-            </button>
-          </form>
-
-          {status === 'success' ? (
-            <p className="hero__form-status hero__form-status--success" role="status">
-              Thanks — we&apos;ll be in touch shortly.
-            </p>
-          ) : null}
-
-          {status === 'error' ? (
-            <p className="hero__form-status hero__form-status--error" role="alert">
-              {errorMessage}
-            </p>
-          ) : null}
-        </div>
-
-        <div className="hero__trusted">
-          <p className="hero__trusted-label">Trusted by</p>
-          <div className="hero__trusted-brand" aria-label="FivD">
-            <span className="hero__trusted-icon-wrap">
-              <img src={fivdLogo} alt="" className="hero__trusted-icon" />
+          <motion.h1 className="hero__headline" {...fadeUp(0.05)}>
+            <span className="hero__headline-line">{HERO_HEADLINE_LINE}</span>
+            <span className="hero__headline-line hero__headline-line--gradient">
+              {HERO_HEADLINE_ACCENT_LINE}
             </span>
-            <span className="hero__trusted-name">fivD</span>
-          </div>
+          </motion.h1>
+
+          <motion.p className="hero__subhead" {...fadeUp(0.1)}>
+            {HERO_SUBHEAD}
+          </motion.p>
+
+          <motion.div className="hero__cta" {...fadeUp(0.15)}>
+            <HeroLeadForm />
+            <a href={HERO_CALCULATOR_HREF} className="hero__secondary-link">
+              {HERO_CALCULATOR_CTA}
+              <ArrowRight className="hero__secondary-link-icon" aria-hidden="true" />
+            </a>
+          </motion.div>
         </div>
+
+        <motion.div className="hero__visual" {...fadeUp(0.2)}>
+          <div className="hero__visual-card">
+            <HeroPositionGraph />
+          </div>
+
+          <div className="hero__callout hero__callout--top" aria-hidden="true">
+            <span className="hero__callout-value">+$25K</span>
+            <span className="hero__callout-label">Revenue per employee</span>
+          </div>
+
+          <div className="hero__callout hero__callout--bottom" aria-hidden="true">
+            <span className="hero__callout-value">1.8×</span>
+            <span className="hero__callout-label">Faster time to payment</span>
+          </div>
+        </motion.div>
       </div>
+
+      <motion.div className="hero__trust" {...fadeUp(0.28)}>
+        <div className="hero__trust-brand">
+          <span className="hero__trust-label">Trusted by</span>
+          <span className="hero__trust-icon-wrap">
+            <img src={fivdLogo} alt="" className="hero__trust-icon" />
+          </span>
+          <span className="hero__trust-name">fivD</span>
+        </div>
+
+        <span className="hero__trust-divider" aria-hidden="true" />
+
+        <div className="hero__trust-stats">
+          {TRUST_BAR_STATS.map((stat) => {
+            const StatIcon = stat.icon
+            return (
+              <div className="hero__trust-stat" key={stat.id}>
+                <StatIcon className="hero__trust-stat-icon" aria-hidden="true" />
+                <span className="hero__trust-stat-metric">{stat.metric}</span>
+                <span className="hero__trust-stat-label">{stat.label}</span>
+              </div>
+            )
+          })}
+        </div>
+      </motion.div>
     </section>
   )
 }

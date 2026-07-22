@@ -1,6 +1,6 @@
 import { Mail } from 'lucide-react'
 import { motion, useReducedMotion } from 'framer-motion'
-import { CONTACT_BADGE, CONTACT_SUBTITLE, CONTACT_TITLE } from '../../constants/contactUs'
+import { CONTACT_BADGE, CONTACT_OUTCOME_LINE, CONTACT_SUBTITLE, CONTACT_TITLE } from '../../constants/contactUs'
 import ContactChannels from './ContactChannels'
 import ContactForm from './ContactForm'
 import './ContactUs.css'
@@ -54,6 +54,7 @@ function ContactUs() {
             </h2>
 
             <p className="contact-us__subtitle">{CONTACT_SUBTITLE}</p>
+            <p className="contact-us__outcome">{CONTACT_OUTCOME_LINE}</p>
           </motion.header>
 
           <motion.div className="contact-us__form-column" {...fadeRight(0.08)}>

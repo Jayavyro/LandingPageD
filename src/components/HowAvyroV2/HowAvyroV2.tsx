@@ -4,10 +4,10 @@ import {
   HOW_AVYRO_V2_BADGE,
   HOW_AVYRO_V2_HEADLINE_LINES,
   HOW_AVYRO_V2_SUBTITLE,
-  HOW_JOURNEY_STAGES,
+  HOW_CLOSING_EMPHASIS,
+  HOW_CLOSING_LINES,
 } from '../../constants/howAvyroV2'
-import HowCeoView from './HowCeoView'
-import HowJourney from './HowJourney'
+import HowCompare from './HowCompare'
 import './HowAvyroV2.css'
 
 const EASE = [0.22, 1, 0.36, 1] as const
@@ -65,17 +65,25 @@ function HowAvyroV2() {
           </motion.p>
         </header>
 
-        <HowJourney stages={HOW_JOURNEY_STAGES} />
-
-
-
-
-
-
-        <section className="how-avyro-v2__block" aria-label="Leadership dashboard">
-          <HowCeoView />
+        <section
+          className="how-avyro-v2__block how-avyro-v2__block--compare"
+          aria-labelledby="how-compare-heading"
+        >
+          <HowCompare />
         </section>
 
+
+
+        <motion.footer className="how-avyro-v2__closing" {...fadeUp(0.05)}>
+          <ul className="how-avyro-v2__closing-list">
+            {HOW_CLOSING_LINES.map((line) => (
+              <li key={line} className="how-avyro-v2__closing-line">
+                {line}
+              </li>
+            ))}
+          </ul>
+          <p className="how-avyro-v2__closing-emphasis">{HOW_CLOSING_EMPHASIS}</p>
+        </motion.footer>
       </div>
     </section>
   )

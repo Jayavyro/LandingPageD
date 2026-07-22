@@ -8,6 +8,7 @@ export interface WorkflowSolution {
   quality: string
   title: string
   description: string
+  features: string[]
   ctaLabel: string
   href: string
   accent: WorkflowSolutionAccent
@@ -15,21 +16,27 @@ export interface WorkflowSolution {
   imageAlt: string
 }
 
-export const WHAT_WE_DO_BADGE = 'Products'
+export const WHAT_WE_DO_BADGE = 'What We Do'
 
-export const WHAT_WE_DO_HEADLINE = 'What AVYRO actually does.'
-export const WHAT_WE_DO_HEADLINE_ACCENT = 'For AEC firms that want clarity.'
+export const WHAT_WE_DO_HEADLINE = 'Every product your firm needs.'
+export const WHAT_WE_DO_HEADLINE_ACCENT = 'One shared record behind them.'
 export const WHAT_WE_DO_SUBTITLE =
-  'Win work. Staff projects. Capture time. Bill clients. Lead the firm—with capabilities built for how architecture and engineering businesses operate.'
+  'Avyro is not a pile of apps under one logo. Below is every capability — what it does, the features inside it, and how each one feeds the next so CRM, delivery, time, and billing stay connected.'
 
 export const WHAT_WE_DO_SOLUTIONS: WorkflowSolution[] = [
   {
     id: 'ai-crm',
     step: '01',
     quality: 'AI CRM',
-    title: 'Win more projects with AI-assisted opportunity management and proposal tracking.',
+    title: 'Win more work with less admin.',
     description:
-      'Know which deals need attention, create proposals faster, and convert opportunities into projects without rebuilding information. Outcome: More wins. Less administration.',
+      'Pipeline, clients, and proposals live on one record. AI fills opportunity forms, builds proposals from captured data, and opens the project the moment a deal is won.',
+    features: [
+      'One client record for contacts, notes, and opportunities',
+      'AI-assisted opportunity forms and proposal drafts',
+      'Pipeline by stage, sector, and estimated value',
+      'Won deal → live project with budget attached',
+    ],
     ctaLabel: 'Explore CRM',
     href: PRODUCT_ROUTES.crm,
     accent: 'purple',
@@ -43,7 +50,13 @@ export const WHAT_WE_DO_SOLUTIONS: WorkflowSolution[] = [
     quality: 'RESOURCE PLANNING',
     title: 'Always know who should work on what.',
     description:
-      'Balance workloads, avoid overbooking, and maximize billable utilization across every project. Outcome: More productive teams.',
+      'One live capacity view across every project. Assign people to phases, spot overbooking early, and keep bench time from eating margin.',
+    features: [
+      'Firm-wide capacity and utilization view',
+      'Assign staff to projects and phases in one plan',
+      'Overbooking and idle bench alerts',
+      'Staffing that stays tied to live project demand',
+    ],
     ctaLabel: 'Explore resourcing',
     href: PRODUCT_ROUTES.resource,
     accent: 'blue',
@@ -55,9 +68,15 @@ export const WHAT_WE_DO_SOLUTIONS: WorkflowSolution[] = [
     id: 'project-delivery',
     step: '03',
     quality: 'PROJECT DELIVERY',
-    title: 'Manage projects from kickoff to completion.',
+    title: 'Deliver on the record that won the job.',
     description:
-      'Track progress, collaborate with teams, manage documents, and deliver projects on schedule. Outcome: Predictable delivery.',
+      'Schedules, documents, progress, and budgets stay on the same project that came from the CRM. Nothing gets rebuilt in a second tool.',
+    features: [
+      'Phases, milestones, and Gantt schedules',
+      'Budgets and progress on the live project record',
+      'Documents and delivery status in one workspace',
+      'No exported stale copies for PMs to chase',
+    ],
     ctaLabel: 'Explore projects',
     href: PRODUCT_ROUTES['gantt-chart'],
     accent: 'orange',
@@ -68,10 +87,16 @@ export const WHAT_WE_DO_SOLUTIONS: WorkflowSolution[] = [
   {
     id: 'intelligent-timesheets',
     step: '04',
-    quality: 'INTELLIGENT TIMESHEETS',
-    title: 'Turn daily work into accurate timesheets automatically.',
+    quality: 'SMART TIMESHEETS',
+    title: 'Timesheets people review, not invent.',
     description:
-      'Reduce manual entry, improve billable accuracy, and speed up approvals without chasing employees. Outcome: Higher utilization and faster billing.',
+      'Daily work maps itself to the right project and phase. Billable accuracy climbs, approvals stop stalling, and Friday recall guesswork ends.',
+    features: [
+      'Auto-mapped hours to project and phase',
+      'Review-and-approve instead of recall-and-type',
+      'Billable vs non-billable clarity',
+      'Fewer stalled timesheet approvals',
+    ],
     ctaLabel: 'Explore timesheets',
     href: PRODUCT_ROUTES.timesheets,
     accent: 'pink',
@@ -83,9 +108,15 @@ export const WHAT_WE_DO_SOLUTIONS: WorkflowSolution[] = [
     id: 'billing-invoicing',
     step: '05',
     quality: 'BILLING & INVOICING',
-    title: 'Convert approved work into invoices.',
+    title: 'Invoice the day work is approved.',
     description:
-      'Reduce billing delays and improve cash flow. Outcome: Get paid faster.',
+      'Approved hours flow straight into invoices. No month-end reconstruction, no chasing PMs — cash starts moving sooner.',
+    features: [
+      'Invoices generated from approved timesheets',
+      'Collections and outstanding payments tracked',
+      'Live profitability by project',
+      'Same-day billing when work is approved',
+    ],
     ctaLabel: 'Explore billing',
     href: PRODUCT_ROUTES.billing,
     accent: 'purple',
@@ -97,9 +128,15 @@ export const WHAT_WE_DO_SOLUTIONS: WorkflowSolution[] = [
     id: 'executive-insights',
     step: '06',
     quality: 'EXECUTIVE INSIGHTS',
-    title: 'See the health of your business in real time.',
+    title: 'Lead from live numbers, not last month’s PDF.',
     description:
-      'Track profitability, utilization, revenue, and project performance from one dashboard. Outcome: Better decisions.',
+      'Profitability, utilization, revenue, and risk — fed by real work as it happens. Catch a slipping project while there is still time to fix it.',
+    features: [
+      'Profitability and budget variance by project',
+      'Utilization and billable ratios across teams',
+      'Live revenue and risk signals',
+      'Principal-ready views without spreadsheet rebuilds',
+    ],
     ctaLabel: 'Explore insights',
     href: `${PRODUCT_ROUTES.platform}#analytics`,
     accent: 'blue',
@@ -111,9 +148,15 @@ export const WHAT_WE_DO_SOLUTIONS: WorkflowSolution[] = [
     id: 'activity-tracker',
     step: '07',
     quality: 'ACTIVITY TRACKER',
-    title: 'Know what work happened—without the chase.',
+    title: 'Know what happened without asking.',
     description:
-      'Desktop activity capture feeds Smart Timesheets so daily work is recorded as it happens. Outcome: Less reconstruction. Cleaner time data.',
+      'Desktop capture records the day as it happens and feeds Smart Timesheets. Clean time data with zero interrogation.',
+    features: [
+      'Automatic desktop activity capture',
+      'Feeds Smart Timesheets directly',
+      'Project and phase mapping from real work',
+      'No weekly “what did you do?” chase',
+    ],
     ctaLabel: 'Explore activity',
     href: PRODUCT_ROUTES.activity,
     accent: 'orange',
@@ -125,9 +168,15 @@ export const WHAT_WE_DO_SOLUTIONS: WorkflowSolution[] = [
     id: 'asset-management',
     step: '08',
     quality: 'ASSET MANAGEMENT',
-    title: 'Track equipment and assets alongside projects.',
+    title: 'Track equipment beside the jobs that use it.',
     description:
-      'Know what you own, where it is assigned, and how it is used across jobs. Outcome: Less waste. Better utilization of firm assets.',
+      'What you own, where it sits, and whether it earns its keep — visible next to the projects it serves.',
+    features: [
+      'Inventory of owned equipment and assets',
+      'Location and assignment visibility',
+      'Utilization next to project demand',
+      'Fewer lost or idle assets',
+    ],
     ctaLabel: 'Explore assets',
     href: PRODUCT_ROUTES.assets,
     accent: 'pink',
@@ -139,9 +188,15 @@ export const WHAT_WE_DO_SOLUTIONS: WorkflowSolution[] = [
     id: 'approval-workflows',
     step: '09',
     quality: 'APPROVAL WORKFLOWS',
-    title: 'Keep timesheets and invoices moving.',
+    title: 'Sign-offs that move on their own.',
     description:
-      'Route sign-offs to the right people without email bottlenecks. Outcome: Faster approvals. Fewer billing delays.',
+      'Timesheets and invoices route to the right approver automatically. No email black holes between your team’s work and your revenue.',
+    features: [
+      'Role- and project-based routing',
+      'Pending, approved, and rejected queues',
+      'Audit trail for compliance',
+      'Faster path from work to invoice',
+    ],
     ctaLabel: 'Explore approvals',
     href: `${PRODUCT_ROUTES.platform}#approvals`,
     accent: 'purple',

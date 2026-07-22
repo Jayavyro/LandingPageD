@@ -46,10 +46,15 @@ function WhyAvyro() {
       }
     }
 
+    const getPinHeight = () => {
+      const pin = runway.querySelector<HTMLElement>('.why-avyro__pin')
+      return pin?.offsetHeight ?? window.innerHeight
+    }
+
     const update = () => {
-      measureStride()
       const rect = runway.getBoundingClientRect()
-      const scrollable = runway.offsetHeight - window.innerHeight
+      const pinHeight = getPinHeight()
+      const scrollable = runway.offsetHeight - pinHeight
       if (scrollable <= 0) return
 
       const nextProgress = clamp(-rect.top / scrollable)
@@ -77,12 +82,18 @@ function WhyAvyro() {
       })
     }
 
+    const onResize = () => {
+      measureStride()
+      update()
+    }
+
+    measureStride()
     update()
     window.addEventListener('scroll', onScroll, { passive: true })
-    window.addEventListener('resize', onScroll)
+    window.addEventListener('resize', onResize)
     return () => {
       window.removeEventListener('scroll', onScroll)
-      window.removeEventListener('resize', onScroll)
+      window.removeEventListener('resize', onResize)
     }
   }, [prefersReducedMotion])
 
@@ -102,7 +113,7 @@ function WhyAvyro() {
 
   return (
     <section
-      id="why-avyro-v1"
+      id="why-avyro"
       className="why-avyro"
       aria-labelledby="why-avyro-heading"
     >
@@ -186,13 +197,16 @@ function WhyAvyro() {
                     </p>
                     <h3 className="why-avyro__item-title">{active.title}</h3>
                     <p className="why-avyro__item-copy">{active.description}</p>
-                    <ul className="why-avyro__highlights">
-                      {active.highlights.map((point) => (
-                        <li key={point} className="why-avyro__highlight">
-                          {point}
-                        </li>
-                      ))}
-                    </ul>
+                    <div className="why-avyro__business-outcome">
+                      <p className="why-avyro__outcome-label">Outcome</p>
+                      <p className="why-avyro__outcome-metric">
+                        {active.outcomeMetric}
+                      </p>
+                      <p className="why-avyro__outcome-caption">
+                        {active.outcomeCaption}
+                      </p>
+                    </div>
+                   
                   </motion.div>
                 </AnimatePresence>
               </div>

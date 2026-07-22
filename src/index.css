@@ -83,7 +83,16 @@ ul {
   list-style: none;
 }
 
+#do-and-outcome,
 #why-avyro,
+#financial-calculator,
+#proven-results,
+#revenue-leaks,
+#how-avyro-works,
+#case-study,
+#competitive-table,
+#pricing,
+#how-avyro-v2,
 #faq,
 #contact-us {
   scroll-margin-top: var(--navbar-scroll-offset);

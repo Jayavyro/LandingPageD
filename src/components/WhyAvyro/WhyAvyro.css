@@ -8,10 +8,10 @@
   --why-steps: 4;
 
   position: relative;
-  padding: clamp(3.5rem, 6vw, 4.5rem) 0 0;
-  background: #060816;
+  padding: 0 0 clamp(3rem, 5vw, 4rem);
+  background: transparent;
   color: #ffffff;
-  overflow: clip;
+  overflow: visible;
 }
 
 .why-avyro__ambient {
@@ -146,8 +146,8 @@
 
 .why-avyro__pin {
   position: sticky;
-  top: 0;
-  height: 100vh;
+  top: var(--navbar-scroll-offset, 5.5rem);
+  height: calc(100vh - var(--navbar-scroll-offset, 5.5rem));
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -239,6 +239,40 @@
   font-size: 1rem;
   line-height: 1.65;
   color: var(--why-ink-soft);
+}
+
+.why-avyro__business-outcome {
+  margin: 1rem 0 0;
+  padding: 0.75rem 0.875rem;
+  background: rgb(75 110 245 / 0.12);
+  border: 1px solid rgb(75 110 245 / 0.22);
+  border-radius: 0.625rem;
+}
+
+.why-avyro__outcome-label {
+  margin: 0 0 0.35rem;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgb(199 210 254 / 0.72);
+}
+
+.why-avyro__outcome-metric {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 650;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: #e0e7ff;
+}
+
+.why-avyro__outcome-caption {
+  margin: 0.35rem 0 0;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #c7d2fe;
 }
 
 .why-avyro__highlights {
@@ -339,7 +373,7 @@
 
 @media (max-width: 959px) {
   .why-avyro {
-    padding: clamp(4rem, 8vw, 5.5rem) 0 clamp(4rem, 8vw, 5.5rem);
+    padding: 0 0 clamp(3rem, 6vw, 4rem);
     overflow: visible;
   }
 

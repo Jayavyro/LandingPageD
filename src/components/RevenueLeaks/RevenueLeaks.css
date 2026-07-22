@@ -1,0 +1,201 @@
+.revenue-leaks {
+  --rl-ink: #0f172a;
+  --rl-ink-soft: #4b5563;
+  --rl-line: #e5e7eb;
+  --rl-accent: #1d4ed8;
+  --rl-mono: 'IBM Plex Mono', monospace;
+
+  position: relative;
+  background: #ffffff;
+  color: var(--rl-ink);
+  padding: clamp(4.25rem, 7vw, 6rem) 0;
+  font-family: var(--font-sans);
+}
+
+.revenue-leaks__container {
+  position: relative;
+  width: min(56rem, calc(100% - 2.5rem));
+  margin-inline: auto;
+}
+
+.revenue-leaks__intro {
+  max-width: 38rem;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.revenue-leaks__kicker {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  margin: 0;
+  font-family: var(--rl-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--rl-ink-soft);
+}
+
+.revenue-leaks__kicker-rule {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1px;
+  background: var(--rl-ink-soft);
+}
+
+.revenue-leaks__title {
+  margin: 1rem 0 0;
+  font-size: clamp(1.625rem, 3.5vw, 2.25rem);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  color: var(--rl-ink);
+}
+
+.revenue-leaks__subtitle {
+  margin: 0.875rem 0 0;
+  font-size: 1rem;
+  line-height: 1.55;
+  color: var(--rl-ink-soft);
+}
+
+.revenue-leaks__leak-list {
+  display: flex;
+  flex-direction: column;
+  margin: clamp(2.25rem, 5vw, 3rem) 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--rl-line);
+}
+
+.revenue-leaks__leak-row {
+  display: grid;
+  grid-template-columns: minmax(13rem, auto) 1fr;
+  align-items: start;
+  gap: 1rem 1.75rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--rl-line);
+}
+
+.revenue-leaks__leak-figure {
+  margin: 0.125rem 0 0;
+  font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: var(--leak-accent, var(--rl-accent));
+  white-space: nowrap;
+}
+
+.revenue-leaks__leak-copy {
+  min-width: 0;
+}
+
+.revenue-leaks__leak-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.revenue-leaks__leak-icon {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+  color: var(--leak-accent, var(--rl-accent));
+}
+
+.revenue-leaks__leak-title {
+  margin: 0;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--rl-ink);
+}
+
+.revenue-leaks__leak-description {
+  margin: 0.5rem 0 0;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: var(--rl-ink-soft);
+}
+
+.revenue-leaks__leak-why {
+  margin: 0.625rem 0 0;
+  padding-left: 0.75rem;
+  border-left: 2px solid var(--leak-accent, var(--rl-accent));
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--rl-ink-soft);
+}
+
+.revenue-leaks__leak-why-tag {
+  display: inline-block;
+  margin-right: 0.375rem;
+  font-family: var(--rl-mono);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--rl-ink);
+}
+
+.revenue-leaks__footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 1.5rem;
+  margin-top: 1.75rem;
+  padding-top: 1.25rem;
+}
+
+.revenue-leaks__total {
+  margin: 0;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--rl-ink);
+}
+
+.revenue-leaks__closing-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4375rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--rl-accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease, gap 0.2s ease;
+}
+
+.revenue-leaks__closing-link:hover,
+.revenue-leaks__closing-link:focus-visible {
+  gap: 0.625rem;
+  border-color: currentColor;
+}
+
+.revenue-leaks__closing-link:focus-visible {
+  outline: 2px solid var(--rl-accent);
+  outline-offset: 4px;
+  border-radius: 0.25rem;
+}
+
+@media (max-width: 640px) {
+  .revenue-leaks__leak-row {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .revenue-leaks__footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .revenue-leaks__closing-link {
+    transition: none;
+  }
+}

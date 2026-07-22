@@ -12,14 +12,18 @@ export interface IndustryItem {
   href: string
 }
 
+export const INDUSTRY_HEADLINE = 'Built for Architecture, Engineering, and Construction.'
+
+/** Single supporting line — wedge + routing CTA */
 export const INDUSTRY_SUBTITLE =
-  'Solutions tailored to the unique needs of AEC firms.'
+  'Pick your discipline. Same platform — fees, staffing, and invoices that match how your firm actually runs.'
 
 export const INDUSTRY_ITEMS: IndustryItem[] = [
   {
     id: 'architecture',
     title: 'Architecture',
-    tagline: 'Design with precision. Deliver with confidence.',
+    tagline:
+      'SD, DD, and CD fees captured on every phase — invoices that follow the work plan, not a month-end rebuild.',
     icon: Building2,
     imageSrc:
       'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=80',
@@ -29,7 +33,8 @@ export const INDUSTRY_ITEMS: IndustryItem[] = [
   {
     id: 'engineering',
     title: 'Engineering',
-    tagline: 'Plan smarter. Execute better.',
+    tagline:
+      'Staff concurrent jobs without overbooking — multi-discipline capacity and fee budgets that hold to closeout.',
     icon: FolderOpen,
     imageSrc:
       'https://images.unsplash.com/photo-1541976590-713941681591?auto=format&fit=crop&w=900&q=80',
@@ -39,7 +44,8 @@ export const INDUSTRY_ITEMS: IndustryItem[] = [
   {
     id: 'construction',
     title: 'Construction',
-    tagline: 'Build efficiently. Deliver on time.',
+    tagline:
+      'Field to invoice — crews, equipment, and cash on one live record from the job site to collections.',
     icon: HardHat,
     imageSrc:
       'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=900&q=80',

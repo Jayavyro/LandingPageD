@@ -3,23 +3,26 @@ import projectImage from '../Screenshot 2026-07-20 104755.png'
 import autoMappingImage from '../Screenshot 2026-07-14 154441.png'
 import billingImage from '../Account_image.png'
 
-export const WHY_AVYRO_BADGE = 'How AVYRO Connects Your Business'
+export const WHY_AVYRO_BADGE = 'Inside the product'
 
 export const WHY_AVYRO_HEADLINE_LINES = [
-  'Every project. Every person.',
-  'Every billable hour.',
+  'Real screens.',
+  'Real workflows.',
 ] as const
 
-export const WHY_AVYRO_HEADLINE_ACCENT = 'One AEC platform.'
+export const WHY_AVYRO_HEADLINE_ACCENT = 'Your firm’s Monday.'
 
 export const WHY_AVYRO_SUBTITLE =
-  'Every stage of your business runs on the same platform. From winning new work to delivering projects, capturing time, and billing clients, AVYRO keeps your teams connected with one source of truth.'
+  'Four connected modules on one record — CRM, work plans, time capture, and billing — the same product your PMs, finance, and principals open every day.'
 
 export interface WhyAvyroTimelineItem {
   id: string
   module: string
   title: string
   description: string
+  /** Standalone P&L / ops outcome — never depends on prior sections */
+  outcomeMetric: string
+  outcomeCaption: string
   highlights: string[]
   image: string
   imageAlt: string
@@ -30,14 +33,17 @@ export interface WhyAvyroTimelineItem {
 export const WHY_AVYRO_TIMELINE: WhyAvyroTimelineItem[] = [
   {
     id: 'ai-crm',
-    module: 'AI CRM & Proposal Management',
-    title: 'Win more work with connected CRM and proposals',
+    module: 'Win Work · AI CRM & Proposals',
+    title: 'The deal closes. The project opens itself.',
     description:
-      'Track leads and opportunities, Auto fill opportunity forms with AI, turn wins into DocuSign-ready proposals from captured client data, then open the project automatically.',
+      'AI fills opportunity forms from captured client data, proposals go out DocuSign-ready, and the moment a client signs, the project opens with budget and client record attached. No kickoff meeting spent copying data.',
+    outcomeMetric: '50% less setup',
+    outcomeCaption:
+      'Won deals open as live projects with budget and contacts already attached — half the admin of a typical handoff.',
     highlights: [
-      'AI-assisted opportunity management',
-      'Faster proposal creation',
-      'Better win rates',
+      'AI-assisted opportunity and client forms',
+      'Proposals built from live client data',
+      'Signed deal → live project, automatically',
     ],
     image: crmImage,
     imageAlt:
@@ -47,14 +53,17 @@ export const WHY_AVYRO_TIMELINE: WhyAvyroTimelineItem[] = [
   },
   {
     id: 'projects',
-    module: 'Project Delivery',
-    title: 'Deliver projects from one shared workspace',
+    module: 'Work Plans · Project Delivery',
+    title: 'Every PM works from the same live plan.',
     description:
-      'Plan projects, assign the right people, manage schedules, and track delivery from one shared workspace. Every team works from the same live project data.',
+      'Phases, staffing, schedules, and budgets live on the record that won the work. When something changes, everyone sees it — there is no stale spreadsheet copy to contradict it.',
+    outcomeMetric: '−34% overruns',
+    outcomeCaption:
+      'Slipping jobs and fee burn show up early — while you can still re-staff, re-scope, or reset the client conversation.',
     highlights: [
-      'Resource planning and scheduling',
-      'Live project progress and budgets',
-      'Real-time collaboration',
+      'Phases, milestones, and staffing in one plan',
+      'Budgets and progress always current',
+      'No exported, outdated project copies',
     ],
     image: projectImage,
     imageAlt:
@@ -64,14 +73,17 @@ export const WHY_AVYRO_TIMELINE: WhyAvyroTimelineItem[] = [
   },
   {
     id: 'smart-timesheets',
-    module: 'Activity Tracker & Smart Timesheets',
-    title: 'Capture every billable hour automatically',
+    module: 'Time Capture · Smart Timesheets',
+    title: 'Timesheets write themselves. People just review.',
     description:
-      'Desktop activity tracking records daily work and intelligently maps it to the right project and phase. Employees review their timesheets instead of manually creating them, improving accuracy and reducing administrative effort.',
+      'The desktop tracker records work as it happens and maps it to the right project and phase. Friday timesheet archaeology is gone — and so is the underbilling that came with it.',
+    outcomeMetric: '10+ hrs / person / week',
+    outcomeCaption:
+      'Billable hours that used to vanish at week’s end now map to the right phase and land on invoices.',
     highlights: [
-      'Automatic desktop activity tracking',
+      'Automatic desktop activity capture',
       'Intelligent project and phase mapping',
-      'Faster approvals and accurate billable hours',
+      'Review-and-approve instead of recall-and-type',
     ],
     image: autoMappingImage,
     imageAlt:
@@ -81,14 +93,17 @@ export const WHY_AVYRO_TIMELINE: WhyAvyroTimelineItem[] = [
   },
   {
     id: 'billing',
-    module: 'Billing & Invoice',
-    title: 'Invoice directly from approved work',
+    module: 'Billing · Invoices & Collections',
+    title: 'Approved hours become invoices the same day.',
     description:
-      'Approved timesheets flow directly into billing, making invoice creation faster and more accurate. Track collections, monitor cash flow, and measure profitability from the same connected project data.',
+      'Billing pulls straight from approved timesheets — no month-end reconstruction, no chasing PMs for numbers. Collections, cash flow, and per-project profit sit in the same view.',
+    outcomeMetric: '1.8× faster payment',
+    outcomeCaption:
+      'Invoices leave the day work is approved — finance stops rebuilding spreadsheets and cash comes in sooner.',
     highlights: [
-      'Generate invoices from approved work',
-      'Track collections and outstanding payments',
-      'Live profitability and cash flow insights',
+      'Invoices generated from approved work',
+      'Collections and open balances in one view',
+      'Live profitability by project',
     ],
     image: billingImage,
     imageAlt:

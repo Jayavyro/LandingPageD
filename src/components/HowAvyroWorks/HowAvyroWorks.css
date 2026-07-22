@@ -1,0 +1,227 @@
+.how-avyro-works {
+  --haw-bg: #060816;
+  --haw-ink: #e9eef2;
+  --haw-ink-soft: #90a5b8;
+  --haw-blue: #4b6ef5;
+  --haw-purple: #a855f7;
+  --haw-line: #7c8cff;
+  --haw-mono: 'IBM Plex Mono', monospace;
+
+  position: relative;
+  overflow: hidden;
+  padding: clamp(4.5rem, 8vw, 6.5rem) 0 clamp(5rem, 9vw, 7rem);
+  background: var(--haw-bg);
+  color: var(--haw-ink);
+  font-family: var(--font-sans);
+}
+
+.how-avyro-works__ambient {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+}
+
+.how-avyro-works__grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgb(75 110 245 / 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(75 110 245 / 0.06) 1px, transparent 1px);
+  background-size: 3.5rem 3.5rem;
+  mask-image: radial-gradient(ellipse 72% 50% at 50% 8%, #000 18%, transparent 78%);
+  -webkit-mask-image: radial-gradient(ellipse 72% 50% at 50% 8%, #000 18%, transparent 78%);
+}
+
+.how-avyro-works__glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(88px);
+}
+
+.how-avyro-works__glow--center {
+  top: -8rem;
+  left: 50%;
+  width: 40rem;
+  height: 20rem;
+  transform: translateX(-50%);
+  background: radial-gradient(
+    ellipse,
+    rgb(75 110 245 / 0.14) 0%,
+    rgb(168 85 247 / 0.06) 42%,
+    transparent 72%
+  );
+}
+
+.how-avyro-works__glow--left {
+  bottom: 4rem;
+  left: -10rem;
+  width: 18rem;
+  height: 18rem;
+  background: radial-gradient(circle, rgb(75 110 245 / 0.08) 0%, transparent 70%);
+}
+
+.how-avyro-works__container {
+  position: relative;
+  z-index: 1;
+  width: min(72rem, calc(100% - 2.5rem));
+  margin-inline: auto;
+}
+
+.how-avyro-works__intro {
+  max-width: 40rem;
+}
+
+.how-avyro-works__kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  margin: 0;
+  font-family: var(--haw-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #c7d2fe;
+}
+
+.how-avyro-works__kicker-rule {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1px;
+  background: var(--haw-line);
+}
+
+.how-avyro-works__title {
+  margin: 1.125rem 0 0;
+  font-size: clamp(1.75rem, 3.6vw, 2.5rem);
+  font-weight: 500;
+  line-height: 1.18;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+}
+
+.how-avyro-works__subtitle {
+  max-width: 36rem;
+  margin: 1rem 0 0;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--haw-ink-soft);
+}
+
+.how-avyro-works__flow {
+  position: relative;
+  margin-top: clamp(3rem, 6vw, 4rem);
+}
+
+.how-avyro-works__line {
+  display: none;
+}
+
+.how-avyro-works__steps {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.how-avyro-works__step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.how-avyro-works__num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  margin-bottom: 1rem;
+  font-family: var(--haw-mono);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  background: rgb(15 23 42 / 0.9);
+  border: 1px solid rgb(233 238 242 / 0.35);
+  border-radius: 50%;
+  box-shadow: 0 0 0 6px var(--haw-bg);
+  position: relative;
+  z-index: 2;
+}
+
+.how-avyro-works__step-title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+}
+
+.how-avyro-works__step-copy {
+  margin: 0.5rem 0 0;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--haw-ink-soft);
+}
+
+@media (min-width: 900px) {
+  .how-avyro-works__flow {
+    padding-top: 0.25rem;
+  }
+
+  .how-avyro-works__line {
+    display: block;
+    position: absolute;
+    top: 1.625rem;
+    left: 4%;
+    right: 4%;
+    height: 0;
+    border-top: 1px dashed rgb(124 140 255 / 0.55);
+    z-index: 1;
+  }
+
+  .how-avyro-works__steps {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+
+  .how-avyro-works__num {
+    margin-bottom: 1.125rem;
+  }
+}
+
+@media (max-width: 899px) {
+  .how-avyro-works__steps {
+    gap: 0;
+  }
+
+  .how-avyro-works__step {
+    padding: 1.25rem 0 1.25rem 1.25rem;
+    border-left: 1px dashed rgb(124 140 255 / 0.4);
+  }
+
+  .how-avyro-works__step:last-child {
+    border-left-color: transparent;
+  }
+
+  .how-avyro-works__num {
+    position: absolute;
+    left: -1.625rem;
+    top: 1.25rem;
+    width: 3.25rem;
+    height: 3.25rem;
+    margin: 0;
+  }
+
+  .how-avyro-works__step-title {
+    margin-left: 1.75rem;
+  }
+
+  .how-avyro-works__step-copy {
+    margin-left: 1.75rem;
+  }
+}

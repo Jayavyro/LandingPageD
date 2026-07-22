@@ -49,9 +49,6 @@ function WhyAvyroV2() {
             <span className="why-avyro-v2__title-line">
               {WHY_AVYRO_V2_HEADLINE_LINES[0]}
             </span>
-            <span className="why-avyro-v2__title-line">
-              {WHY_AVYRO_V2_HEADLINE_LINES[1]}
-            </span>
             <span className="why-avyro-v2__title-line why-avyro-v2__title-line--gradient">
               {WHY_AVYRO_V2_HEADLINE_ACCENT}
             </span>

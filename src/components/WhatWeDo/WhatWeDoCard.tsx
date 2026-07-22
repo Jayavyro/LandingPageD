@@ -53,6 +53,14 @@ function WhatWeDoCard({ solution, index }: WhatWeDoCardProps) {
 
         <p className="workflow-card__description">{solution.description}</p>
 
+        <ul className="workflow-card__features">
+          {solution.features.map((feature) => (
+            <li key={feature} className="workflow-card__feature">
+              {feature}
+            </li>
+          ))}
+        </ul>
+
         <Link to={solution.href} className="workflow-card__cta">
           {solution.ctaLabel}
           <ArrowRight className="workflow-card__cta-icon" strokeWidth={2} aria-hidden="true" />

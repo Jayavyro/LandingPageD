@@ -25,9 +25,9 @@ function WhyAvyroV3() {
 
   return (
     <section
-      id="why-avyro"
+      id="proven-results"
       className="why-avyro-v3"
-      aria-labelledby="why-avyro-heading"
+      aria-labelledby="proven-results-heading"
     >
       <div className="why-avyro-v3__ambient" aria-hidden="true">
         <div className="why-avyro-v3__grid-pattern" />
@@ -41,17 +41,17 @@ function WhyAvyroV3() {
           <motion.div {...fadeUp(0)}>
             <span className="why-avyro-v3__badge">
               <Sparkles className="why-avyro-v3__badge-icon" aria-hidden="true" />
-              Why AVYRO
+              Proven Outcomes
             </span>
           </motion.div>
 
           <motion.h2
-            id="why-avyro-heading"
+            id="proven-results-heading"
             className="why-avyro-v3__title"
             {...fadeUp(0.06)}
           >
             <span className="why-avyro-v3__title-line">
-              Why Choose <span className="why-avyro-v3__gradient">Avyro</span>?
+              Do the work above. <span className="why-avyro-v3__gradient">Get these results.</span>
             </span>
             <span className="why-avyro-v3__title-line why-avyro-v3__title-line--soft">
               {WHY_AVYRO_V3_SUBTITLE}

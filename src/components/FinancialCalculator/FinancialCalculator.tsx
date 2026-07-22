@@ -2,13 +2,20 @@ import { useMemo, useState } from 'react'
 import { ArrowRight, Calculator } from 'lucide-react'
 import { motion, useReducedMotion } from 'framer-motion'
 import {
+  AVYRO_RECOVERY_RATE,
+  CALCULATOR_CURRENT_LABEL,
   CALCULATOR_DEFAULTS,
+  CALCULATOR_HOURS_LABEL,
   CALCULATOR_LIMITS,
+  CALCULATOR_MONTHLY_LABEL,
+  CALCULATOR_PRIMARY_LABEL,
+  CALCULATOR_PRIMARY_SUB,
+  CALCULATOR_PROJECTED_LABEL,
+  CALCULATOR_RESULTS_LABEL,
   CALCULATOR_SUBTITLE,
   calculateAvyroSavings,
   formatCurrency,
   formatNumber,
-  AVYRO_RECOVERY_RATE,
   type CalculatorInputs,
 } from '../../constants/financialCalculator'
 import './FinancialCalculator.css'
@@ -153,13 +160,18 @@ function FinancialCalculator() {
             </div>
 
             <div className="financial-calculator__results" aria-live="polite">
-              <p className="financial-calculator__results-label">Projected with Avyro</p>
+              <p className="financial-calculator__results-label">
+                {CALCULATOR_RESULTS_LABEL}
+              </p>
 
               <p className="financial-calculator__results-primary">
                 {formatCurrency(results.additionalAnnualRevenue)}
                 <span className="financial-calculator__results-primary-sub">
-                  additional annual revenue
+                  {CALCULATOR_PRIMARY_LABEL}
                 </span>
+              </p>
+              <p className="financial-calculator__results-primary-note">
+                {CALCULATOR_PRIMARY_SUB}
               </p>
 
               <div className="financial-calculator__results-grid">
@@ -168,7 +180,7 @@ function FinancialCalculator() {
                     {formatCurrency(results.monthlyRevenueGain)}
                   </span>
                   <span className="financial-calculator__result-caption">
-                    Monthly revenue gain
+                    {CALCULATOR_MONTHLY_LABEL}
                   </span>
                 </div>
 
@@ -177,7 +189,7 @@ function FinancialCalculator() {
                     {formatNumber(results.recoveredHours)}
                   </span>
                   <span className="financial-calculator__result-caption">
-                    Billable hours recovered / year
+                    {CALCULATOR_HOURS_LABEL}
                   </span>
                 </div>
 
@@ -186,7 +198,7 @@ function FinancialCalculator() {
                     {formatCurrency(results.currentCapturedRevenue)}
                   </span>
                   <span className="financial-calculator__result-caption">
-                    Revenue captured today
+                    {CALCULATOR_CURRENT_LABEL}
                   </span>
                 </div>
 
@@ -195,7 +207,7 @@ function FinancialCalculator() {
                     {formatCurrency(results.projectedCapturedRevenue)}
                   </span>
                   <span className="financial-calculator__result-caption">
-                    Projected captured revenue
+                    {CALCULATOR_PROJECTED_LABEL}
                   </span>
                 </div>
               </div>

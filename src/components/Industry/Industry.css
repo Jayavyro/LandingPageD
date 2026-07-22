@@ -7,10 +7,8 @@
   position: relative;
   z-index: 1;
   overflow: hidden;
-  margin-top: calc(-1 * var(--section-transition-h)+20px);
-  padding: calc(clamp(0rem, 9vw, 1.5rem) + var(--section-transition-h) * 0.25) 0
-    clamp(6rem, 10vw, 8rem);
-  background: #060816;
+  padding: clamp(2rem, 4vw, 3rem) 0 clamp(1.5rem, 3vw, 2.25rem);
+  background: transparent;
   color: var(--industry-ink);
 }
 
@@ -89,18 +87,19 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  max-width: 18rem;
+  max-width: 22rem;
 }
 
 .industry__title {
-  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-size: clamp(1.85rem, 3.6vw, 2.5rem);
   font-weight: 500;
-  line-height: 1.08;
+  line-height: 1.1;
   letter-spacing: -0.04em;
   color: var(--industry-ink);
 }
 
 .industry__subtitle {
+  margin: 0;
   font-size: 1rem;
   line-height: 1.65;
   color: var(--industry-ink-soft);

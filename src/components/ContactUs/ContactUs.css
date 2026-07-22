@@ -143,6 +143,17 @@
   color: var(--contact-ink-soft);
 }
 
+.contact-us__outcome {
+  max-width: 28rem;
+  margin-top: 0.875rem;
+  padding-left: 0.75rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--contact-ink);
+  border-left: 3px solid #8b5cf6;
+}
+
 .contact-us__form-column {
   min-width: 0;
 }

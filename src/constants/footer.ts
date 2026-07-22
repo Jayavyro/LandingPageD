@@ -34,7 +34,7 @@ export const FOOTER_SOCIAL_LINKS: FooterLink[] = [
 
 export const FOOTER_COMPANY_LINKS: FooterLink[] = [
   WHY_AVYRO_LINK,
-  { label: 'Solutions', href: '#solutions' },
+  { label: 'Solutions', href: '#do-and-outcome' },
   { label: 'Industry', href: '#industry' },
   { label: 'Testimonials', href: '#testimonials' },
   ...NAV_LINKS,

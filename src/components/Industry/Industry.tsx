@@ -1,5 +1,9 @@
 import { motion, useReducedMotion } from 'framer-motion'
-import { INDUSTRY_ITEMS, INDUSTRY_SUBTITLE } from '../../constants/industry'
+import {
+  INDUSTRY_HEADLINE,
+  INDUSTRY_ITEMS,
+  INDUSTRY_SUBTITLE,
+} from '../../constants/industry'
 import IndustryCard from './IndustryCard'
 import './Industry.css'
 
@@ -24,10 +28,6 @@ function Industry() {
       className="industry"
       aria-labelledby="industry-heading"
     >
-      
-
-
-
       <div className="industry__container">
         <div className="industry__layout">
           <header className="industry__intro">
@@ -36,9 +36,9 @@ function Industry() {
               className="industry__title"
               {...fadeUp(0)}
             >
-              Built for Your Industry
+              {INDUSTRY_HEADLINE}
             </motion.h2>
-            <motion.p className="industry__subtitle" {...fadeUp(0.08)}>
+            <motion.p className="industry__subtitle" {...fadeUp(0.06)}>
               {INDUSTRY_SUBTITLE}
             </motion.p>
           </header>

@@ -1,0 +1,275 @@
+.case-study {
+  --case-blue: #4b6ef5;
+  --case-purple: #a855f7;
+  --case-warm: #f59e0b;
+  --case-bg: #060816;
+  --case-ink: #e9eef2;
+  --case-ink-soft: #90a5b8;
+  --case-line: rgb(255 255 255 / 0.1);
+  --case-grad: linear-gradient(120deg, var(--case-blue) 0%, var(--case-purple) 55%, #ff6584 100%);
+
+  position: relative;
+  overflow: hidden;
+  padding: clamp(5.5rem, 10vw, 8rem) 0 clamp(6rem, 10vw, 8.5rem);
+  background: var(--case-bg);
+  color: var(--case-ink);
+  margin-bottom: 5rem;
+}
+
+.case-study__ambient {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+}
+
+.case-study__grid-pattern {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgb(75 110 245 / 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(75 110 245 / 0.06) 1px, transparent 1px);
+  background-size: 3.5rem 3.5rem;
+  mask-image: radial-gradient(ellipse 72% 52% at 50% 8%, #000 18%, transparent 78%);
+  -webkit-mask-image: radial-gradient(ellipse 72% 52% at 50% 8%, #000 18%, transparent 78%);
+}
+
+.case-study__glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(88px);
+}
+
+.case-study__glow--center {
+  top: -8rem;
+  left: 50%;
+  width: 42rem;
+  height: 22rem;
+  transform: translateX(-50%);
+  background: radial-gradient(
+    ellipse,
+    rgb(75 110 245 / 0.18) 0%,
+    rgb(168 85 247 / 0.08) 42%,
+    transparent 72%
+  );
+}
+
+.case-study__glow--left {
+  bottom: 6rem;
+  left: -10rem;
+  width: 20rem;
+  height: 20rem;
+  background: radial-gradient(circle, rgb(75 110 245 / 0.12) 0%, transparent 70%);
+}
+
+.case-study__glow--right {
+  right: -8rem;
+  top: 32%;
+  width: 18rem;
+  height: 18rem;
+  background: radial-gradient(circle, rgb(168 85 247 / 0.12) 0%, transparent 70%);
+}
+
+.case-study__container {
+  position: relative;
+  z-index: 1;
+  width: min(78rem, calc(100% - 2.5rem));
+  margin-inline: auto;
+}
+
+.case-study__intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 42rem;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.case-study__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4375rem;
+  padding: 0.4375rem 0.875rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #c7d2fe;
+  background: rgb(75 110 245 / 0.16);
+  border: 1px solid rgb(75 110 245 / 0.28);
+  border-radius: 9999px;
+}
+
+.case-study__badge-icon {
+  width: 0.8125rem;
+  height: 0.8125rem;
+  color: var(--case-blue);
+}
+
+.case-study__title {
+  margin-top: 1.5rem;
+  font-size: clamp(2.25rem, 4.8vw, 3.25rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  color: var(--case-ink);
+}
+
+.case-study__title-line {
+  display: block;
+}
+
+.case-study__title-accent {
+  background: var(--case-grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.case-study__subtitle {
+  max-width: 38rem;
+  margin: 1.125rem auto 0;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--case-ink-soft);
+}
+
+.case-study__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(2.5rem, 5vw, 3.5rem);
+  margin-top: clamp(3rem, 6vw, 4.5rem);
+  align-items: start;
+}
+
+.case-study__narrative {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  min-width: 0;
+}
+
+.case-study__meta {
+  margin: 0;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: #93c5fd;
+}
+
+.case-study__block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.case-study__block-label {
+  margin: 0;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--case-ink-soft);
+}
+
+.case-study__block-copy {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: rgb(233 238 242 / 0.88);
+}
+
+.case-study__quote {
+  position: relative;
+  margin: 0.5rem 0 0;
+  padding: 1.5rem 1.75rem 1.625rem;
+  background: linear-gradient(165deg, rgb(75 110 245 / 0.1) 0%, rgb(255 255 255 / 0.03) 55%);
+  border-left: 3px solid var(--case-warm);
+  border-radius: 0 1rem 1rem 0;
+}
+
+.case-study__quote-mark {
+  display: block;
+  font-family: 'Georgia', serif;
+  font-size: 3rem;
+  line-height: 1;
+  background: var(--case-grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.case-study__quote-text {
+  margin: 0.25rem 0 0;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+  color: var(--case-ink);
+}
+
+.case-study__quote-cite {
+  display: block;
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: -0.01em;
+  color: var(--case-ink-soft);
+}
+
+.case-study__metrics {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.case-study__metric {
+  padding: 1.375rem 1.5rem;
+  background: rgb(255 255 255 / 0.04);
+  border: 1px solid var(--case-line);
+  border-radius: 1.125rem;
+}
+
+.case-study__metric-value {
+  margin: 0;
+  font-size: clamp(1.875rem, 3.2vw, 2.25rem);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  background: var(--case-grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.case-study__metric-title {
+  margin: 0.5rem 0 0;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--case-ink);
+}
+
+.case-study__metric-caption {
+  margin: 0.3rem 0 0;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--case-ink-soft);
+}
+
+@media (min-width: 900px) {
+  .case-study__grid {
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: stretch;
+  }
+
+  .case-study__metrics {
+    justify-content: space-between;
+  }
+}

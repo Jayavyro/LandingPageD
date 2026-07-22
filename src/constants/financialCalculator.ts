@@ -23,7 +23,21 @@ export const CALCULATOR_LIMITS = {
 } as const
 
 export const CALCULATOR_SUBTITLE =
-  'Estimate how much revenue your firm could recover by capturing billable time and accelerating billing with Avyro.'
+  'You saw what Avyro delivered at a real firm. Put your own headcount, rate, and uncaptured hours below — this is what the same workflow means for your P&L.'
+
+export const CALCULATOR_RESULTS_LABEL = 'Projected with Avyro'
+
+export const CALCULATOR_PRIMARY_LABEL = 'Annual revenue left on the table'
+
+export const CALCULATOR_PRIMARY_SUB = 'What Avyro typically recovers from uncaptured hours'
+
+export const CALCULATOR_MONTHLY_LABEL = 'Monthly revenue recovered'
+
+export const CALCULATOR_HOURS_LABEL = 'Billable hours recovered / year'
+
+export const CALCULATOR_CURRENT_LABEL = 'Revenue you capture today'
+
+export const CALCULATOR_PROJECTED_LABEL = 'Revenue after Avyro recovery'
 
 export interface CalculatorResults {
   annualBillableHours: number

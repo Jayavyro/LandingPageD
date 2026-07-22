@@ -8,39 +8,38 @@ export interface WhyAvyroV2Feature {
   icon: LucideIcon
 }
 
-export const WHY_AVYRO_V2_BADGE = 'Why Firms Choose AVYRO'
+export const WHY_AVYRO_V2_BADGE = 'What You Get'
 
 export const WHY_AVYRO_V2_HEADLINE_LINES = [
-  'One platform.',
-  'Every workflow.',
+  'Because of everything above,',
 ] as const
 
-export const WHY_AVYRO_V2_HEADLINE_ACCENT = 'Better business performance.'
+export const WHY_AVYRO_V2_HEADLINE_ACCENT = 'here is what your firm gets back.'
 
 export const WHY_AVYRO_V2_SUBTITLE_PARAS = [
-  'Most AEC firms lose time switching between disconnected systems, rebuilding information, and chasing updates.',
- ] as const
+  'When CRM, resourcing, delivery, timesheets, and billing share one record, the gaps that leak hours and delay invoices disappear. These are the outcomes firms see once the products above are connected.',
+] as const
 
 export const WHY_AVYRO_V2_FEATURES: WhyAvyroV2Feature[] = [
   {
-    title: 'Recover Billable Hours',
-    metric: '10+ Hours',
+    title: 'Billable hours recovered',
+    metric: '10+ hrs/week',
     metricLabel:
-      'Recovered per employee every week through intelligent time capture.',
+      'Per employee. Activity Tracker and Smart Timesheets map work to the right project automatically — hours that used to vanish now land on invoices.',
     icon: Clock,
   },
   {
-    title: 'Increase Resource Utilization',
+    title: 'Utilization gained',
     metric: '15%+',
     metricLabel:
-      'Keep the right people on the right projects at the right time.',
+      'Resource Planning and Project Delivery give one live capacity view. No overbooking, no idle bench, no guessing who is free next week.',
     icon: UsersRound,
   },
   {
-    title: 'Reduce Software Costs',
+    title: 'Software spend cut',
     metric: 'Up to 40%',
     metricLabel:
-      'Replace multiple disconnected applications with one integrated platform.',
+      'One platform replaces the CRM + PM + timesheet + billing + BI license pile — one record, one bill, fewer tools to babysit.',
     icon: CircleDollarSign,
   },
 ]

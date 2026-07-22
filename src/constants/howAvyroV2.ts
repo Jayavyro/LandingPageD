@@ -1,21 +1,29 @@
 import type { LucideIcon } from 'lucide-react'
 import {
+  BarChart3,
   Briefcase,
+  CircleDollarSign,
   ClipboardCheck,
+  Clock3,
+  FileText,
+  Filter,
   FolderKanban,
   LineChart,
+  ReceiptText,
+  Table2,
+  Target,
   UsersRound,
 } from 'lucide-react'
 
-export const HOW_AVYRO_V2_BADGE = 'HOW AVYRO RUNS YOUR BUSINESS'
+export const HOW_AVYRO_V2_BADGE = 'AVYRO VS THE STACK YOU HAVE NOW'
 
 export const HOW_AVYRO_V2_HEADLINE_LINES = [
-  'Your entire AEC firm.',
-  'One continuous journey.',
+  'You saw the outcomes.',
+  'Here is why one platform beats seven tools.',
 ] as const
 
 export const HOW_AVYRO_V2_SUBTITLE =
-  'From the first lead to the final invoice—and the profit behind it.'
+  'Most AEC firms run a CRM, a resourcing tool, a timesheet app, invoicing software, spreadsheets, and a BI dashboard — each with its own login and handoffs. Avyro replaces that stack on one record. No re-entry between steps.'
 
 export interface HowJourneyStage {
   id: string
@@ -68,25 +76,37 @@ export interface HowCompareStep {
   label: string
 }
 
-export const HOW_COMPARE_WITHOUT: HowCompareStep[] = [
-  { id: 'crm', label: 'CRM' },
-  { id: 'excel', label: 'Excel' },
-  { id: 'resource', label: 'Resource Tool' },
-  { id: 'project', label: 'Project Tool' },
-  { id: 'timesheet', label: 'Timesheet Tool' },
-  { id: 'invoice', label: 'Invoice Tool' },
-  { id: 'bi', label: 'BI Dashboard' },
+export interface HowCompareWithoutStep extends HowCompareStep {
+  friction: string
+}
+
+export interface HowCompareWithStep extends HowCompareStep {
+  icon: LucideIcon
+}
+
+export interface HowCompareWithoutStepFull extends HowCompareWithoutStep {
+  icon: LucideIcon
+}
+
+export const HOW_COMPARE_WITHOUT: HowCompareWithoutStepFull[] = [
+  { id: 'crm', label: 'CRM', friction: 'Manual handoff', icon: UsersRound },
+  { id: 'excel', label: 'Excel', friction: 'Re-entry', icon: Table2 },
+  { id: 'resource', label: 'Resource Tool', friction: 'Export', icon: UsersRound },
+  { id: 'project', label: 'Project Tool', friction: 'Import', icon: FolderKanban },
+  { id: 'timesheet', label: 'Timesheet Tool', friction: 'Rebuild', icon: Clock3 },
+  { id: 'invoice', label: 'Invoice Tool', friction: 'Manual handoff', icon: ReceiptText },
+  { id: 'bi', label: 'BI Dashboard', friction: 'Re-entry', icon: BarChart3 },
 ]
 
-export const HOW_COMPARE_WITH: HowCompareStep[] = [
-  { id: 'lead', label: 'Lead' },
-  { id: 'opportunity', label: 'Opportunity' },
-  { id: 'proposal', label: 'Proposal' },
-  { id: 'project', label: 'Project' },
-  { id: 'resources', label: 'Resources' },
-  { id: 'time', label: 'Time' },
-  { id: 'billing', label: 'Billing' },
-  { id: 'insights', label: 'Insights' },
+export const HOW_COMPARE_WITH: HowCompareWithStep[] = [
+  { id: 'lead', label: 'Lead', icon: Target },
+  { id: 'opportunity', label: 'Opportunity', icon: Filter },
+  { id: 'proposal', label: 'Proposal', icon: FileText },
+  { id: 'project', label: 'Project', icon: Briefcase },
+  { id: 'resources', label: 'Resources', icon: UsersRound },
+  { id: 'time', label: 'Time', icon: Clock3 },
+  { id: 'billing', label: 'Billing', icon: CircleDollarSign },
+  { id: 'insights', label: 'Insights', icon: LineChart },
 ]
 
 export const HOW_COMPARE_WITHOUT_FRICTION = [
@@ -104,9 +124,61 @@ export const HOW_COMPARE_WITH_BENEFITS = [
   'Nothing disconnected',
 ] as const
 
-export const HOW_COMPARE_TITLE = 'Buy tools—or run the business'
-export const HOW_COMPARE_WITHOUT_LABEL = 'Buying separate products'
+export const HOW_COMPARE_TITLE = 'Seven subscriptions—or one system'
+
+export const HOW_COMPARE_SUBTITLE =
+  'Replace disconnected tools and manual work with one connected platform.'
+
+export const HOW_COMPARE_WITHOUT_LABEL = 'Your stack today'
 export const HOW_COMPARE_WITH_LABEL = 'Running on AVYRO'
+
+export interface HowCompareSummaryMetric {
+  id: string
+  icon: LucideIcon
+  prefix?: string
+  highlight: string
+  suffix: string
+  tone: 'purple' | 'green' | 'blue' | 'navy'
+}
+
+export const HOW_COMPARE_SUMMARY = {
+  title: 'One platform. One source of truth.',
+  subtitle: 'Less admin. More billable time. Healthier projects.',
+} as const
+
+export const HOW_COMPARE_SUMMARY_METRICS: HowCompareSummaryMetric[] = [
+  {
+    id: 'hours',
+    icon: Clock3,
+    prefix: 'Save',
+    highlight: '100+ hours',
+    suffix: 'every month',
+    tone: 'purple',
+  },
+  {
+    id: 'spend',
+    icon: CircleDollarSign,
+    prefix: 'Reduce',
+    highlight: '20–40%',
+    suffix: 'software spend',
+    tone: 'green',
+  },
+  {
+    id: 'utilization',
+    icon: BarChart3,
+    prefix: 'Increase',
+    highlight: 'billable utilization',
+    suffix: 'by 15%+',
+    tone: 'blue',
+  },
+  {
+    id: 'decisions',
+    icon: ClipboardCheck,
+    highlight: 'Faster decisions',
+    suffix: 'with real-time insights',
+    tone: 'navy',
+  },
+]
 
 export interface HowAutomationBlock {
   id: string
@@ -164,9 +236,9 @@ export const HOW_CEO_METRICS: HowCeoMetric[] = [
   { id: 'cash', label: 'Cash flow', hint: 'From invoices' },
 ]
 
-export const HOW_CEO_TITLE = 'What leadership sees'
+export const HOW_CEO_TITLE = 'The Monday-morning view'
 export const HOW_CEO_BODY =
-  'Every stage of the firm feeds this view. No monthly scramble.'
+  'Revenue, utilization, profit, and cash—fed live by the same records your team works in. No month-end scramble, no waiting on finance to assemble it.'
 
 export const HOW_CLOSING_LINES = [
   'Not another CRM.',

@@ -309,7 +309,7 @@ function PlatformProductPage() {
                   </span>
                 ))}
               </div>
-              <Link to="/#solutions" className="product-page__workflow-cta">
+              <Link to="/#do-and-outcome" className="product-page__workflow-cta">
                 See the full workflow
               </Link>
             </motion.aside>

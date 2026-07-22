@@ -8,7 +8,9 @@
 
   position: relative;
   overflow: hidden;
-  padding: clamp(5.5rem, 10vw, 8.5rem) 0 clamp(7rem, 11vw, 10rem);
+  margin-top: calc(-1 * var(--section-transition-h));
+  padding: calc(clamp(3.5rem, 6vw, 5rem) + var(--section-transition-h) * 0.35) 0
+    clamp(7rem, 11vw, 10rem);
   background: #ffffff;
   color: var(--why-ink);
   margin-bottom: 4.8rem;

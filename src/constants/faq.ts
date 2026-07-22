@@ -11,7 +11,7 @@ export interface FaqTrustItem {
 }
 
 export const FAQ_SUBTITLE =
-  'Everything you need to know about Avyro and how we help AEC firms work smarter.'
+  'Straight answers for principals who are done buying another disconnected tool.'
 
 export const FAQ_CONTACT_IMAGE =
   'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=900&q=80'
@@ -21,19 +21,37 @@ export const FAQ_ITEMS: FaqItem[] = [
     id: 'what-is-avyro',
     question: 'What is Avyro?',
     answer:
-      'Avyro is an all-in-one platform built specifically for AEC firms to manage projects, resources, finances, and operations. It helps you streamline workflows, improve collaboration, and deliver projects on time and within budget.',
+      'Avyro is the AI-native operating system for AEC firms. One platform that runs winning work, staffing, delivery, smart timesheets, billing, and live profit—so every hour and every invoice lives on the same record.',
   },
   {
     id: 'who-is-it-for',
     question: 'Who is Avyro designed for?',
     answer:
-      'Avyro is designed for architecture, engineering, and construction firms of all sizes — from growing studios to multi-office enterprises. It supports executives, project managers, finance teams, and operations leaders with role-specific workflows.',
+      'Architecture, engineering, and construction firms that are tired of stitching CRM, project tools, timesheets, and billing together. Built for principals, operations leaders, PMs, and finance—not generic SaaS checklists.',
   },
   {
     id: 'how-different',
     question: 'How is Avyro different from Deltek, Procore, or Unanet?',
     answer:
-      'Unlike point solutions, Avyro unifies CRM, project delivery, timesheets, billing, and analytics in one connected platform. Smart timesheets map activities to projects using keyword mapping, and AEC-native workflows help firms capture more billable time with less manual effort.',
+      'Those products each own a slice of your firm. Avyro owns the journey: CRM → proposal → project → time → invoice → profit on one connected system. Smart timesheets map real desktop activity to projects, so you capture billable hours competitors leave on the floor — and you stop paying for a Frankenstein stack of licenses.',
+  },
+  {
+    id: 'what-do-we-replace',
+    question: 'What do we replace?',
+    answer:
+      'Most firms replace a patchwork of CRM (Cosential, HubSpot), resourcing (Deltek), timesheets and billing (BQE CORE, spreadsheets), and reporting tools. Avyro runs all of that on one record — so you stop paying for seven subscriptions and stop re-typing data between them.',
+  },
+  {
+    id: 'how-long-go-live',
+    question: 'How long does it take to go live?',
+    answer:
+      'Most AEC firms are running core workflows — CRM, projects, timesheets, and billing — within 4–8 weeks with guided onboarding and data migration support. You start with the modules you need and expand from there.',
+  },
+  {
+    id: 'cost-vs-stack',
+    question: 'What does it cost vs our current stack?',
+    answer:
+      'Avyro typically replaces multiple point tools with one platform — so total software spend often drops even before you count recovered billable hours. Contact our team for a quote mapped to your firm size and modules; we will walk through your current stack side by side.',
   },
   {
     id: 'easy-implement',

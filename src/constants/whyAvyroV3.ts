@@ -5,27 +5,29 @@ export interface WhyAvyroV3Result {
   caption: string
 }
 
-export const WHY_AVYRO_V3_SUBTITLE = 'Proven Results from an AEC Firm'
+export const WHY_AVYRO_V3_SUBTITLE =
+  'The firm-level numbers behind the module outcomes above — measured after go-live, not projected.'
 
-export const WHY_AVYRO_V3_NOTE = 'Results measured after implementing Avyro.'
+export const WHY_AVYRO_V3_NOTE =
+  'These three metrics roll up what you saw in each tab: +$25K revenue per employee, −34% budget overrun, and 1.8× faster payment — from one connected record.'
 
 export const WHY_AVYRO_V3_RESULTS: WhyAvyroV3Result[] = [
   {
     id: 'revenue',
-    title: 'Win more work',
+    title: 'Revenue per employee',
     metric: '+$25K',
-    caption: 'More revenue per employee',
+    caption: 'More billable output from the same headcount',
   },
   {
     id: 'budget',
-    title: 'Deliver projects profitably',
-    metric: '34%',
-    caption: 'Less budget overrun',
+    title: 'Budget overrun',
+    metric: '−34%',
+    caption: 'Projects tracked against live budgets, not month-old reports',
   },
   {
     id: 'payment',
-    title: 'Get paid faster',
+    title: 'Time to payment',
     metric: '1.8×',
-    caption: 'Faster time-to-payment',
+    caption: 'Faster — because invoices leave the day work is approved',
   },
 ]
