@@ -25,18 +25,20 @@ function LandingPage() {
       <main className="app__main">
         <Hero />
         <RevenueLeaks />
-    
+        <CompetitiveTable />
         <DoAndOutcome />
        
        
         <LandingDarkStack>
-          <Industry />
+         
           
           <WhyAvyro />
-          <HowAvyroWorks />
+          
+          
         </LandingDarkStack>
         
-        <CompetitiveTable />
+        <HowAvyroWorks />
+        
         <WorkflowSolutions />
         <CaseStudy />
         

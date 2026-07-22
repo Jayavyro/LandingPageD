@@ -16,7 +16,7 @@ import {
 import './DoAndOutcome.css'
 
 const EASE = [0.22, 1, 0.36, 1] as const
-const AUTO_ADVANCE_MS = 15_000
+const AUTO_ADVANCE_MS = 12_000
 const STEP_COUNT = DO_AND_OUTCOME_ITEMS.length
 
 function wrapIndex(index: number) {
@@ -345,7 +345,7 @@ function DoAndOutcome() {
                 <div
                   className="do-outcome__auto"
                   aria-hidden="true"
-                  title="Advances every 15 seconds — pauses while you hover the card"
+                  title="Advances every 12 seconds — pauses while you hover the card"
                 >
                   <span className="do-outcome__auto-track">
                     <span

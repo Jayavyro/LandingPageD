@@ -10,7 +10,7 @@
   padding-bottom: var(--section-transition-h);
   background: var(--dark-stack-bg);
   overflow: visible;
-  margin-bottom: 5rem;
+  
 }
 
 .landing-dark-stack__transition {

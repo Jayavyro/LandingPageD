@@ -65,6 +65,7 @@
   z-index: 1;
   width: min(72rem, calc(100% - 2.5rem));
   margin-inline: auto;
+  margin-bottom: 5rem;
 }
 
 .how-avyro-works__intro {

@@ -1,9 +1,9 @@
 import type { LucideIcon } from 'lucide-react'
 import {
-  BarChart3,
   ClipboardList,
   Clock3,
   Handshake,
+  Package,
   ReceiptText,
   UsersRound,
 } from 'lucide-react'
@@ -140,21 +140,21 @@ export const DO_AND_OUTCOME_ITEMS: DoAndOutcomeItem[] = [
     icon: ReceiptText,
   },
   {
-    id: 'insights',
+    id: 'assets',
     step: '06',
-    label: 'Firm Insights',
-    doTitle: 'Lead from live numbers — not last month’s export.',
+    label: 'Asset Management',
+    doTitle: 'Manage your software assets.',
     doDescription:
-      'Profit, utilization, and project health come from real work in Avyro — not a manual report rebuild.',
+      'Licenses, renewals, and seat assignments in one register — so you buy what you need and never miss a due date.',
     features: [
-      'Project profit and budget status',
-      'Team utilization, always current',
-      'One source instead of five tools',
+      'Never miss a due — and save money',
+      'Assign the correct amount of licenses',
+      'Get complete visibility',
     ],
-    outcomeMetric: '+$25K',
-    outcomeLabel: 'More revenue per person',
-    outcomeCaption: 'Same headcount, more billed work captured.',
+    outcomeMetric: '100%',
+    outcomeLabel: 'License visibility',
+    outcomeCaption: 'Know every seat, every renewal, every assignment.',
     accent: 'blue',
-    icon: BarChart3,
+    icon: Package,
   },
 ]

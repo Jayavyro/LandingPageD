@@ -75,9 +75,7 @@
   margin-inline: auto;
 }
 
-.why-avyro__container--intro {
-  margin-bottom: clamp(2rem, 4vw, 3rem);
-}
+
 
 .why-avyro__intro {
   display: flex;
@@ -139,6 +137,7 @@
 
 /* Tall scroll runway — longer per step = slower, more premium scrub */
 .why-avyro__runway {
+
   position: relative;
   z-index: 1;
   height: calc(var(--why-steps) * 145vh);
@@ -151,6 +150,7 @@
   display: flex;
   align-items: center;
   overflow: hidden;
+  padding-top: 5rem;
 }
 
 .why-avyro__stage {
