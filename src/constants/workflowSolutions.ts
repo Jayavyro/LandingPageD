@@ -15,7 +15,7 @@ export interface WorkflowSolution {
   imageAlt: string
 }
 
-export const WORKFLOW_SOLUTIONS_BADGE = 'Solutions'
+export const WORKFLOW_SOLUTIONS_BADGE = 'Features'
 
 export const WORKFLOW_SOLUTIONS_HEADLINE = 'What AVYRO actually does.'
 export const WORKFLOW_SOLUTIONS_HEADLINE_ACCENT = 'For AEC firms that want clarity.'

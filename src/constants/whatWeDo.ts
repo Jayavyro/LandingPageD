@@ -18,8 +18,8 @@ export interface WorkflowSolution {
 
 export const WHAT_WE_DO_BADGE = 'What We Do'
 
-export const WHAT_WE_DO_HEADLINE = 'Every product your firm needs.'
-export const WHAT_WE_DO_HEADLINE_ACCENT = 'One shared record behind them.'
+export const WHAT_WE_DO_HEADLINE = 'One operational platform.'
+export const WHAT_WE_DO_HEADLINE_ACCENT = 'Every team. Every project. Every dollar.'
 export const WHAT_WE_DO_SUBTITLE =
   'Avyro is not a pile of apps under one logo. Below is every capability — what it does, the features inside it, and how each one feeds the next so CRM, delivery, time, and billing stay connected.'
 

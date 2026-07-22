@@ -1,14 +1,19 @@
 import { motion, useReducedMotion } from 'framer-motion'
-import { BookOpenCheck } from 'lucide-react'
+import { ArrowRight, BookOpenCheck } from 'lucide-react'
+import LandingHashLink from '../LandingHashLink/LandingHashLink'
 import {
   CASE_STUDY_BADGE,
+  CASE_STUDY_FOOTNOTE,
   CASE_STUDY_HEADLINE_LINES,
   CASE_STUDY_META,
   CASE_STUDY_METRICS,
+  CASE_STUDY_PRIMARY_CTA,
   CASE_STUDY_PROBLEM,
   CASE_STUDY_QUOTE,
+  CASE_STUDY_SECONDARY_CTA,
   CASE_STUDY_SOLUTION,
   CASE_STUDY_SUBTITLE,
+  CASE_STUDY_WHO,
 } from '../../constants/caseStudy'
 import './CaseStudy.css'
 
@@ -72,6 +77,11 @@ function CaseStudy() {
             <p className="case-study__meta">{CASE_STUDY_META}</p>
 
             <div className="case-study__block">
+              <p className="case-study__block-label">{CASE_STUDY_WHO.label}</p>
+              <p className="case-study__block-copy">{CASE_STUDY_WHO.copy}</p>
+            </div>
+
+            <div className="case-study__block">
               <p className="case-study__block-label">{CASE_STUDY_PROBLEM.label}</p>
               <p className="case-study__block-copy">{CASE_STUDY_PROBLEM.copy}</p>
             </div>
@@ -87,24 +97,47 @@ function CaseStudy() {
               </span>
               <p className="case-study__quote-text">{CASE_STUDY_QUOTE.quote}</p>
               <cite className="case-study__quote-cite">
-                {CASE_STUDY_QUOTE.name}, {CASE_STUDY_QUOTE.role}, {CASE_STUDY_QUOTE.company}
+                {CASE_STUDY_QUOTE.name}, {CASE_STUDY_QUOTE.role},{' '}
+                {CASE_STUDY_QUOTE.company}
               </cite>
             </blockquote>
           </motion.div>
 
-          <ul className="case-study__metrics" aria-label="fivD results with Avyro">
-            {CASE_STUDY_METRICS.map((metric, index) => (
-              <motion.li
-                key={metric.id}
-                className="case-study__metric"
-                {...fadeUp(0.16 + index * 0.06)}
+          <div className="case-study__proof">
+            <ul className="case-study__metrics" aria-label="fivD results with Avyro">
+              {CASE_STUDY_METRICS.map((metric, index) => (
+                <motion.li
+                  key={metric.id}
+                  className="case-study__metric"
+                  {...fadeUp(0.16 + index * 0.06)}
+                >
+                  <p className="case-study__metric-value">{metric.value}</p>
+                  <p className="case-study__metric-title">{metric.title}</p>
+                  <p className="case-study__metric-caption">{metric.caption}</p>
+                </motion.li>
+              ))}
+            </ul>
+
+            <motion.div className="case-study__actions" {...fadeUp(0.32)}>
+              <LandingHashLink
+                to={CASE_STUDY_PRIMARY_CTA.href}
+                className="case-study__cta case-study__cta--primary"
               >
-                <p className="case-study__metric-value">{metric.value}</p>
-                <p className="case-study__metric-title">{metric.title}</p>
-                <p className="case-study__metric-caption">{metric.caption}</p>
-              </motion.li>
-            ))}
-          </ul>
+                {CASE_STUDY_PRIMARY_CTA.label}
+                <ArrowRight size={16} strokeWidth={2} aria-hidden="true" />
+              </LandingHashLink>
+              <LandingHashLink
+                to={CASE_STUDY_SECONDARY_CTA.href}
+                className="case-study__cta case-study__cta--secondary"
+              >
+                {CASE_STUDY_SECONDARY_CTA.label}
+              </LandingHashLink>
+            </motion.div>
+
+            <motion.p className="case-study__footnote" {...fadeUp(0.34)}>
+              {CASE_STUDY_FOOTNOTE}
+            </motion.p>
+          </div>
         </div>
       </div>
     </section>

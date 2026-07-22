@@ -362,6 +362,7 @@ function DoAndOutcome() {
 
         <motion.footer className="do-outcome__rollup" {...fadeUp(0.2)}>
           <p className="do-outcome__rollup-text">{DO_AND_OUTCOME_ROLLUP}</p>
+
           <p className="do-outcome__footnote">{DO_AND_OUTCOME_FOOTNOTE}</p>
         </motion.footer>
       </div>

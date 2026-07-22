@@ -1,3 +1,5 @@
+import { OUTCOME_FOOTNOTE, OUTCOME_METRICS } from './outcomeMetrics'
+
 export interface CaseStudyTextBlock {
   label: string
   copy: string
@@ -17,62 +19,75 @@ export interface CaseStudyMetric {
   caption: string
 }
 
-export const CASE_STUDY_BADGE = 'Case study'
+export const CASE_STUDY_BADGE = 'A firm like yours'
 
 /** [primary line, accent line] */
 export const CASE_STUDY_HEADLINE_LINES: [string, string] = [
-  'How fivD runs on one connected record.',
-  "Here's what changed.",
+  'They ran the same leak.',
+  'Then they ran one record.',
 ]
 
 export const CASE_STUDY_SUBTITLE =
-  "fivD Architecture replaced spreadsheets and disconnected tools with Avyro's CRM, projects, timesheets, and billing — all on one record."
+  'One AEC firm. A few of the outcomes from What we do — measured after they connected win → time → bill on Avyro.'
 
-export const CASE_STUDY_META = 'fivD Architecture · Flagship partner'
+export const CASE_STUDY_META = 'fivD Architecture · ~mid-size AEC · Flagship partner'
 
 export const CASE_STUDY_PROBLEM: CaseStudyTextBlock = {
-  label: 'The problem',
+  label: 'Before',
   copy:
-    'Disconnected spreadsheets and point tools meant project leads found out about budget and capacity problems after the hours were already spent.',
+    'CRM, time, and billing lived in separate tools. Capacity and invoices drifted — the same leak pattern as a typical 50-person firm.',
 }
 
 export const CASE_STUDY_SOLUTION: CaseStudyTextBlock = {
-  label: 'The solution',
+  label: 'After',
   copy:
-    "fivD moved CRM, project delivery, timesheets, and billing onto Avyro's single connected record — replacing several separate tools with one system every team works from.",
+    'fivD put win, delivery, timesheets, and billing on one connected record — so principal, PM, and finance work from the same truth.',
+}
+
+export const CASE_STUDY_WHO: CaseStudyTextBlock = {
+  label: 'Who',
+  copy:
+    'fivD Architecture — a mid-size architecture practice (~30–50 people), the same size band as the leak math and calculator defaults.',
 }
 
 export const CASE_STUDY_QUOTE: CaseStudyQuote = {
   quote:
-    "What impressed me most about Avyro is that it's built around the real challenges AEC firms face every day. It's practical, easy for teams to adopt, and has helped us work more efficiently.",
+    'Friday stopped being a rebuild. Hours map as work happens, and invoices go out from approved time — not from chasing spreadsheets.',
   name: 'Gaurav Chopra',
   role: 'Co-Founder',
   company: 'fivD',
 }
 
+/** Only 2–3 locked outcomes — ties §1 money + §4 calculator. */
 export const CASE_STUDY_METRICS: CaseStudyMetric[] = [
   {
-    id: 'revenue',
-    value: '+$25K',
-    title: 'Revenue per employee',
-    caption: 'More billable output from the same headcount.',
+    id: OUTCOME_METRICS.resourcing.id,
+    value: OUTCOME_METRICS.resourcing.metric,
+    title: OUTCOME_METRICS.resourcing.outcomeLabel,
+    caption: OUTCOME_METRICS.resourcing.caption,
   },
   {
-    id: 'budget',
-    value: '−34%',
-    title: 'Budget overrun',
-    caption: 'Projects tracked against live budgets, not month-old reports.',
+    id: OUTCOME_METRICS.timeCapture.id,
+    value: OUTCOME_METRICS.timeCapture.metric,
+    title: OUTCOME_METRICS.timeCapture.outcomeLabel,
+    caption: OUTCOME_METRICS.timeCapture.caption,
   },
   {
-    id: 'payment',
-    value: '1.8×',
-    title: 'Faster time to payment',
-    caption: 'Invoices go out the day work is approved.',
-  },
-  {
-    id: 'utilization',
-    value: '15%+',
-    title: 'Utilization gained',
-    caption: 'One live capacity view catches gaps before they cost billable hours.',
+    id: OUTCOME_METRICS.billing.id,
+    value: OUTCOME_METRICS.billing.metric,
+    title: OUTCOME_METRICS.billing.outcomeLabel,
+    caption: OUTCOME_METRICS.billing.caption,
   },
 ]
+
+export const CASE_STUDY_FOOTNOTE = OUTCOME_FOOTNOTE
+
+export const CASE_STUDY_PRIMARY_CTA = {
+  label: 'Book a walkthrough',
+  href: '#contact-us',
+} as const
+
+export const CASE_STUDY_SECONDARY_CTA = {
+  label: 'See pricing',
+  href: '#pricing',
+} as const

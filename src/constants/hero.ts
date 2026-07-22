@@ -8,16 +8,16 @@ import {
   UsersRound,
 } from 'lucide-react'
 
-export const HERO_BADGE = 'The operating system for AEC firms'
+export const HERO_BADGE = 'THE OPERATING SYSTEM FOR AEC FIRMS'
 
-export const HERO_HEADLINE_LINE = 'Stop leaving revenue in your spreadsheets.'
+export const HERO_HEADLINE_LINE = 'Built for the Way Modern'
 
-export const HERO_HEADLINE_ACCENT_LINE = 'Run your firm on one AEC platform.'
+export const HERO_HEADLINE_ACCENT_LINE = 'AEC Firms Actually Operate.'
 
 export const HERO_HEADLINE_ACCENT = HERO_HEADLINE_ACCENT_LINE
 
 export const HERO_SUBHEAD =
-  'Avyro unifies CRM, project work plans, resource allocation, and billing into a single platform. Eliminate unbilled hours, replace disconnected tools, and lift billable utilization by up to 4% in 90 days.'
+  'One AI-native platform to win work, plan resources, manage projects, capture time, bill accurately, and run your entire AEC firm with complete visibility.'
 
 export const HERO_CALCULATOR_CTA = 'Or calculate your firm’s uncaptured revenue'
 

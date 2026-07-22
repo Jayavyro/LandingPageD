@@ -12,7 +12,6 @@ import {
 } from '../../constants/hero'
 import { TRUST_BAR_STATS } from '../../constants/trustBar'
 import HeroLeadForm from './HeroLeadForm'
-import HeroPositionGraph from './HeroPositionGraph'
 import './Hero.css'
 
 const EASE = [0.22, 1, 0.36, 1] as const
@@ -61,21 +60,7 @@ function Hero() {
           </motion.div>
         </div>
 
-        <motion.div className="hero__visual" {...fadeUp(0.2)}>
-          <div className="hero__visual-card">
-            <HeroPositionGraph />
-          </div>
 
-          <div className="hero__callout hero__callout--top" aria-hidden="true">
-            <span className="hero__callout-value">+$25K</span>
-            <span className="hero__callout-label">Revenue per employee</span>
-          </div>
-
-          <div className="hero__callout hero__callout--bottom" aria-hidden="true">
-            <span className="hero__callout-value">1.8×</span>
-            <span className="hero__callout-label">Faster time to payment</span>
-          </div>
-        </motion.div>
       </div>
 
       <motion.div className="hero__trust" {...fadeUp(0.28)}>

@@ -22,14 +22,30 @@ export const CALCULATOR_LIMITS = {
   uncapturedPercent: { min: 3, max: 30, step: 1 },
 } as const
 
+export const CALCULATOR_BADGE = 'Your number'
+
+export const CALCULATOR_HEADLINE = 'What does the leak look like for your firm?'
+export const CALCULATOR_HEADLINE_ACCENT = 'Run your headcount. See your dollars.'
+
 export const CALCULATOR_SUBTITLE =
-  'You saw what Avyro delivered at a real firm. Put your own headcount, rate, and uncaptured hours below — this is what the same workflow means for your P&L.'
+  'Section 1 used a typical 50-person firm. Put your billable staff, rate, and uncaptured hours below — this is the same leak, sized to you.'
+
+export const CALCULATOR_BRIDGE =
+  'You saw the connected record. Now see what disconnected work is costing your firm.'
+
+export const CALCULATOR_INPUT_LABELS = {
+  billableStaff: 'Billable staff',
+  billableRate: 'Billable rate ($/hr)',
+  weeklyBillableHours: 'Weekly billable hours (target)',
+  uncapturedPercent: 'Uncaptured %',
+} as const
 
 export const CALCULATOR_RESULTS_LABEL = 'Projected with Avyro'
 
 export const CALCULATOR_PRIMARY_LABEL = 'Annual revenue left on the table'
 
-export const CALCULATOR_PRIMARY_SUB = 'What Avyro typically recovers from uncaptured hours'
+export const CALCULATOR_PRIMARY_SUB =
+  'What Avyro typically recovers from uncaptured hours — directional, not a quote'
 
 export const CALCULATOR_MONTHLY_LABEL = 'Monthly revenue recovered'
 
@@ -38,6 +54,12 @@ export const CALCULATOR_HOURS_LABEL = 'Billable hours recovered / year'
 export const CALCULATOR_CURRENT_LABEL = 'Revenue you capture today'
 
 export const CALCULATOR_PROJECTED_LABEL = 'Revenue after Avyro recovery'
+
+export const CALCULATOR_TRUST_NOTE =
+  'Estimate based on typical recovery of uncaptured hours at AEC firms using Avyro — not a quote. A walkthrough will refine it.'
+
+export const CALCULATOR_CTA_LABEL = 'Book a walkthrough'
+export const CALCULATOR_CTA_HREF = '#contact-us'
 
 export interface CalculatorResults {
   annualBillableHours: number

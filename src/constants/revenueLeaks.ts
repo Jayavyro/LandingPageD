@@ -19,7 +19,7 @@ export interface RevenueLeakItem {
   accent: RevenueLeakAccent
 }
 
-export const REVENUE_LEAKS_BADGE = 'The problem'
+export const REVENUE_LEAKS_BADGE = 'The Cost of Disconnected Operations'
 
 export const REVENUE_LEAKS_HEADLINE = 'Where a 50-person firm loses ~$1.5M a year.'
 
@@ -61,5 +61,10 @@ export const REVENUE_LEAKS_ITEMS: RevenueLeakItem[] = [
 
 export const REVENUE_LEAKS_TOTAL = '~$1.5M / year for a typical 50-person firm'
 
+export const REVENUE_LEAKS_NEED = "The question isn't how much you're losing. It's why."
+
 export const REVENUE_LEAKS_CLOSING_TEXT = 'See what this costs your firm'
 export const REVENUE_LEAKS_CLOSING_HREF = '#financial-calculator'
+
+export const REVENUE_LEAKS_SECONDARY_TEXT = 'See how Avyro stops it'
+export const REVENUE_LEAKS_SECONDARY_HREF = '#the-solution'

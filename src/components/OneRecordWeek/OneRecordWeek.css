@@ -1,0 +1,219 @@
+.one-record {
+  --or-ink: var(--color-text, #0f172a);
+  --or-ink-soft: var(--color-text-muted, #4b5563);
+  --or-line: var(--color-border, #e5e7eb);
+  --or-grad: linear-gradient(
+    90deg,
+    #f97316 0%,
+    #ec4899 40%,
+    #8b5cf6 70%,
+    #3b82f6 100%
+  );
+
+  position: relative;
+  overflow: hidden;
+  padding: clamp(3.5rem, 7vw, 5.5rem) 0;
+  background: #0b1220;
+  color: #f8fafc;
+  margin-bottom: 5rem;
+}
+
+.one-record__ambient {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+}
+
+.one-record__grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgb(248 250 252 / 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(248 250 252 / 0.04) 1px, transparent 1px);
+  background-size: 3rem 3rem;
+  mask-image: radial-gradient(ellipse 70% 55% at 50% 0%, #000 0%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 55% at 50% 0%, #000 0%, transparent 75%);
+}
+
+.one-record__glow {
+  position: absolute;
+  top: -3rem;
+  left: 50%;
+  width: min(40rem, 88vw);
+  height: 12rem;
+  transform: translateX(-50%);
+  background: radial-gradient(
+    ellipse at center,
+    rgb(59 130 246 / 0.22) 0%,
+    rgb(249 115 22 / 0.1) 45%,
+    transparent 72%
+  );
+  filter: blur(28px);
+}
+
+.one-record__container {
+  position: relative;
+  z-index: 1;
+  width: min(52rem, calc(100% - 2.5rem));
+  margin-inline: auto;
+  text-align: center;
+}
+
+.one-record__intro {
+  margin-bottom: 1.75rem;
+}
+
+.one-record__badge {
+  margin: 0 0 0.85rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgb(226 232 240 / 0.72);
+}
+
+.one-record__title {
+  margin: 0;
+  font-size: clamp(1.5rem, 3.5vw, 2.35rem);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+}
+
+.one-record__title-line {
+  display: block;
+}
+
+.one-record__title-line--accent {
+  background: var(--or-grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.one-record__subtitle {
+  max-width: 34rem;
+  margin: 0.9rem auto 0;
+  font-size: 1.02rem;
+  line-height: 1.55;
+  color: rgb(226 232 240 / 0.78);
+}
+
+.one-record__flow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.45rem 0.15rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.one-record__flow-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.15rem;
+}
+
+.one-record__flow-join {
+  margin-right: 0.15rem;
+  color: rgb(148 163 184 / 0.9);
+  font-size: 0.9rem;
+}
+
+.one-record__flow-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid rgb(148 163 184 / 0.28);
+  background: rgb(15 23 42 / 0.65);
+  font-size: 0.8125rem;
+  font-weight: 550;
+  letter-spacing: -0.01em;
+  color: #f8fafc;
+}
+
+.one-record__flow-num {
+  font-size: 0.65rem;
+  font-weight: 650;
+  letter-spacing: 0.06em;
+  color: rgb(148 163 184 / 0.95);
+}
+
+.one-record__wedge {
+  max-width: 38rem;
+  margin: 1.75rem auto 0;
+  font-size: 1.05rem;
+  line-height: 1.55;
+  letter-spacing: -0.015em;
+  color: #f1f5f9;
+}
+
+.one-record__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.one-record__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.7rem 1.15rem;
+  border-radius: 999px;
+  font-size: 0.9375rem;
+  font-weight: 550;
+  text-decoration: none;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.one-record__cta--primary {
+  background: #f8fafc;
+  color: #0f172a;
+  border: 1px solid #f8fafc;
+}
+
+.one-record__cta--primary:hover {
+  background: #e2e8f0;
+}
+
+.one-record__cta--secondary {
+  background: transparent;
+  color: #f8fafc;
+  border: 1px solid rgb(148 163 184 / 0.45);
+}
+
+.one-record__cta--secondary:hover {
+  border-color: rgb(226 232 240 / 0.7);
+}
+
+.one-record__cta:focus-visible {
+  outline: 2px solid #60a5fa;
+  outline-offset: 3px;
+}
+
+.one-record__footnote {
+  margin: 1.15rem 0 0;
+  font-size: 0.8125rem;
+  line-height: 1.45;
+  color: rgb(148 163 184 / 0.95);
+}
+
+@media (max-width: 640px) {
+  .one-record__flow-join {
+    display: none;
+  }
+
+  .one-record__flow {
+    gap: 0.45rem;
+  }
+}

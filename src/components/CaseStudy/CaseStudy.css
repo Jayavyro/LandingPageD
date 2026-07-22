@@ -1,19 +1,23 @@
 .case-study {
   --case-blue: #4b6ef5;
-  --case-purple: #a855f7;
   --case-warm: #f59e0b;
-  --case-bg: #060816;
-  --case-ink: #e9eef2;
-  --case-ink-soft: #90a5b8;
-  --case-line: rgb(255 255 255 / 0.1);
-  --case-grad: linear-gradient(120deg, var(--case-blue) 0%, var(--case-purple) 55%, #ff6584 100%);
+  --case-ink: #12162a;
+  --case-ink-soft: #4b5066;
+  --case-line: #e8ebf4;
+  --case-surface: #f7f8fc;
+  --case-grad: linear-gradient(
+    90deg,
+    #f97316 0%,
+    #ec4899 40%,
+    #8b5cf6 70%,
+    #3b82f6 100%
+  );
 
   position: relative;
   overflow: hidden;
-  padding: clamp(5.5rem, 10vw, 8rem) 0 clamp(6rem, 10vw, 8.5rem);
-  background: var(--case-bg);
+  padding: clamp(4rem, 7vw, 5.5rem) 0;
+  background: #ffffff;
   color: var(--case-ink);
-  margin-bottom: 5rem;
 }
 
 .case-study__ambient {
@@ -26,11 +30,11 @@
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgb(75 110 245 / 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgb(75 110 245 / 0.06) 1px, transparent 1px);
+    linear-gradient(rgb(75 110 245 / 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(75 110 245 / 0.035) 1px, transparent 1px);
   background-size: 3.5rem 3.5rem;
-  mask-image: radial-gradient(ellipse 72% 52% at 50% 8%, #000 18%, transparent 78%);
-  -webkit-mask-image: radial-gradient(ellipse 72% 52% at 50% 8%, #000 18%, transparent 78%);
+  mask-image: radial-gradient(ellipse 100% 72% at 50% -4%, #000 0%, transparent 82%);
+  -webkit-mask-image: radial-gradient(ellipse 100% 72% at 50% -4%, #000 0%, transparent 82%);
 }
 
 .case-study__glow {
@@ -40,33 +44,33 @@
 }
 
 .case-study__glow--center {
-  top: -8rem;
+  top: 1.5rem;
   left: 50%;
-  width: 42rem;
-  height: 22rem;
+  width: 48rem;
+  height: 20rem;
   transform: translateX(-50%);
   background: radial-gradient(
     ellipse,
-    rgb(75 110 245 / 0.18) 0%,
-    rgb(168 85 247 / 0.08) 42%,
-    transparent 72%
+    rgb(75 110 245 / 0.06) 0%,
+    rgb(168 85 247 / 0.03) 45%,
+    transparent 74%
   );
 }
 
 .case-study__glow--left {
-  bottom: 6rem;
-  left: -10rem;
-  width: 20rem;
-  height: 20rem;
-  background: radial-gradient(circle, rgb(75 110 245 / 0.12) 0%, transparent 70%);
+  bottom: 4rem;
+  left: -8rem;
+  width: 18rem;
+  height: 18rem;
+  background: radial-gradient(circle, rgb(75 110 245 / 0.05) 0%, transparent 70%);
 }
 
 .case-study__glow--right {
-  right: -8rem;
-  top: 32%;
-  width: 18rem;
-  height: 18rem;
-  background: radial-gradient(circle, rgb(168 85 247 / 0.12) 0%, transparent 70%);
+  right: -6rem;
+  top: 36%;
+  width: 16rem;
+  height: 16rem;
+  background: radial-gradient(circle, rgb(236 72 153 / 0.04) 0%, transparent 70%);
 }
 
 .case-study__container {
@@ -74,6 +78,7 @@
   z-index: 1;
   width: min(78rem, calc(100% - 2.5rem));
   margin-inline: auto;
+  margin-bottom: 10rem
 }
 
 .case-study__intro {
@@ -95,9 +100,9 @@
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #c7d2fe;
-  background: rgb(75 110 245 / 0.16);
-  border: 1px solid rgb(75 110 245 / 0.28);
+  color: #2a3aa0;
+  background: #e7ecfe;
+  border: 1px solid rgb(75 110 245 / 0.18);
   border-radius: 9999px;
 }
 
@@ -124,6 +129,7 @@
   background: var(--case-grad);
   -webkit-background-clip: text;
   background-clip: text;
+  -webkit-text-fill-color: transparent;
   color: transparent;
 }
 
@@ -156,7 +162,7 @@
   font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.06em;
-  color: #93c5fd;
+  color: #2a3aa0;
 }
 
 .case-study__block {
@@ -172,21 +178,21 @@
   font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--case-ink-soft);
+  color: #6b7289;
 }
 
 .case-study__block-copy {
   margin: 0;
   font-size: 1rem;
   line-height: 1.65;
-  color: rgb(233 238 242 / 0.88);
+  color: var(--case-ink-soft);
 }
 
 .case-study__quote {
   position: relative;
   margin: 0.5rem 0 0;
   padding: 1.5rem 1.75rem 1.625rem;
-  background: linear-gradient(165deg, rgb(75 110 245 / 0.1) 0%, rgb(255 255 255 / 0.03) 55%);
+  background: var(--case-surface);
   border-left: 3px solid var(--case-warm);
   border-radius: 0 1rem 1rem 0;
 }
@@ -199,6 +205,7 @@
   background: var(--case-grad);
   -webkit-background-clip: text;
   background-clip: text;
+  -webkit-text-fill-color: transparent;
   color: transparent;
 }
 
@@ -231,7 +238,7 @@
 
 .case-study__metric {
   padding: 1.375rem 1.5rem;
-  background: rgb(255 255 255 / 0.04);
+  background: var(--case-surface);
   border: 1px solid var(--case-line);
   border-radius: 1.125rem;
 }
@@ -245,6 +252,7 @@
   background: var(--case-grad);
   -webkit-background-clip: text;
   background-clip: text;
+  -webkit-text-fill-color: transparent;
   color: transparent;
 }
 
@@ -261,6 +269,71 @@
   font-size: 0.8125rem;
   line-height: 1.5;
   color: var(--case-ink-soft);
+}
+
+.case-study__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1rem;
+  margin-top: 1.5rem;
+}
+
+.case-study__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  border-radius: 0.75rem;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.case-study__cta--primary {
+  padding: 0.8rem 1.25rem;
+  color: #ffffff;
+  background: var(--case-ink);
+  border: 1px solid transparent;
+}
+
+.case-study__cta--primary:hover {
+  background: #1c2340;
+  transform: translateY(-1px);
+}
+
+.case-study__cta--primary:focus-visible {
+  outline: 2px solid var(--case-blue);
+  outline-offset: 2px;
+}
+
+.case-study__cta--secondary {
+  padding: 0.8rem 0.25rem;
+  color: var(--case-ink-soft);
+  background: transparent;
+  border: none;
+}
+
+.case-study__cta--secondary:hover,
+.case-study__cta--secondary:focus-visible {
+  color: var(--case-ink);
+}
+
+.case-study__cta--secondary:focus-visible {
+  outline: 2px solid var(--case-blue);
+  outline-offset: 2px;
+}
+
+.case-study__footnote {
+  margin: 1.25rem 0 0;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: #6b7289;
 }
 
 @media (min-width: 900px) {

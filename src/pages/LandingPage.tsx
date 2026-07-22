@@ -1,10 +1,9 @@
 import Navbar from '../components/Navbar/Navbar'
 import Hero from '../components/Hero/Hero'
-import RevenueLeaks from '../components/RevenueLeaks/RevenueLeaks'
-import HowAvyroWorks from '../components/HowAvyroWorks/HowAvyroWorks'
 import DoAndOutcome from '../components/DoAndOutcome/DoAndOutcome'
+import OneRecordWeek from '../components/OneRecordWeek/OneRecordWeek'
 import LandingDarkStack from '../components/LandingDarkStack/LandingDarkStack'
-import WhyAvyro from '../components/WhyAvyro/WhyAvyro'
+import ProductModules from '../components/ProductModules/ProductModules'
 import CaseStudy from '../components/CaseStudy/CaseStudy'
 import FinancialCalculator from '../components/FinancialCalculator/FinancialCalculator'
 import Testimonials from '../components/Testimonials/Testimonials'
@@ -13,10 +12,10 @@ import ContactUs from '../components/ContactUs/ContactUs'
 import Footer from '../components/Footer/Footer'
 import Chatbot from '../components/Chatbot/Chatbot'
 import '../App.css'
-import WorkflowSolutions from '../components/WorkflowSolutions/WorkflowSolutions'
 import CompetitiveTable from '../components/CompetitiveTable/CompetitiveTable'
 import PricingSection from '../components/PricingSection/PricingSection'
-import Industry from '../components/Industry/Industry'
+import RevenueLeaks from '../components/RevenueLeaks/RevenueLeaks'
+import TheSolution from '../components/TheSolution/TheSolution'
 
 function LandingPage() {
   return (
@@ -25,27 +24,18 @@ function LandingPage() {
       <main className="app__main">
         <Hero />
         <RevenueLeaks />
-       
+        <TheSolution />
         <DoAndOutcome />
-      
-       
-       
+        <OneRecordWeek />
         <LandingDarkStack>
-         
-          
-          <WhyAvyro />
-          
-          <Industry />     
+          <ProductModules />
         </LandingDarkStack>
-        
-        <HowAvyroWorks />
-        
-        <WorkflowSolutions />
-        <CaseStudy />
         <CompetitiveTable />
-        <FinancialCalculator />
         
+        <CaseStudy />
+        <FinancialCalculator />
        
+        
         <PricingSection />
         <Testimonials />
         <FAQ />

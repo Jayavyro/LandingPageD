@@ -5,9 +5,13 @@ import {
   REVENUE_LEAKS_CLOSING_TEXT,
   REVENUE_LEAKS_HEADLINE,
   REVENUE_LEAKS_ITEMS,
+  REVENUE_LEAKS_NEED,
+  REVENUE_LEAKS_SECONDARY_HREF,
+  REVENUE_LEAKS_SECONDARY_TEXT,
   REVENUE_LEAKS_SUBTITLE,
   REVENUE_LEAKS_TOTAL,
 } from '../../constants/revenueLeaks'
+import LandingHashLink from '../LandingHashLink/LandingHashLink'
 import LeakRow from './LeakRow'
 import './RevenueLeaks.css'
 
@@ -60,10 +64,22 @@ function RevenueLeaks() {
 
         <motion.div className="revenue-leaks__footer" {...fadeUp(0.14)}>
           <p className="revenue-leaks__total">{REVENUE_LEAKS_TOTAL}</p>
-          <a className="revenue-leaks__closing-link" href={REVENUE_LEAKS_CLOSING_HREF}>
-            {REVENUE_LEAKS_CLOSING_TEXT}
-            <span aria-hidden="true">&rarr;</span>
-          </a>
+          <p className="revenue-leaks__need">{REVENUE_LEAKS_NEED}</p>
+          <div className="revenue-leaks__actions">
+            <LandingHashLink
+              to={REVENUE_LEAKS_CLOSING_HREF}
+              className="revenue-leaks__closing-link"
+            >
+              {REVENUE_LEAKS_CLOSING_TEXT}
+              <span aria-hidden="true">&rarr;</span>
+            </LandingHashLink>
+            <LandingHashLink
+              to={REVENUE_LEAKS_SECONDARY_HREF}
+              className="revenue-leaks__secondary-link"
+            >
+              {REVENUE_LEAKS_SECONDARY_TEXT}
+            </LandingHashLink>
+          </div>
         </motion.div>
       </div>
     </section>

@@ -143,12 +143,12 @@
 
 .revenue-leaks__footer {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  gap: 0.75rem 1.5rem;
+  gap: 0.75rem;
   margin-top: 1.75rem;
   padding-top: 1.25rem;
+  text-align: center;
 }
 
 .revenue-leaks__total {
@@ -156,6 +156,23 @@
   font-size: 0.9375rem;
   font-weight: 600;
   color: var(--rl-ink);
+}
+
+.revenue-leaks__need {
+  max-width: 32rem;
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--rl-ink-soft);
+}
+
+.revenue-leaks__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem 1.25rem;
+  margin-top: 0.25rem;
 }
 
 .revenue-leaks__closing-link {
@@ -168,6 +185,27 @@
   text-decoration: none;
   border-bottom: 1px solid transparent;
   transition: border-color 0.2s ease, gap 0.2s ease;
+}
+
+.revenue-leaks__secondary-link {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--rl-ink-soft);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.revenue-leaks__secondary-link:hover,
+.revenue-leaks__secondary-link:focus-visible {
+  color: var(--rl-ink);
+  border-color: currentColor;
+}
+
+.revenue-leaks__secondary-link:focus-visible {
+  outline: 2px solid var(--rl-accent);
+  outline-offset: 4px;
+  border-radius: 0.25rem;
 }
 
 .revenue-leaks__closing-link:hover,
@@ -186,11 +224,6 @@
   .revenue-leaks__leak-row {
     grid-template-columns: 1fr;
     gap: 0.5rem;
-  }
-
-  .revenue-leaks__footer {
-    flex-direction: column;
-    align-items: flex-start;
   }
 }
 
