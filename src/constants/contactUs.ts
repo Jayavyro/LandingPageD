@@ -7,36 +7,36 @@ export interface ContactChannel {
 
 export const CONTACT_BADGE = 'Contact Us'
 
-export const CONTACT_TITLE = 'See Your Firm on Avyro'
+export const CONTACT_TITLE = "Let's talk about your firm."
 
 export const CONTACT_SUBTITLE =
-  'Tell us about your firm and we’ll walk you through the platform with your own workflows — projects, timesheets, and billing — so you can judge it on your numbers, not ours.'
+  "Book a demo, or send a note and we'll get back to you within a day."
 
 export const CONTACT_OUTCOME_LINE =
-  'See your firm’s uncaptured revenue in the first 30 minutes.'
+  'Tell us your firm size and which modules matter most — Drive, X, or both.'
 
 export const CONTACT_CHANNELS: ContactChannel[] = [
+  {
+    id: 'founder',
+    label: 'Founder',
+    value: 'Manas Mehrotra, Founder',
+  },
+  {
+    id: 'company',
+    label: 'Company',
+    value: 'Avyro IT Solution Pvt. Ltd.',
+  },
+  {
+    id: 'web',
+    label: 'Web',
+    value: 'avyro.io',
+    href: 'https://avyro.io',
+  },
   {
     id: 'email',
     label: 'Email',
     value: 'sales@avyro.com',
     href: 'mailto:sales@avyro.com',
-  },
-  {
-    id: 'phone',
-    label: 'Phone',
-    value: '+91 6350 057 275',
-    href: 'tel:+916350057275',
-  },
-  {
-    id: 'office',
-    label: 'Office Address',
-    value: '3rd Floor, Paras Downtown Mall, Zirakpur, Punjab 140603, India',
-  },
-  {
-    id: 'hours',
-    label: 'Business Hours',
-    value: 'Mon – Fri, 9:30 AM – 6:30 PM (IST)',
   },
 ]
 

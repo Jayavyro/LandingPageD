@@ -9,7 +9,11 @@ lerna-debug.log*
 
 node_modules
 dist
+dist-html
 dist-ssr
+avyro-app.html
+scripts/site-content.json
+scripts/.content-export/
 *.local
 .env
 .env.*

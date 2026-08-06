@@ -6,6 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "build:html": "vite build --config vite.singlefile.config.ts && node scripts/copy-singlefile.mjs",
+    "export:content": "node scripts/export-site-content.mjs",
+    "build:docx": "npm run export:content && python scripts/create_site_docx.py",
     "lint": "eslint .",
     "preview": "vite preview"
   },
@@ -31,6 +34,7 @@
     "globals": "^17.4.0",
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.56.1",
-    "vite": "^8.0.1"
+    "vite": "^8.0.1",
+    "vite-plugin-singlefile": "^2.3.3"
   }
 }

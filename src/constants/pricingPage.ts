@@ -1,5 +1,5 @@
 export interface PricingTier {
-  id: 'starter' | 'full-suite' | 'custom'
+  id: 'drive' | 'x'
   name: string
   price: string
   priceUnit: string
@@ -12,104 +12,80 @@ export interface PricingTier {
 
 export const PRICING_HERO = {
   eyebrow: 'Pricing',
-  title: 'Plans that scale with your firm',
-  subtitle: 'Per-user pricing for AEC teams. Start with core modules or run the full connected platform.',
+  title: 'Pricing built around your firm, not a price list.',
+  subtitle:
+    "Both products are still early in their rollout, and we're pricing pilot partners individually rather than publishing a fixed rate card. Tell us your firm size and which modules matter most, and we'll put together a number that fits.",
 } as const
 
 export const PRICING_DISCLAIMER =
-  'Sample pricing for planning purposes. Final quotes depend on firm size, modules, and rollout scope.'
+  'Avyro X in particular is still evolving in its current form — pilot partners get direct input into the roadmap alongside custom pricing. No setup or onboarding fee on either product.'
 
 export const PRICING_TIERS: PricingTier[] = [
   {
-    id: 'starter',
-    name: 'Starter',
-    price: '$59',
-    priceUnit: 'per user / month',
-    tagline: 'CRM, time, resourcing, assets, and billing—connected.',
+    id: 'drive',
+    name: 'Avyro Drive',
+    price: "Let's talk",
+    priceUnit: '',
+    tagline: 'Project Management, Smart Timesheets & Workforce Productivity.',
     modules: [
-      'AI-Powered CRM',
-      'Proposal Management',
-      'Activity Tracker',
-      'Smart Timesheets',
-      'Resource Allocation',
-      'Asset Management',
-      'Billing & Invoice',
+      'All three Drive modules',
+      'No setup or onboarding fee',
+      'Live in weeks',
     ],
-    ctaLabel: 'Talk to sales',
+    ctaLabel: 'Get pricing',
     ctaHref: '/#contact-us',
   },
   {
-    id: 'full-suite',
-    name: 'Full Suite',
-    price: '$99',
-    priceUnit: 'per user / month',
-    tagline: 'Everything in Starter plus the full Platform layer.',
+    id: 'x',
+    name: 'Avyro X',
+    price: "Let's talk",
+    priceUnit: '',
+    tagline: 'CRM, Resource Allocation, Timesheets & Billing.',
     modules: [
-      'All Starter modules',
-      'Approval Workflows',
-      'Bulk Uploader',
-      'Analytics',
-      'Integrations',
+      'All four X modules',
+      'Full work-plan continuity, lead to invoice',
+      'Priority onboarding as an early pilot partner',
     ],
-    ctaLabel: 'Book a demo',
+    ctaLabel: 'Get pricing',
     ctaHref: '/#contact-us',
     featured: true,
-  },
-  {
-    id: 'custom',
-    name: 'Custom Suite',
-    price: 'From $45',
-    priceUnit: 'per user / month',
-    tagline: 'Pick the modules you need and add more as you grow.',
-    modules: [
-      'Any core module mix',
-      'Platform add-ons optional',
-      'Multi-office rollout support',
-    ],
-    ctaLabel: 'Get a custom quote',
-    ctaHref: '/#contact-us',
   },
 ]
 
 export const PRICING_ALL_MODULES = [
-  'AI-Powered CRM',
-  'Proposal Management',
-  'Resource Allocation',
-  'Activity Tracker',
+  'Project Management',
   'Smart Timesheets',
-  'Asset Management',
-  'Billing & Invoice',
-  'Approval Workflows',
-  'Bulk Uploader',
-  'Analytics',
-  'Integrations',
+  'Workforce Productivity',
+  'CRM',
+  'Resource Allocation',
+  'Timesheets',
+  'Billing & Invoicing',
 ] as const
 
-export const PRICING_STARTER_MODULE_SET = new Set([
-  'AI-Powered CRM',
-  'Proposal Management',
-  'Resource Allocation',
-  'Activity Tracker',
+export const PRICING_DRIVE_MODULE_SET = new Set([
+  'Project Management',
   'Smart Timesheets',
-  'Asset Management',
-  'Billing & Invoice',
+  'Workforce Productivity',
 ])
+
+/** @deprecated Use PRICING_DRIVE_MODULE_SET — kept for PricingPage imports during transition */
+export const PRICING_STARTER_MODULE_SET = PRICING_DRIVE_MODULE_SET
 
 export const PRICING_FAQ = [
   {
+    question: 'Which product is right for us — Drive or X?',
+    answer:
+      'If you mainly need project tracking, timesheets, and productivity visibility, start with Avyro Drive. If you also need CRM, resource allocation, and billing connected to the same record, that\'s Avyro X. Many firms start with Drive and add X later.',
+  },
+  {
     question: 'Is this the final price?',
     answer:
-      'These are sample rates for planning. Contact our team for a quote based on your firm size, modules, and implementation scope.',
+      'We price pilot partners individually based on firm size and which modules you need, rather than publishing a fixed rate card. Contact us for a number that fits your firm.',
   },
   {
-    question: 'Can we start on Starter and upgrade?',
+    question: 'Can we start on Drive and add X later?',
     answer:
-      'Yes. Many firms begin with Starter and move to Full Suite or add Platform modules when the team is ready.',
-  },
-  {
-    question: 'What is included in Starter?',
-    answer:
-      'CRM, proposals, Activity Tracker, Smart Timesheets with keyword mapping, Resource Allocation, Asset Management, and Billing & Invoice.',
+      'Yes. Drive and X share the same underlying record — nothing gets rebuilt as you expand.',
   },
 ] as const
 

@@ -1,0 +1,160 @@
+.company-about {
+  --ca-ink: var(--color-text, #0f172a);
+  --ca-ink-soft: var(--color-text-muted, #4b5563);
+  --ca-line: var(--color-border, #e5e7eb);
+  --ca-accent: #1d4ed8;
+  --ca-tint: #eff6ff;
+  --ca-grad: linear-gradient(
+    90deg,
+    #f97316 0%,
+    #ec4899 35%,
+    #8b5cf6 70%,
+    #3b82f6 100%
+  );
+
+  position: relative;
+  overflow: hidden;
+  padding: clamp(4rem, 8vw, 6rem) 0;
+  background: #fff;
+  color: var(--ca-ink);
+}
+
+.company-about__ambient {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+}
+
+.company-about__glow {
+  position: absolute;
+  top: -4rem;
+  left: 50%;
+  width: min(48rem, 90vw);
+  height: 14rem;
+  transform: translateX(-50%);
+  background: radial-gradient(
+    ellipse at center,
+    rgb(59 130 246 / 0.08) 0%,
+    transparent 72%
+  );
+  filter: blur(32px);
+}
+
+.company-about__container {
+  position: relative;
+  z-index: 1;
+  width: min(72rem, calc(100% - 2.5rem));
+  margin-inline: auto;
+}
+
+.company-about__intro {
+  max-width: 44rem;
+  margin: 0 0 2.25rem;
+}
+
+.company-about__badge {
+  margin: 0 0 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ca-ink-soft);
+}
+
+.company-about__title {
+  margin: 0;
+  font-size: clamp(1.625rem, 3.8vw, 2.5rem);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+}
+
+.company-about__body {
+  margin: 1rem 0 0;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--ca-ink-soft);
+}
+
+.company-about__founder {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+  max-width: 44rem;
+  margin: 0 0 3.5rem;
+}
+
+.company-about__avatar {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background: var(--ca-tint);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ca-accent);
+}
+
+.company-about__founder-name {
+  margin: 0 0 0.125rem;
+  font-size: 1.0625rem;
+  font-weight: 600;
+}
+
+.company-about__founder-role {
+  margin: 0 0 0.625rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--ca-accent);
+}
+
+.company-about__founder-bio {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--ca-ink-soft);
+}
+
+.company-about__advisory-title {
+  margin: 0 0 0.75rem;
+  font-size: 1.375rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.company-about__advisory-subtitle {
+  max-width: 44rem;
+  margin: 0 0 1.5rem;
+  font-size: 0.975rem;
+  line-height: 1.6;
+  color: var(--ca-ink-soft);
+}
+
+.company-about__advisory-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.company-about__advisory-card {
+  padding: 1.75rem 1.5rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--ca-ink-soft);
+  border: 1px dashed var(--ca-line);
+  border-radius: 0.75rem;
+  background: #fff;
+}
+
+@media (max-width: 640px) {
+  .company-about__advisory-grid {
+    grid-template-columns: 1fr;
+  }
+}

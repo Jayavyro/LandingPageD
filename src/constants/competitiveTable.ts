@@ -1,14 +1,14 @@
 import type { LucideIcon } from 'lucide-react'
 import { CheckCircle2, Circle, MinusCircle } from 'lucide-react'
 
-export const COMPETITIVE_TABLE_BADGE = 'Why Avyro'
+export const COMPETITIVE_TABLE_BADGE = 'Resources'
 
-export const COMPETITIVE_TABLE_HEADLINE_LINE = 'Every point tool is strong somewhere.'
+export const COMPETITIVE_TABLE_HEADLINE_LINE = 'How Avyro compares'
 
-export const COMPETITIVE_TABLE_HEADLINE_ACCENT_LINE = 'Avyro is strong everywhere.'
+export const COMPETITIVE_TABLE_HEADLINE_ACCENT_LINE = 'Capability by capability.'
 
 export const COMPETITIVE_TABLE_SUBTITLE =
-  'Cosential wins at CRM. Deltek wins at resourcing. BQE CORE wins at timesheets. None of them do all three — and none of them bill from the same record. Avyro does.'
+  'Competitor rows reflect our understanding of each product as of this writing and should be verified against current vendor documentation before publishing externally.'
 
 export type CompetitiveRating = 'strong' | 'partial' | 'weak'
 
@@ -20,7 +20,7 @@ export interface CompetitiveRatingMeta {
 
 export const COMPETITIVE_RATING_META: Record<CompetitiveRating, CompetitiveRatingMeta> = {
   strong: {
-    label: 'Strong',
+    label: 'Yes',
     icon: CheckCircle2,
     toneClass: 'competitive-table__rating--strong',
   },
@@ -30,7 +30,7 @@ export const COMPETITIVE_RATING_META: Record<CompetitiveRating, CompetitiveRatin
     toneClass: 'competitive-table__rating--partial',
   },
   weak: {
-    label: 'Weak / none',
+    label: 'Limited / no',
     icon: Circle,
     toneClass: 'competitive-table__rating--weak',
   },
@@ -43,13 +43,16 @@ export interface CompetitiveColumn {
   label: string
 }
 
+/** Capability columns matching the HTML comparison table. */
 export const COMPETITIVE_TABLE_COLUMNS: CompetitiveColumn[] = [
-  { id: 'crm', label: 'CRM' },
-  { id: 'resourceAllocation', label: 'Resource Allocation' },
-  { id: 'timesheets', label: 'Timesheets' },
-  { id: 'billing', label: 'Billing' },
-  { id: 'aiNative', label: 'AI-native' },
-  { id: 'allInOne', label: 'All-in-one' },
+  { id: 'singleRecord', label: 'Lead-to-invoice record' },
+  { id: 'resourceAllocation', label: 'Native capacity view' },
+  { id: 'smartTimesheets', label: 'Plan-linked timesheets' },
+  { id: 'aiaBilling', label: 'AIA progress billing' },
+  { id: 'aecBuilt', label: 'Built for AEC' },
+  { id: 'alongsideStack', label: 'Works alongside stack' },
+  { id: 'liveInWeeks', label: 'Live in weeks' },
+  { id: 'twoEntryPoints', label: 'Drive → X path' },
 ]
 
 export interface CompetitiveToolRow {
@@ -61,76 +64,60 @@ export interface CompetitiveToolRow {
 
 export const COMPETITIVE_TABLE_ROWS: CompetitiveToolRow[] = [
   {
-    id: 'cosential',
-    name: 'Cosential',
+    id: 'avyro',
+    name: 'Avyro',
+    isAvyro: true,
     ratings: {
-      crm: 'strong',
-      resourceAllocation: 'weak',
-      timesheets: 'weak',
-      billing: 'weak',
-      aiNative: 'partial',
-      allInOne: 'weak',
-    },
-  },
-  {
-    id: 'deltek',
-    name: 'Deltek',
-    ratings: {
-      crm: 'weak',
+      singleRecord: 'strong',
       resourceAllocation: 'strong',
-      timesheets: 'partial',
-      billing: 'partial',
-      aiNative: 'weak',
-      allInOne: 'partial',
+      smartTimesheets: 'strong',
+      aiaBilling: 'strong',
+      aecBuilt: 'strong',
+      alongsideStack: 'strong',
+      liveInWeeks: 'strong',
+      twoEntryPoints: 'strong',
     },
   },
   {
-    id: 'bqe-core',
-    name: 'BQE CORE',
+    id: 'deltek-vantagepoint',
+    name: 'Deltek Vantagepoint',
     ratings: {
-      crm: 'weak',
-      resourceAllocation: 'weak',
-      timesheets: 'strong',
-      billing: 'partial',
-      aiNative: 'weak',
-      allInOne: 'partial',
-    },
-  },
-  {
-    id: 'unanet',
-    name: 'Unanet',
-    ratings: {
-      crm: 'weak',
+      singleRecord: 'partial',
       resourceAllocation: 'strong',
-      timesheets: 'partial',
-      billing: 'partial',
-      aiNative: 'weak',
-      allInOne: 'partial',
+      smartTimesheets: 'strong',
+      aiaBilling: 'strong',
+      aecBuilt: 'strong',
+      alongsideStack: 'weak',
+      liveInWeeks: 'weak',
+      twoEntryPoints: 'weak',
     },
   },
   {
     id: 'monograph',
     name: 'Monograph',
     ratings: {
-      crm: 'weak',
-      resourceAllocation: 'partial',
-      timesheets: 'partial',
-      billing: 'weak',
-      aiNative: 'partial',
-      allInOne: 'weak',
+      singleRecord: 'partial',
+      resourceAllocation: 'strong',
+      smartTimesheets: 'strong',
+      aiaBilling: 'partial',
+      aecBuilt: 'strong',
+      alongsideStack: 'strong',
+      liveInWeeks: 'strong',
+      twoEntryPoints: 'weak',
     },
   },
   {
-    id: 'avyro',
-    name: 'Avyro',
-    isAvyro: true,
+    id: 'bqe-core',
+    name: 'BQE Core',
     ratings: {
-      crm: 'strong',
-      resourceAllocation: 'strong',
-      timesheets: 'strong',
-      billing: 'strong',
-      aiNative: 'strong',
-      allInOne: 'strong',
+      singleRecord: 'partial',
+      resourceAllocation: 'weak',
+      smartTimesheets: 'strong',
+      aiaBilling: 'strong',
+      aecBuilt: 'partial',
+      alongsideStack: 'strong',
+      liveInWeeks: 'partial',
+      twoEntryPoints: 'weak',
     },
   },
 ]

@@ -3,7 +3,6 @@ import { ArrowRight, Calculator } from 'lucide-react'
 import { motion, useReducedMotion } from 'framer-motion'
 import LandingHashLink from '../LandingHashLink/LandingHashLink'
 import {
-  AVYRO_RECOVERY_RATE,
   CALCULATOR_BADGE,
   CALCULATOR_BRIDGE,
   CALCULATOR_CTA_HREF,
@@ -165,28 +164,6 @@ function FinancialCalculator() {
               formatValue={(value) => `${formatCurrency(value)}/hr`}
               onChange={(value) => updateInput('billableRate', value)}
             />
-
-            <SliderField
-              id="weekly-hours"
-              label={CALCULATOR_INPUT_LABELS.weeklyBillableHours}
-              value={inputs.weeklyBillableHours}
-              min={CALCULATOR_LIMITS.weeklyBillableHours.min}
-              max={CALCULATOR_LIMITS.weeklyBillableHours.max}
-              step={CALCULATOR_LIMITS.weeklyBillableHours.step}
-              formatValue={(value) => `${formatNumber(value)} hrs`}
-              onChange={(value) => updateInput('weeklyBillableHours', value)}
-            />
-
-            <SliderField
-              id="uncaptured-percent"
-              label={CALCULATOR_INPUT_LABELS.uncapturedPercent}
-              value={inputs.uncapturedPercent}
-              min={CALCULATOR_LIMITS.uncapturedPercent.min}
-              max={CALCULATOR_LIMITS.uncapturedPercent.max}
-              step={CALCULATOR_LIMITS.uncapturedPercent.step}
-              formatValue={(value) => `${value}%`}
-              onChange={(value) => updateInput('uncapturedPercent', value)}
-            />
           </div>
 
           <div className="financial-calculator__results" aria-live="polite">
@@ -245,11 +222,7 @@ function FinancialCalculator() {
         </motion.div>
 
         <motion.footer className="financial-calculator__footer" {...fadeUp(0.16)}>
-          <p className="financial-calculator__note">
-            {CALCULATOR_TRUST_NOTE} Firms typically recover{' '}
-            <strong>{Math.round(AVYRO_RECOVERY_RATE * 100)}%</strong> of leaked
-            billable time.
-          </p>
+          <p className="financial-calculator__note">{CALCULATOR_TRUST_NOTE}</p>
           <LandingHashLink
             to={CALCULATOR_CTA_HREF}
             className="financial-calculator__cta"

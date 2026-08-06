@@ -8,16 +8,19 @@ import {
   UsersRound,
 } from 'lucide-react'
 
-export const HERO_BADGE = 'THE OPERATING SYSTEM FOR AEC FIRMS'
+export const HERO_BADGE = 'For mid-market AEC firms'
 
-export const HERO_HEADLINE_LINE = 'Built for the Way Modern'
+export const HERO_HEADLINE_LINE = "Know who's free. Log time in seconds."
 
-export const HERO_HEADLINE_ACCENT_LINE = 'AEC Firms Actually Operate.'
+export const HERO_HEADLINE_ACCENT_LINE = 'Never lose a project to a spreadsheet again.'
 
 export const HERO_HEADLINE_ACCENT = HERO_HEADLINE_ACCENT_LINE
 
 export const HERO_SUBHEAD =
-  'Run your entire AEC firm with complete visibility and operational control. Every department works from the same operational foundation, so projects move faster, teams stay aligned, and revenue no longer slips through the gaps.'
+  'Real-time resource allocation, smart timesheets, and project management — in one place, updating live, so staffing and status are never a guess.'
+
+export const HERO_TRUST_LINE =
+  "Live in weeks · No integration fees · You don't pay until your team is up and running"
 
 export const HERO_CALCULATOR_CTA = 'Or calculate your firm’s uncaptured revenue'
 

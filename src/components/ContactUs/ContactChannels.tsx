@@ -1,4 +1,4 @@
-import { Clock, Mail, MapPin, Phone } from 'lucide-react'
+import { Globe, Mail, UserRound, Building2 } from 'lucide-react'
 import { motion, useReducedMotion } from 'framer-motion'
 import { CONTACT_CHANNELS } from '../../constants/contactUs'
 import './ContactChannels.css'
@@ -7,9 +7,9 @@ const EASE = [0.22, 1, 0.36, 1] as const
 
 const CHANNEL_ICONS = {
   email: Mail,
-  phone: Phone,
-  office: MapPin,
-  hours: Clock,
+  founder: UserRound,
+  company: Building2,
+  web: Globe,
 } as const
 
 function ContactChannels() {

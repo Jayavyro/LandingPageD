@@ -1,32 +1,40 @@
-import { OUTCOME_METRICS } from './outcomeMetrics'
+export const ONE_RECORD_BADGE = 'One record'
 
-export const ONE_RECORD_BADGE = 'What Makes Avyro Different'
-
-export const ONE_RECORD_HEADLINE = 'Six business stages. One shared record.'
-export const ONE_RECORD_HEADLINE_ACCENT = 'That\'s what makes Avyro different.'
+export const ONE_RECORD_HEADLINE =
+  'One record, whichever product you start with.'
 
 export const ONE_RECORD_SUBTITLE =
-  'Every stage shares the same business record, so information never has to be recreated or reconciled.'
+  "Start with Drive, start with X, or run both. Either way, it's the same underlying record — nothing gets rebuilt as you add more."
 
-/** Compact flow — labels only. No second tour of do/get/outcome. */
+/** Matches the HTML 8-in-1 chip set. */
 export const ONE_RECORD_FLOW = [
-  OUTCOME_METRICS.winWork.label,
-  OUTCOME_METRICS.resourcing.label,
-  OUTCOME_METRICS.workPlans.label,
-  OUTCOME_METRICS.timeCapture.label,
-  OUTCOME_METRICS.billing.label,
-  OUTCOME_METRICS.assets.label,
+  'CRM',
+  'Proposals',
+  'Resource Allocation',
+  'Smart Timesheets',
+  'Project Management',
+  'Billing & Invoicing',
+  'IT & Asset Mgmt',
+  'Workforce Productivity',
 ] as const
 
+export const ONE_RECORD_ACCENT_CHIPS = new Set([
+  'Resource Allocation',
+  'Smart Timesheets',
+  'Project Management',
+])
+
+export const ONE_RECORD_CARD_LABEL = 'One Connected System'
+
 export const ONE_RECORD_WEDGE =
-  'Every team works from the same business record, so handoffs stay connected from pursuit to payment.'
+  'One work plan, from first lead to final invoice — every module reading and writing to the same record, so nothing is ever re-entered, re-explained, or rebuilt.'
 
 export const ONE_RECORD_PROOF_NOTE =
-  'Outcomes above are from measured AEC firms using Avyro — your numbers will differ. Next: run yours.'
+  'Drive and X share the same foundation — pick the entry point that fits, then expand.'
 
 export const ONE_RECORD_PRIMARY_CTA = {
-  label: 'See what this costs your firm',
-  href: '#financial-calculator',
+  label: 'Explore the platform',
+  href: '#explore-platform',
 } as const
 
 export const ONE_RECORD_SECONDARY_CTA = {

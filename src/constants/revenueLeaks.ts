@@ -1,5 +1,5 @@
 import type { LucideIcon } from 'lucide-react'
-import { FileWarning, Layers, UsersRound } from 'lucide-react'
+import { Clock3, FileWarning, UsersRound } from 'lucide-react'
 
 export type RevenueLeakAccent = 'blue' | 'purple' | 'orange'
 
@@ -19,52 +19,53 @@ export interface RevenueLeakItem {
   accent: RevenueLeakAccent
 }
 
-export const REVENUE_LEAKS_BADGE = 'The Cost of Disconnected Operations'
+export const REVENUE_LEAKS_BADGE = 'Why Avyro'
+export const REVENUE_LEAKS_CODE = 'A4.00'
 
-export const REVENUE_LEAKS_HEADLINE = 'Where a 50-person firm loses ~$1.5M a year.'
+export const REVENUE_LEAKS_HEADLINE = 'Most firms are only running at six days out of ten.'
+
+export const REVENUE_LEAKS_STAT = '60%'
+
+export const REVENUE_LEAKS_STAT_CAPTION_BEFORE =
+  'Average studio utilization across A&E firms industry-wide — '
+
+export const REVENUE_LEAKS_STAT_CITE = 'Deltek Clarity, 2026'
+
+export const REVENUE_LEAKS_STAT_CAPTION_AFTER =
+  '. High performers routinely clear 72%. That gap is where disconnected tools quietly cost firms the most.'
 
 export const REVENUE_LEAKS_SUBTITLE =
-  'Not fraud. Not bad clients. Just under-utilization, missed billing, and the tools meant to prevent both — working against each other.'
+  'Average studio utilization across A&E firms industry-wide is 60% — Deltek Clarity, 2026. High performers routinely clear 72%. That gap is where disconnected tools quietly cost firms the most.'
 
 export const REVENUE_LEAKS_ITEMS: RevenueLeakItem[] = [
   {
-    id: 'utilization',
-    icon: UsersRound,
-    number: '$680K',
-    title: 'Lost to under-utilization',
-    description:
-      'Industry average is 59%. Healthy is 70%. That 11-point gap is ~5,500 unbilled hours a year at $125/hr.',
-    why: 'Utilization lives in spreadsheets and shows up monthly — after the hours are already gone.',
-    accent: 'blue',
-  },
-  {
-    id: 'invoicing',
+    id: 'won-unbilled',
     icon: FileWarning,
-    number: '$680–850K',
-    title: 'Lost to under-invoicing',
+    number: '01',
+    title: 'Won scope, unbilled.',
     description:
-      '8–10% of project value never reaches an invoice — untracked tasks, missed change orders, time that never gets billed.',
-    why: 'Time, scope, and billing sit in separate tools, so they drift apart within weeks.',
+      "Work gets sold and re-entered — sometimes never fully — into resourcing. What's won and what's staffed quietly drift apart.",
+    why: 'Handoffs between BD and delivery break the work plan.',
     accent: 'purple',
   },
   {
-    id: 'tooling',
-    icon: Layers,
-    number: '$120K',
-    title: 'Spent on the tools causing it',
+    id: 'bandwidth-guessed',
+    icon: UsersRound,
+    number: '02',
+    title: 'Bandwidth, guessed.',
     description:
-      'Typical annual spend across CRM, resourcing, time, and billing — usually 4 to 6 disconnected products.',
-    why: 'Enterprise prices. No enterprise outcomes. Pure overhead.',
+      "Without a live view of studio capacity, staffing decisions are made on gut feel and last week's spreadsheet — not this week's reality.",
+    why: 'Capacity lives in inboxes and memory, not one live view.',
+    accent: 'blue',
+  },
+  {
+    id: 'billing-delayed',
+    icon: Clock3,
+    number: '03',
+    title: 'Billing, delayed.',
+    description:
+      "Hours sit in disconnected timesheets before they reach billing, pushing out cash collection on work that's already been delivered.",
+    why: 'Time and billing never share the same record.',
     accent: 'orange',
   },
 ]
-
-export const REVENUE_LEAKS_TOTAL = '~$1.5M / year for a typical 50-person firm'
-
-export const REVENUE_LEAKS_NEED = "The question isn't how much you're losing. It's why."
-
-export const REVENUE_LEAKS_CLOSING_TEXT = 'See what this costs your firm'
-export const REVENUE_LEAKS_CLOSING_HREF = '#financial-calculator'
-
-export const REVENUE_LEAKS_SECONDARY_TEXT = 'See how Avyro stops it'
-export const REVENUE_LEAKS_SECONDARY_HREF = '#the-solution'

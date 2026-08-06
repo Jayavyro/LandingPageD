@@ -1,4 +1,15 @@
-import { OUTCOME_FOOTNOTE, OUTCOME_METRICS } from './outcomeMetrics'
+export const CASE_STUDY_BADGE = 'Case study'
+
+/** [primary line, accent line] */
+export const CASE_STUDY_HEADLINE_LINES: [string, string] = [
+  'Case study: fivD,',
+  'a 150-person AE firm.',
+]
+
+export const CASE_STUDY_SUBTITLE =
+  "fivD is running Avyro's proof of concept across CRM, resourcing, and billing. Verified utilization and cycle-time results will be published here once the PoC concludes."
+
+export const CASE_STUDY_META = 'fivD · 150-person AE firm · PoC through Nov 2026'
 
 export interface CaseStudyTextBlock {
   label: string
@@ -19,68 +30,54 @@ export interface CaseStudyMetric {
   caption: string
 }
 
-export const CASE_STUDY_BADGE = 'A firm like yours'
-
-/** [primary line, accent line] */
-export const CASE_STUDY_HEADLINE_LINES: [string, string] = [
-  'They ran the same leak.',
-  'Then they ran one record.',
-]
-
-export const CASE_STUDY_SUBTITLE =
-  'One AEC firm. A few of the outcomes from What we do — measured after they connected win → time → bill on Avyro.'
-
-export const CASE_STUDY_META = 'fivD Architecture · ~mid-size AEC · Flagship partner'
-
 export const CASE_STUDY_PROBLEM: CaseStudyTextBlock = {
-  label: 'Before',
+  label: 'Engagement',
   copy:
-    'CRM, time, and billing lived in separate tools. Capacity and invoices drifted — the same leak pattern as a typical 50-person firm.',
+    'fivD is running Avyro across CRM, resourcing, and billing in a live proof of concept — not a slide-deck pilot.',
 }
 
 export const CASE_STUDY_SOLUTION: CaseStudyTextBlock = {
-  label: 'After',
+  label: 'Status',
   copy:
-    'fivD put win, delivery, timesheets, and billing on one connected record — so principal, PM, and finance work from the same truth.',
+    'Outcome metrics and quote — pending PoC completion. Not fabricated for launch.',
 }
 
 export const CASE_STUDY_WHO: CaseStudyTextBlock = {
   label: 'Who',
-  copy:
-    'fivD Architecture — a mid-size architecture practice (~30–50 people), the same size band as the leak math and calculator defaults.',
+  copy: 'fivD — a 150-person architecture and engineering firm evaluating Avyro as a front-office operating layer.',
 }
 
 export const CASE_STUDY_QUOTE: CaseStudyQuote = {
   quote:
-    'Friday stopped being a rebuild. Hours map as work happens, and invoices go out from approved time — not from chasing spreadsheets.',
-  name: 'Gaurav Chopra',
-  role: 'Co-Founder',
-  company: 'fivD',
+    'Verified utilization and cycle-time results will be published here once the PoC concludes.',
+  name: 'fivD',
+  role: 'Proof of concept',
+  company: 'Pending completion',
 }
 
-/** Only 2–3 locked outcomes — ties §1 money + §4 calculator. */
 export const CASE_STUDY_METRICS: CaseStudyMetric[] = [
   {
-    id: OUTCOME_METRICS.resourcing.id,
-    value: OUTCOME_METRICS.resourcing.metric,
-    title: OUTCOME_METRICS.resourcing.outcomeLabel,
-    caption: OUTCOME_METRICS.resourcing.caption,
+    id: 'headcount',
+    value: '150',
+    title: 'People on the team',
+    caption: 'Mid-market AE firm running the PoC.',
   },
   {
-    id: OUTCOME_METRICS.timeCapture.id,
-    value: OUTCOME_METRICS.timeCapture.metric,
-    title: OUTCOME_METRICS.timeCapture.outcomeLabel,
-    caption: OUTCOME_METRICS.timeCapture.caption,
+    id: 'poc-window',
+    value: 'Nov 2026',
+    title: 'Proof-of-concept runs through',
+    caption: 'Results publish after the window closes.',
   },
   {
-    id: OUTCOME_METRICS.billing.id,
-    value: OUTCOME_METRICS.billing.metric,
-    title: OUTCOME_METRICS.billing.outcomeLabel,
-    caption: OUTCOME_METRICS.billing.caption,
+    id: 'scope',
+    value: '3',
+    title: 'Modules in scope',
+    caption: 'CRM, resourcing, and billing on one record.',
   },
 ]
 
-export const CASE_STUDY_FOOTNOTE = OUTCOME_FOOTNOTE
+export const CASE_STUDY_FOOTNOTE =
+  'Outcome metrics and quote — pending PoC completion. Not fabricated for launch.'
 
 export const CASE_STUDY_PRIMARY_CTA = {
   label: 'Book a walkthrough',

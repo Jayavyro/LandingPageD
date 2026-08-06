@@ -1,17 +1,14 @@
 import { motion, useReducedMotion } from 'framer-motion'
 import {
   REVENUE_LEAKS_BADGE,
-  REVENUE_LEAKS_CLOSING_HREF,
-  REVENUE_LEAKS_CLOSING_TEXT,
+  REVENUE_LEAKS_CODE,
   REVENUE_LEAKS_HEADLINE,
   REVENUE_LEAKS_ITEMS,
-  REVENUE_LEAKS_NEED,
-  REVENUE_LEAKS_SECONDARY_HREF,
-  REVENUE_LEAKS_SECONDARY_TEXT,
-  REVENUE_LEAKS_SUBTITLE,
-  REVENUE_LEAKS_TOTAL,
+  REVENUE_LEAKS_STAT,
+  REVENUE_LEAKS_STAT_CAPTION_AFTER,
+  REVENUE_LEAKS_STAT_CAPTION_BEFORE,
+  REVENUE_LEAKS_STAT_CITE,
 } from '../../constants/revenueLeaks'
-import LandingHashLink from '../LandingHashLink/LandingHashLink'
 import LeakRow from './LeakRow'
 import './RevenueLeaks.css'
 
@@ -32,14 +29,15 @@ function RevenueLeaks() {
 
   return (
     <section
-      id="revenue-leaks"
+      id="why-avyro"
       className="revenue-leaks"
       aria-labelledby="revenue-leaks-heading"
     >
       <div className="revenue-leaks__container">
         <header className="revenue-leaks__intro">
-          <motion.p className="revenue-leaks__kicker" {...fadeUp(0)}>
-            <span className="revenue-leaks__kicker-rule" aria-hidden="true" />
+          <motion.p className="revenue-leaks__tag" {...fadeUp(0)}>
+            <span className="revenue-leaks__tag-code">{REVENUE_LEAKS_CODE}</span>
+            <span className="revenue-leaks__tag-dot" aria-hidden="true" />
             {REVENUE_LEAKS_BADGE}
           </motion.p>
 
@@ -50,37 +48,25 @@ function RevenueLeaks() {
           >
             {REVENUE_LEAKS_HEADLINE}
           </motion.h2>
-
-          <motion.p className="revenue-leaks__subtitle" {...fadeUp(0.08)}>
-            {REVENUE_LEAKS_SUBTITLE}
-          </motion.p>
         </header>
+
+        <motion.div className="revenue-leaks__bigstat" {...fadeUp(0.08)}>
+          <p className="revenue-leaks__bigstat-num" aria-hidden="true">
+            {REVENUE_LEAKS_STAT}
+          </p>
+          <p className="revenue-leaks__bigstat-caption">
+            <span className="revenue-leaks__sr-only">{REVENUE_LEAKS_STAT}. </span>
+            {REVENUE_LEAKS_STAT_CAPTION_BEFORE}
+            <cite>{REVENUE_LEAKS_STAT_CITE}</cite>
+            {REVENUE_LEAKS_STAT_CAPTION_AFTER}
+          </p>
+        </motion.div>
 
         <ol className="revenue-leaks__leak-list" aria-label="Where the revenue goes">
           {REVENUE_LEAKS_ITEMS.map((leak, index) => (
             <LeakRow key={leak.id} leak={leak} index={index} />
           ))}
         </ol>
-
-        <motion.div className="revenue-leaks__footer" {...fadeUp(0.14)}>
-          <p className="revenue-leaks__total">{REVENUE_LEAKS_TOTAL}</p>
-          <p className="revenue-leaks__need">{REVENUE_LEAKS_NEED}</p>
-          <div className="revenue-leaks__actions">
-            <LandingHashLink
-              to={REVENUE_LEAKS_CLOSING_HREF}
-              className="revenue-leaks__closing-link"
-            >
-              {REVENUE_LEAKS_CLOSING_TEXT}
-              <span aria-hidden="true">&rarr;</span>
-            </LandingHashLink>
-            <LandingHashLink
-              to={REVENUE_LEAKS_SECONDARY_HREF}
-              className="revenue-leaks__secondary-link"
-            >
-              {REVENUE_LEAKS_SECONDARY_TEXT}
-            </LandingHashLink>
-          </div>
-        </motion.div>
       </div>
     </section>
   )

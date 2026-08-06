@@ -1,9 +1,10 @@
 import { motion, useReducedMotion } from 'framer-motion'
 import {
+  ONE_RECORD_ACCENT_CHIPS,
   ONE_RECORD_BADGE,
+  ONE_RECORD_CARD_LABEL,
   ONE_RECORD_FLOW,
   ONE_RECORD_HEADLINE,
-  ONE_RECORD_HEADLINE_ACCENT,
   ONE_RECORD_PROOF_NOTE,
   ONE_RECORD_SUBTITLE,
   ONE_RECORD_WEDGE,
@@ -11,6 +12,14 @@ import {
 import './OneRecordWeek.css'
 
 const EASE = [0.22, 1, 0.36, 1] as const
+
+const CONVERGENCE_PATHS = [
+  'M5,0 C5,25 50,15 50,38',
+  'M25,0 C25,20 50,15 50,38',
+  'M50,0 L50,38',
+  'M75,0 C75,20 50,15 50,38',
+  'M95,0 C95,25 50,15 50,38',
+] as const
 
 function OneRecordWeek() {
   const prefersReducedMotion = useReducedMotion()
@@ -47,10 +56,7 @@ function OneRecordWeek() {
             className="one-record__title"
             {...fadeUp(0.04)}
           >
-            <span className="one-record__title-line">{ONE_RECORD_HEADLINE}</span>
-            <span className="one-record__title-line one-record__title-line--accent">
-              {ONE_RECORD_HEADLINE_ACCENT}
-            </span>
+            {ONE_RECORD_HEADLINE}
           </motion.h2>
 
           <motion.p className="one-record__subtitle" {...fadeUp(0.07)}>
@@ -58,35 +64,47 @@ function OneRecordWeek() {
           </motion.p>
         </header>
 
-        <motion.ol
-          className="one-record__flow"
-          aria-label="Connected firm record"
+        <motion.ul
+          className="one-record__chips"
+          aria-label="Modules on one record"
           {...fadeUp(0.1)}
         >
-          {ONE_RECORD_FLOW.map((label, index) => (
-            <li key={label} className="one-record__flow-item">
-              {index > 0 && (
-                <span className="one-record__flow-join" aria-hidden="true">
-                  →
-                </span>
-              )}
-              <span className="one-record__flow-chip">
-                <span className="one-record__flow-num" aria-hidden="true">
-                  {String(index + 1).padStart(2, '0')}
-                </span>
-                {label}
-              </span>
+          {ONE_RECORD_FLOW.map((label) => (
+            <li
+              key={label}
+              className={`one-record__chip${
+                ONE_RECORD_ACCENT_CHIPS.has(label)
+                  ? ' one-record__chip--accent'
+                  : ''
+              }`}
+            >
+              {label}
             </li>
           ))}
-        </motion.ol>
+        </motion.ul>
 
-        <motion.p className="one-record__wedge" {...fadeUp(0.12)}>
-          {ONE_RECORD_WEDGE}
-        </motion.p>
+        <motion.div
+          className="one-record__convergence"
+          aria-hidden="true"
+          {...fadeUp(0.14)}
+        >
+          <svg
+            className="one-record__lines"
+            viewBox="0 0 100 40"
+            preserveAspectRatio="none"
+          >
+            {CONVERGENCE_PATHS.map((d) => (
+              <path key={d} d={d} />
+            ))}
+          </svg>
+        </motion.div>
 
+        <motion.div className="one-record__card" {...fadeUp(0.18)}>
+          <p className="one-record__card-label">{ONE_RECORD_CARD_LABEL}</p>
+          <p className="one-record__card-text">{ONE_RECORD_WEDGE}</p>
+        </motion.div>
 
-
-        <motion.p className="one-record__footnote" {...fadeUp(0.16)}>
+        <motion.p className="one-record__footnote" {...fadeUp(0.22)}>
           {ONE_RECORD_PROOF_NOTE}
         </motion.p>
       </div>

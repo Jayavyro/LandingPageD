@@ -9,9 +9,9 @@ import ContactUs from '../../components/ContactUs/ContactUs'
 import {
   PRICING_ALL_MODULES,
   PRICING_DISCLAIMER,
+  PRICING_DRIVE_MODULE_SET,
   PRICING_FAQ,
   PRICING_HERO,
-  PRICING_STARTER_MODULE_SET,
   PRICING_TIERS,
 } from '../../constants/pricingPage'
 import './PricingPage.css'
@@ -135,26 +135,25 @@ function PricingPage() {
                   <thead>
                     <tr>
                       <th scope="col">Module</th>
-                      <th scope="col">Starter</th>
-                      <th scope="col">Full Suite</th>
-                      <th scope="col">Custom</th>
+                      <th scope="col">Avyro Drive</th>
+                      <th scope="col">Avyro X</th>
                     </tr>
                   </thead>
                   <tbody>
                     {PRICING_ALL_MODULES.map((module) => {
-                      const inStarter = PRICING_STARTER_MODULE_SET.has(module)
-                      const isPlatform =
-                        module === 'Approval Workflows' ||
-                        module === 'Bulk Uploader' ||
-                        module === 'Analytics' ||
-                        module === 'Integrations'
+                      const inDrive = PRICING_DRIVE_MODULE_SET.has(module)
+                      const inX =
+                        module === 'CRM' ||
+                        module === 'Resource Allocation' ||
+                        module === 'Timesheets' ||
+                        module === 'Billing & Invoicing' ||
+                        module === 'Smart Timesheets'
 
                       return (
                         <tr key={module}>
                           <th scope="row">{module}</th>
-                          <td>{inStarter ? '✓' : '—'}</td>
-                          <td>✓</td>
-                          <td>{isPlatform ? 'Add-on' : 'Pick'}</td>
+                          <td>{inDrive ? '✓' : '—'}</td>
+                          <td>{inX ? '✓' : '—'}</td>
                         </tr>
                       )
                     })}

@@ -9,9 +9,11 @@ import {
   HERO_HEADLINE_ACCENT_LINE,
   HERO_HEADLINE_LINE,
   HERO_SUBHEAD,
+  HERO_TRUST_LINE,
 } from '../../constants/hero'
 import { TRUST_BAR_STATS } from '../../constants/trustBar'
 import HeroLeadForm from './HeroLeadForm'
+import HeroStory from './HeroStory'
 import './Hero.css'
 
 const EASE = [0.22, 1, 0.36, 1] as const
@@ -51,6 +53,10 @@ function Hero() {
             {HERO_SUBHEAD}
           </motion.p>
 
+          <motion.p className="hero__trust-line" {...fadeUp(0.12)}>
+            {HERO_TRUST_LINE}
+          </motion.p>
+
           <motion.div className="hero__cta" {...fadeUp(0.15)}>
             <HeroLeadForm />
             <a href={HERO_CALCULATOR_HREF} className="hero__secondary-link">
@@ -60,10 +66,12 @@ function Hero() {
           </motion.div>
         </div>
 
-
+        <motion.div className="hero__visual" {...fadeUp(0.2)}>
+          <HeroStory />
+        </motion.div>
       </div>
 
-      <motion.div className="hero__trust" {...fadeUp(0.28)}>
+      {/* <motion.div className="hero__trust" {...fadeUp(0.28)}>
         <div className="hero__trust-brand">
           <span className="hero__trust-label">Trusted by</span>
           <span className="hero__trust-icon-wrap">
@@ -86,7 +94,7 @@ function Hero() {
             )
           })}
         </div>
-      </motion.div>
+      </motion.div> */}
     </section>
   )
 }

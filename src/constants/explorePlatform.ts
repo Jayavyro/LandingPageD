@@ -1,12 +1,12 @@
 import type { LucideIcon } from 'lucide-react'
 import {
   BarChart3,
-  CheckSquare,
   ClipboardList,
   Clock3,
+  FileText,
   Handshake,
+  Laptop,
   ReceiptText,
-  Activity,
   UsersRound,
 } from 'lucide-react'
 import { PRODUCT_ROUTES } from './productRoutes'
@@ -19,13 +19,13 @@ export interface ExplorePlatformModule {
   icon: LucideIcon
 }
 
-export const EXPLORE_PLATFORM_BADGE = 'Explore the Platform'
+export const EXPLORE_PLATFORM_BADGE = 'One Connected System'
 
-export const EXPLORE_PLATFORM_HEADLINE = 'Everything your firm needs.'
-export const EXPLORE_PLATFORM_HEADLINE_ACCENT = 'One operating system.'
+export const EXPLORE_PLATFORM_HEADLINE = 'One record, eight capabilities.'
+export const EXPLORE_PLATFORM_HEADLINE_ACCENT = 'Nothing rebuilt as you grow.'
 
 export const EXPLORE_PLATFORM_SUBTITLE =
-  'Avyro brings CRM, planning, delivery, time, billing, and analytics into one system built for AEC. Every module shares the same operational foundation — so the business runs as one, not as a stack of tools.'
+  'CRM, proposals, resource allocation, smart timesheets, project management, billing, assets, and workforce productivity — reading and writing to the same record so nothing is ever re-entered, re-explained, or rebuilt.'
 
 export const EXPLORE_PLATFORM_CTA_LABEL = 'Learn More'
 
@@ -33,57 +33,57 @@ export const EXPLORE_PLATFORM_MODULES: ExplorePlatformModule[] = [
   {
     id: 'crm',
     name: 'CRM',
-    description: 'Win more work with pursuits that open straight into delivery.',
+    description: 'Track leads and opportunities from first contact, with the work plan starting here.',
     href: PRODUCT_ROUTES.crm,
     icon: Handshake,
   },
   {
-    id: 'resource-planning',
-    name: 'Resource Planning',
-    description: 'Staff the right team before capacity and utilization slip.',
+    id: 'proposals',
+    name: 'Proposals',
+    description: 'Scope goes out from the same record that won the lead.',
+    href: PRODUCT_ROUTES.proposals,
+    icon: FileText,
+  },
+  {
+    id: 'resource-allocation',
+    name: 'Resource Allocation',
+    description: 'See real-time studio bandwidth against won and pipeline work.',
     href: PRODUCT_ROUTES.resource,
     icon: UsersRound,
   },
   {
-    id: 'project-management',
-    name: 'Project Management',
-    description: 'Deliver every job from one live plan, budget, and timeline.',
-    href: PRODUCT_ROUTES['gantt-chart'],
-    icon: ClipboardList,
-  },
-  {
-    id: 'activity-tracking',
-    name: 'Activity Tracking',
-    description: 'See work as it happens — not after the week is reconstructed.',
-    href: PRODUCT_ROUTES.activity,
-    icon: Activity,
-  },
-  {
     id: 'smart-timesheets',
     name: 'Smart Timesheets',
-    description: 'Capture billable hours accurately with far less admin.',
+    description: 'Hours log in seconds against the actual project plan.',
     href: PRODUCT_ROUTES.timesheets,
     icon: Clock3,
   },
   {
+    id: 'project-management',
+    name: 'Project Management',
+    description: 'Track milestones, deliverables, and budget against plan — one view.',
+    href: PRODUCT_ROUTES['gantt-chart'],
+    icon: ClipboardList,
+  },
+  {
     id: 'billing',
     name: 'Billing & Invoicing',
-    description: 'Invoice from approved work and get paid faster.',
+    description: 'AIA-style progress billing pulled straight from approved hours.',
     href: PRODUCT_ROUTES.billing,
     icon: ReceiptText,
   },
   {
-    id: 'analytics',
-    name: 'Analytics',
-    description: 'Decide from live firm performance — not month-end reports.',
-    href: `${PRODUCT_ROUTES.platform}#analytics`,
-    icon: BarChart3,
+    id: 'assets',
+    name: 'IT & Asset Mgmt',
+    description: 'Track firm assets and utilization on the same operational foundation.',
+    href: PRODUCT_ROUTES.assets,
+    icon: Laptop,
   },
   {
-    id: 'approvals',
-    name: 'Approvals',
-    description: 'Keep sign-offs moving without bottlenecks or email chains.',
-    href: `${PRODUCT_ROUTES.platform}#approvals`,
-    icon: CheckSquare,
+    id: 'workforce-productivity',
+    name: 'Workforce Productivity',
+    description: 'Firm-wide visibility into where time and effort are actually going.',
+    href: `${PRODUCT_ROUTES.platform}#analytics`,
+    icon: BarChart3,
   },
 ]
