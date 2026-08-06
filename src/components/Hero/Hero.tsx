@@ -1,6 +1,5 @@
 import { motion, useReducedMotion } from 'framer-motion'
 import heroBg from '../../ChatGPT Image Jul 9, 2026, 11_48_31 AM.png'
-import fivdLogo from '../../695775c397e9ba97edd85611_26faefd428f8a4efc1b4b947dd0a2003_FivD white logo 2.webp'
 import { ArrowRight } from 'lucide-react'
 import {
   HERO_BADGE,
@@ -11,7 +10,6 @@ import {
   HERO_SUBHEAD,
   HERO_TRUST_LINE,
 } from '../../constants/hero'
-import { TRUST_BAR_STATS } from '../../constants/trustBar'
 import HeroLeadForm from './HeroLeadForm'
 import HeroStory from './HeroStory'
 import './Hero.css'
