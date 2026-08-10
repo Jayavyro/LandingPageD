@@ -31,18 +31,6 @@
   color: rgb(255 255 255 / 0.5);
 }
 
-.story__code {
-  color: #8fc1ff;
-  font-weight: 500;
-}
-
-.story__dot {
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background: rgb(255 255 255 / 0.2);
-}
-
 .story__intro {
   max-width: 600px;
   margin: 0 auto 110px;

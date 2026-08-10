@@ -47,19 +47,6 @@
   color: var(--rl-ink-soft);
 }
 
-.revenue-leaks__tag-code {
-  color: var(--rl-accent);
-  font-weight: 500;
-}
-
-.revenue-leaks__tag-dot {
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background: var(--rl-line);
-  flex-shrink: 0;
-}
-
 .revenue-leaks__title {
   max-width: 600px;
   margin: 0;
