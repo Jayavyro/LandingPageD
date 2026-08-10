@@ -24,8 +24,8 @@ function DeltekSunset() {
 
   return (
     <section
-      id="resources"
-      className="deltek-sunset"
+      id="deltek-sunset"
+      className="deltek-sunset deltek-sunset--embedded"
       aria-labelledby="deltek-sunset-heading"
     >
       <div className="deltek-sunset__container">

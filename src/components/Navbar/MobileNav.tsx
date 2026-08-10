@@ -1,9 +1,14 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { NAV_LINKS, PROJECTS_MENU, WHY_AVYRO_LINK, BOOK_DEMO_HREF } from '../../constants/navMenu'
+import {
+  NAV_LINKS,
+  PRODUCT_LINES_MENU,
+  WHY_AVYRO_LINK,
+  BOOK_DEMO_HREF,
+} from '../../constants/navMenu'
+import { FEATURES_MENU_ITEMS } from '../../constants/featuresMenu'
 import LandingHashLink from '../LandingHashLink/LandingHashLink'
 import { RESOURCES_LINKS } from '../../constants/resourcesMenu'
-import { USE_CASE_MENU } from '../../constants/useCaseMenu'
 import './MobileNav.css'
 
 interface MobileNavProps {
@@ -39,24 +44,19 @@ function MobileNav({ isOpen, onClose }: MobileNavProps) {
         </button>
         {expandedSection === 'products' && (
           <div className="mobile-nav__section-panel">
-            {PROJECTS_MENU.map((section) => (
-              <div key={section.title} className="mobile-nav__group">
-                <p className="mobile-nav__group-label">{section.title}</p>
-                <ul className="mobile-nav__sublist">
-                  {section.items.map((item) => (
-                    <li key={item.title}>
-                      <Link
-                        to={item.href ?? '/'}
-                        className="mobile-nav__sublink"
-                        onClick={onClose}
-                      >
-                        {item.title}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+            <ul className="mobile-nav__sublist">
+              {PRODUCT_LINES_MENU.map((item) => (
+                <li key={item.title}>
+                  <LandingHashLink
+                    to={item.href ?? '/'}
+                    className="mobile-nav__sublink"
+                    onClick={onClose}
+                  >
+                    {item.title}
+                  </LandingHashLink>
+                </li>
+              ))}
+            </ul>
           </div>
         )}
       </div>
@@ -68,24 +68,23 @@ function MobileNav({ isOpen, onClose }: MobileNavProps) {
           aria-expanded={expandedSection === 'use-case'}
           onClick={() => toggleSection('use-case')}
         >
-          Use Case
+          Features
         </button>
         {expandedSection === 'use-case' && (
           <div className="mobile-nav__section-panel">
-            {USE_CASE_MENU.map((section) => (
-              <div key={section.title} className="mobile-nav__group">
-                <p className="mobile-nav__group-label">{section.title}</p>
-                <ul className="mobile-nav__sublist">
-                  {section.items.map((item) => (
-                    <li key={item.title}>
-                      <Link to={item.href} className="mobile-nav__sublink" onClick={onClose}>
-                        {item.title}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+            <ul className="mobile-nav__sublist">
+              {FEATURES_MENU_ITEMS.map((item) => (
+                <li key={item.title}>
+                  <LandingHashLink
+                    to={item.href}
+                    className="mobile-nav__sublink"
+                    onClick={onClose}
+                  >
+                    {item.title}
+                  </LandingHashLink>
+                </li>
+              ))}
+            </ul>
           </div>
         )}
       </div>

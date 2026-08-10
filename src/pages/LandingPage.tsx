@@ -9,7 +9,7 @@ import OneRecordWeek from '../components/OneRecordWeek/OneRecordWeek'
 import ExplorePlatform from '../components/ExplorePlatform/ExplorePlatform'
 import CompanyAbout from '../components/CompanyAbout/CompanyAbout'
 import PricingSection from '../components/PricingSection/PricingSection'
-import DeltekSunset from '../components/DeltekSunset/DeltekSunset'
+// import DeltekSunset from '../components/DeltekSunset/DeltekSunset'
 import FinancialCalculator from '../components/FinancialCalculator/FinancialCalculator'
 import FAQ from '../components/FAQ/FAQ'
 import ContactUs from '../components/ContactUs/ContactUs'
@@ -34,7 +34,7 @@ function LandingPage() {
         <CompanyAbout />
         <PricingSection />
         <FAQ />
-        <DeltekSunset />
+        {/* <DeltekSunset /> */}
         <FinancialCalculator />
         {/* <Testimonials /> */}
         

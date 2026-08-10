@@ -4,15 +4,18 @@ import ModuleIcon from './ModuleIcon'
 
 interface ProductModuleItemProps {
   module: ProductModule
+  onClick?: () => void
 }
 
-function ProductModuleItem({ module }: ProductModuleItemProps) {
+function ProductModuleItem({ module, onClick }: ProductModuleItemProps) {
   return (
     <NavDropdownItem
       title={module.title}
       description={module.description}
       href={module.href ?? '#'}
       icon={<ModuleIcon name={module.icon} />}
+      badge={module.badge}
+      onClick={onClick}
     />
   )
 }

@@ -24,6 +24,7 @@ export interface ProductModule {
   description: string
   icon: ModuleIconName
   href?: string
+  badge?: string
 }
 
 export interface MenuSection {
@@ -132,6 +133,27 @@ export const SCHEDULER_OFFERING = {
   ctaLabel: 'Explore scheduler',
   ctaHref: PRODUCT_ROUTES['gantt-chart'],
 }
+
+/** Top-level product lines shown in the Products dropdown. */
+export const PRODUCT_LINES_MENU: ProductModule[] = [
+  {
+    title: 'Avyro Project Management',
+    description:
+      'Project Management, Smart Timesheets, and Workforce Productivity — everything a PM needs day to day.',
+    icon: 'project',
+    href: '/#avyro-drive',
+    badge: 'Avyro Drive',
+  },
+  {
+    title: 'Avyro Enterprise Management',
+    description:
+      'CRM, Resource Allocation, Timesheets, and Billing — one record from first lead to final invoice.',
+    icon: 'workforce',
+    href: '/#avyro-x',
+    badge: 'Avyro X',
+  },
+
+]
 
 export const LANDING_CONTACT_HREF = '/#contact-us'
 

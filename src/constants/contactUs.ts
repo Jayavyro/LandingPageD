@@ -35,8 +35,8 @@ export const CONTACT_CHANNELS: ContactChannel[] = [
   {
     id: 'email',
     label: 'Email',
-    value: 'sales@avyro.com',
-    href: 'mailto:sales@avyro.com',
+    value: 'manas@avyro.io',
+    href: 'mailto:manas@avyro.io',
   },
 ]
 

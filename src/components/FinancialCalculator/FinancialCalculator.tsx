@@ -177,9 +177,7 @@ function FinancialCalculator() {
                 {CALCULATOR_PRIMARY_LABEL}
               </span>
             </p>
-            <p className="financial-calculator__results-primary-note">
-              {CALCULATOR_PRIMARY_SUB}
-            </p>
+  
 
             <div className="financial-calculator__results-grid">
               <div className="financial-calculator__result-card">

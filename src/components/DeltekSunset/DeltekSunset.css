@@ -12,6 +12,17 @@
   color: var(--ds-ink);
 }
 
+.deltek-sunset--embedded {
+  padding: 0;
+  background: transparent;
+  overflow: visible;
+}
+
+.deltek-sunset--embedded .deltek-sunset__container {
+  width: 100%;
+  margin-inline: 0;
+}
+
 .deltek-sunset__container {
   width: min(72rem, calc(100% - 2.5rem));
   margin-inline: auto;

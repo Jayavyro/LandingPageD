@@ -4,7 +4,7 @@ export interface DeltekSunsetCard {
   body: string
 }
 
-export const DELTEK_SUNSET_BADGE = 'Resources'
+export const DELTEK_SUNSET_BADGE = 'Blog'
 
 export const DELTEK_SUNSET_HEADLINE = 'The Deltek Vision sunset, explained plainly'
 

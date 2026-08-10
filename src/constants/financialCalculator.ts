@@ -13,12 +13,12 @@ export const CALCULATOR_DEFAULTS: CalculatorInputs = {
   uncapturedPercent: 12,
 }
 
-export const BILLABLE_HOURS_PER_YEAR = 2000
+export const BILLABLE_HOURS_PER_YEAR = 1000
 export const AVYRO_RECOVERY_RATE = 1
 
 export const CALCULATOR_LIMITS = {
-  billableStaff: { min: 15, max: 500, step: 1 },
-  billableRate: { min: 80, max: 300, step: 5 },
+  billableStaff: { min: 1, max: 1000, step: 1 },
+  billableRate: { min: 10, max: 400, step: 5 },
   weeklyBillableHours: { min: 20, max: 45, step: 1 },
   uncapturedPercent: { min: 3, max: 30, step: 1 },
 } as const

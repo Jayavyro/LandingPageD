@@ -1,14 +1,18 @@
-import {
-  RESOURCE_BLOG_POSTS,
-  RESOURCE_TAB_INTROS,
-} from '../../constants/resourcesContent'
+import DeltekSunset from '../../components/DeltekSunset/DeltekSunset'
+// import {
+//   RESOURCE_BLOG_POSTS,
+//   RESOURCE_TAB_INTROS,
+// } from '../../constants/resourcesContent'
 import './ResourcePanel.css'
 
 function ResourceBlog() {
-  const { eyebrow, title, intro } = RESOURCE_TAB_INTROS.blog
+  // const { eyebrow, title, intro } = RESOURCE_TAB_INTROS.blog
 
   return (
-    <section className="resources-panel" aria-labelledby="resource-blog-heading">
+    <section className="resources-panel" aria-labelledby="deltek-sunset-heading">
+      <DeltekSunset />
+
+      {/*
       <header className="resources-panel__head">
         <p className="resources-panel__eyebrow">{eyebrow}</p>
         <h2 id="resource-blog-heading" className="resources-panel__title">
@@ -35,6 +39,7 @@ function ResourceBlog() {
           </li>
         ))}
       </ul>
+      */}
     </section>
   )
 }

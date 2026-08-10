@@ -86,15 +86,7 @@ function ExplorePlatform() {
                     </span>
                   </span>
 
-                  <span className="explore-platform__cta">
-                    {EXPLORE_PLATFORM_CTA_LABEL}
-                    <ArrowRight
-                      className="explore-platform__cta-icon"
-                      size={14}
-                      strokeWidth={2.25}
-                      aria-hidden="true"
-                    />
-                  </span>
+      
                 </Link>
               </motion.li>
             )

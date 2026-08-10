@@ -3,12 +3,13 @@ import { useEffect, useRef, useState } from 'react'
 import { NAVBAR_LOGO_ICON, MOBILE_NAVBAR_LOGO } from '../../constants/brandAssets'
 import { NAV_LINKS, WHY_AVYRO_LINK, BOOK_DEMO_HREF } from '../../constants/navMenu'
 import LandingHashLink from '../LandingHashLink/LandingHashLink'
-import ProductsMenu from '../ProductsMenu/ProductsMenu'
+import ProductLinesMenu from '../ProductsMenu/ProductLinesMenu'
+import FeaturesMenu from '../FeaturesMenu/FeaturesMenu'
 import ResourcesMenu from '../ResourcesMenu/ResourcesMenu'
-import SolutionsMenu from '../SolutionsMenu/SolutionsMenu'
 import MobileNav from './MobileNav'
 import './Navbar.css'
 import './MobileNav.css'
+import './ProductLinesMenu.css'
 
 type ActiveMenu = 'products' | 'use-case' | 'resources' | null
 
@@ -166,7 +167,7 @@ function Navbar() {
             {WHY_AVYRO_LINK.label}
           </LandingHashLink>
 
-          <div className="navbar__dropdown navbar__dropdown--products">
+          <div className="navbar__dropdown">
             <button
               type="button"
               className={`navbar__nav-item navbar__nav-item--dropdown ${activeMenu === 'products' ? 'navbar__nav-item--active' : ''}`}
@@ -177,6 +178,8 @@ function Navbar() {
               Products
               {renderChevron(activeMenu === 'products')}
             </button>
+
+            {activeMenu === 'products' && <ProductLinesMenu onNavigate={closeMenus} />}
           </div>
 
           <div className="navbar__dropdown">
@@ -187,11 +190,11 @@ function Navbar() {
               aria-haspopup="true"
               onClick={() => toggleMenu('use-case')}
             >
-              Use Case
+              Features
               {renderChevron(activeMenu === 'use-case')}
             </button>
 
-            {activeMenu === 'use-case' && <SolutionsMenu />}
+            {activeMenu === 'use-case' && <FeaturesMenu onNavigate={closeMenus} />}
           </div>
 
           <div className="navbar__dropdown">
@@ -219,8 +222,6 @@ function Navbar() {
         <LandingHashLink to={BOOK_DEMO_HREF} className="navbar__cta navbar__cta--desktop" onClick={closeMenus}>
           Book a demo
         </LandingHashLink>
-
-        {activeMenu === 'products' && <ProductsMenu />}
 
         <div id="mobile-navigation">
           <MobileNav isOpen={isMobileMenuOpen} onClose={closeMenus} />
