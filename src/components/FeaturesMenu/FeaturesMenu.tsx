@@ -40,9 +40,7 @@ function FeaturesMenu({ onNavigate }: FeaturesMenuProps) {
                       <NavDropdownItem
                         title={item.title}
                         description={item.description}
-                        href={item.href}
                         icon={<ModuleIcon name={item.icon} />}
-                        onClick={onNavigate}
                       />
                     </li>
                   ))}

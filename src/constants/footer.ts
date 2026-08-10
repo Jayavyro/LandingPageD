@@ -1,12 +1,4 @@
-import { INDUSTRY_ITEMS } from './industry'
-import {
-  NAV_LINKS,
-  PROJECTS_MENU,
-  WHY_AVYRO_LINK,
-} from './navMenu'
-import { PRODUCT_ROUTES } from './productRoutes'
-import { RESOURCES_LINKS } from './resourcesMenu'
-import { USE_CASE_MENU } from './useCaseMenu'
+import { PRODUCT_LINES_MENU, WHY_AVYRO_LINK } from './navMenu'
 
 export interface FooterLink {
   label: string
@@ -20,25 +12,21 @@ export interface FooterColumn {
 }
 
 export const FOOTER_TAGLINE =
-  'The all-in-one platform built for AEC firms to manage projects, people, financials, and performance—connected in one intelligent ecosystem.'
+  'We help AEC firms run the whole business — from first lead to final invoice — on one operational record.'
 
 export const FOOTER_NEWSLETTER_TITLE = 'Stay Connected'
 export const FOOTER_NEWSLETTER_SUBTITLE =
   'Insights, updates, and best practices for AEC firms.'
 
 export const FOOTER_SOCIAL_LINKS: FooterLink[] = [
-  { label: 'LinkedIn', href: 'https://linkedin.com' },
-  { label: 'YouTube', href: 'https://youtube.com' },
-  { label: 'X', href: 'https://x.com' },
-]
-
-export const FOOTER_COMPANY_LINKS: FooterLink[] = [
-  WHY_AVYRO_LINK,
-  { label: 'Solutions', href: '#do-and-outcome' },
-  { label: 'Industry', href: '#industry' },
-  { label: 'Testimonials', href: '#testimonials' },
-  ...NAV_LINKS,
-  { label: 'Book a Demo', href: '#contact-us' },
+  {
+    label: 'LinkedIn',
+    href: 'https://www.linkedin.com/company/avyrosolutions/posts/?feedView=all',
+  },
+  {
+    label: 'Instagram',
+    href: 'https://www.instagram.com/avyro.solutions?igsh=MWFlNmdua2tma2o4Yg==',
+  },
 ]
 
 export const FOOTER_LEGAL_LINKS: FooterLink[] = [
@@ -47,52 +35,35 @@ export const FOOTER_LEGAL_LINKS: FooterLink[] = [
   { label: 'Cookie Policy', href: '#cookies' },
 ]
 
-export const FOOTER_SECURITY_BADGES = [
-  'SOC 2 Type II',
-  'ISO 27001',
-  'GDPR Compliant',
-] as const
+export const FOOTER_SECURITY_BADGES = ['ISO 27001'] as const
 
 export const FOOTER_COPYRIGHT =
-  '© 2025 Avyro Technologies Pvt. Ltd. All rights reserved.'
+  '© 2026 Avyro Technologies Pvt. Ltd. All rights reserved.'
 
-const platformLinks: FooterLink[] = PROJECTS_MENU.flatMap((section) =>
-  section.items.map((item) => ({
-    label: item.title,
-    href: item.href ?? '#',
-  })),
-)
+const productLinks: FooterLink[] = PRODUCT_LINES_MENU.map((item) => ({
+  label: item.badge ?? item.title,
+  href: item.href ?? '/',
+}))
 
-const solutionLinks: FooterLink[] = [
-  { label: 'Win More Projects', href: PRODUCT_ROUTES.crm },
-  { label: 'Plan & Deliver Projects', href: PRODUCT_ROUTES.resource },
-  { label: 'Capture Every Billable Hour', href: PRODUCT_ROUTES.timesheets },
-  { label: 'Accelerate Billing & Cash Flow', href: PRODUCT_ROUTES.billing },
-  { label: 'Enterprise Operations', href: PRODUCT_ROUTES.platform },
+const exploreLinks: FooterLink[] = [
+  { label: 'The Story', href: '/#the-story' },
+  { label: 'The Solution', href: '/#the-solution' },
+  { label: 'One Record Week', href: '/#one-record-week' },
+  { label: 'Explore Platform', href: '/#explore-platform' },
+  { label: 'Estimate the Leak', href: '/#financial-calculator' },
 ]
 
-const industryLinks: FooterLink[] = INDUSTRY_ITEMS.map((item) => ({
-  label: item.title,
-  href: item.href,
-}))
-
-const useCaseLinks: FooterLink[] = USE_CASE_MENU.flatMap((section) =>
-  section.items.map((item) => ({
-    label: item.title,
-    href: item.href,
-  })),
-)
-
-const resourceLinks: FooterLink[] = RESOURCES_LINKS.map((item) => ({
-  label: item.label,
-  href: item.href,
-}))
+const companyLinks: FooterLink[] = [
+  WHY_AVYRO_LINK,
+  { label: 'About Avyro', href: '/#company' },
+  { label: 'Pricing', href: '/#pricing' },
+  { label: 'FAQ', href: '/#faq' },
+  { label: 'Contact Us', href: '/#contact-us' },
+  { label: 'Book a Demo', href: '/#contact-us' },
+]
 
 export const FOOTER_COLUMNS: FooterColumn[] = [
-  { id: 'platform', title: 'Platform', links: platformLinks },
-  { id: 'solutions', title: 'Solutions', links: solutionLinks },
-  { id: 'industries', title: 'Industries', links: industryLinks },
-  { id: 'use-cases', title: 'Use Cases', links: useCaseLinks },
-  { id: 'resources', title: 'Resources', links: resourceLinks },
-  { id: 'company', title: 'Company', links: FOOTER_COMPANY_LINKS },
+  { id: 'products', title: 'Products', links: productLinks },
+  { id: 'explore', title: 'Explore', links: exploreLinks },
+  { id: 'company', title: 'Company', links: companyLinks },
 ]

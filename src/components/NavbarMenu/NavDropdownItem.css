@@ -18,6 +18,21 @@
   outline: none;
 }
 
+.nav-dropdown-item--static {
+  cursor: default;
+  pointer-events: none;
+}
+
+.nav-dropdown-item--static:hover,
+.nav-dropdown-item--static:focus-visible {
+  background: transparent;
+}
+
+.nav-dropdown-item--static:hover .nav-dropdown-item__icon,
+.nav-dropdown-item--static:focus-visible .nav-dropdown-item__icon {
+  background: #1a1d2e;
+}
+
 .nav-dropdown-item__icon {
   display: flex;
   flex: none;

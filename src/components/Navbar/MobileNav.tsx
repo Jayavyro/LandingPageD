@@ -75,13 +75,9 @@ function MobileNav({ isOpen, onClose }: MobileNavProps) {
             <ul className="mobile-nav__sublist">
               {FEATURES_MENU_ITEMS.map((item) => (
                 <li key={item.title}>
-                  <LandingHashLink
-                    to={item.href}
-                    className="mobile-nav__sublink"
-                    onClick={onClose}
-                  >
+                  <span className="mobile-nav__sublink mobile-nav__sublink--static">
                     {item.title}
-                  </LandingHashLink>
+                  </span>
                 </li>
               ))}
             </ul>

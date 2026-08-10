@@ -197,7 +197,7 @@ function Navbar() {
           </div>
 
           <div className="navbar__dropdown">
-            <button
+            {/* <button
               type="button"
               className={`navbar__nav-item navbar__nav-item--dropdown ${activeMenu === 'resources' ? 'navbar__nav-item--active' : ''}`}
               aria-expanded={activeMenu === 'resources'}
@@ -206,7 +206,7 @@ function Navbar() {
             >
               Resources
               {renderChevron(activeMenu === 'resources')}
-            </button>
+            </button> */}
 
             {activeMenu === 'resources' && <ResourcesMenu />}
           </div>

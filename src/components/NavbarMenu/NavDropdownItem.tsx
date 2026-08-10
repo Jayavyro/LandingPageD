@@ -5,7 +5,7 @@ import './NavDropdownItem.css'
 interface NavDropdownItemProps {
   title: string
   description: string
-  href: string
+  href?: string
   icon: ReactNode
   badge?: string
   onClick?: () => void
@@ -19,8 +19,8 @@ function NavDropdownItem({
   badge,
   onClick,
 }: NavDropdownItemProps) {
-  return (
-    <LandingHashLink to={href} className="nav-dropdown-item" onClick={onClick}>
+  const content = (
+    <>
       <span className="nav-dropdown-item__icon" aria-hidden="true">
         {icon}
       </span>
@@ -34,6 +34,16 @@ function NavDropdownItem({
         </span>
         <span className="nav-dropdown-item__description">{description}</span>
       </span>
+    </>
+  )
+
+  if (!href) {
+    return <div className="nav-dropdown-item nav-dropdown-item--static">{content}</div>
+  }
+
+  return (
+    <LandingHashLink to={href} className="nav-dropdown-item" onClick={onClick}>
+      {content}
     </LandingHashLink>
   )
 }

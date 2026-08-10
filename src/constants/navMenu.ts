@@ -1,5 +1,4 @@
 import { PRODUCT_ROUTES } from './productRoutes'
-import { PRICING_ROUTE } from './pricingPage'
 
 export type ModuleIconName =
   | 'crm'
@@ -158,7 +157,7 @@ export const PRODUCT_LINES_MENU: ProductModule[] = [
 export const LANDING_CONTACT_HREF = '/#contact-us'
 
 export const NAV_LINKS = [
-  { label: 'Pricing', href: PRICING_ROUTE },
+  { label: 'Pricing', href: '/#pricing' },
   { label: 'FAQ', href: '/#faq' },
   { label: 'Contact Us', href: LANDING_CONTACT_HREF },
 ]

@@ -14,7 +14,7 @@ import FinancialCalculator from '../components/FinancialCalculator/FinancialCalc
 import FAQ from '../components/FAQ/FAQ'
 import ContactUs from '../components/ContactUs/ContactUs'
 import Footer from '../components/Footer/Footer'
-import Chatbot from '../components/Chatbot/Chatbot'
+
 import '../App.css'
 
 function LandingPage() {
@@ -41,7 +41,7 @@ function LandingPage() {
         <ContactUs />
       </main>
       <Footer />
-      <Chatbot />
+ 
     </div>
   )
 }

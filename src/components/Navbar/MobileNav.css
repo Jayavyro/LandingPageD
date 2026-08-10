@@ -126,6 +126,16 @@
     background: #fff;
   }
 
+  .mobile-nav__sublink--static {
+    cursor: default;
+    pointer-events: none;
+  }
+
+  .mobile-nav__sublink--static:hover {
+    color: #334155;
+    background: transparent;
+  }
+
   .mobile-nav__cta {
     display: inline-flex;
     align-items: center;
