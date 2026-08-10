@@ -3,7 +3,6 @@ import {
   THE_STORY_BEATS,
   THE_STORY_CLOSE,
   THE_STORY_CLOSE_MUTED,
-  THE_STORY_CODE,
   THE_STORY_INTRO,
   THE_STORY_TAG,
 } from '../../constants/theStory'
@@ -44,8 +43,6 @@ function TheStory() {
     <section className="story" id="the-story" ref={sectionRef} aria-label="The Story">
       <div className="story__wrap">
         <div className="story__tag story-reveal">
-          <span className="story__code">{THE_STORY_CODE}</span>
-          <span className="story__dot" aria-hidden="true" />
           <span>{THE_STORY_TAG}</span>
         </div>
 

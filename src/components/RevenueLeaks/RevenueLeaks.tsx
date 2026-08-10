@@ -1,7 +1,6 @@
 import { motion, useReducedMotion } from 'framer-motion'
 import {
   REVENUE_LEAKS_BADGE,
-  REVENUE_LEAKS_CODE,
   REVENUE_LEAKS_HEADLINE,
   REVENUE_LEAKS_ITEMS,
   REVENUE_LEAKS_STAT,
@@ -36,8 +35,6 @@ function RevenueLeaks() {
       <div className="revenue-leaks__container">
         <header className="revenue-leaks__intro">
           <motion.p className="revenue-leaks__tag" {...fadeUp(0)}>
-            <span className="revenue-leaks__tag-code">{REVENUE_LEAKS_CODE}</span>
-            <span className="revenue-leaks__tag-dot" aria-hidden="true" />
             {REVENUE_LEAKS_BADGE}
           </motion.p>
 

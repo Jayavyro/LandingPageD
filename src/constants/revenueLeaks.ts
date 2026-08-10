@@ -20,7 +20,6 @@ export interface RevenueLeakItem {
 }
 
 export const REVENUE_LEAKS_BADGE = 'Why Avyro'
-export const REVENUE_LEAKS_CODE = 'A4.00'
 
 export const REVENUE_LEAKS_HEADLINE = 'Most firms are only running at six days out of ten.'
 

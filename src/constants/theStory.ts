@@ -7,7 +7,6 @@ export interface StoryBeat {
   punch: string
 }
 
-export const THE_STORY_CODE = 'A0.01'
 export const THE_STORY_TAG = 'The Story'
 
 export const THE_STORY_INTRO =
