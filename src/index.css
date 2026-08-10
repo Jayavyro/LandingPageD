@@ -25,7 +25,8 @@
   --color-accent-bg: #eff6ff;
   --color-accent-border: #bfdbfe;
   --container-max: 80rem;
-  --container-padding: clamp(1.5rem, 4vw, 3rem);
+  --container-padding: clamp(1.25rem, 4vw, 3rem);
+  --section-gutter: clamp(1.25rem, 4vw, 2.5rem);
   --section-transition-h: clamp(5.5rem, 9vw, 7.5rem);
   --navbar-scroll-offset: calc(1.25rem + 1.25rem + 3.25rem);
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
@@ -41,6 +42,9 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -54,12 +58,16 @@ body {
   background-color: #fff;
   color: var(--color-text);
   line-height: 1.6;
+  max-width: 100%;
+  overflow-x: clip;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 #root {
   min-height: 100vh;
+  max-width: 100%;
+  overflow-x: clip;
 }
 
 a {
@@ -74,8 +82,11 @@ button {
   background: none;
 }
 
-img {
+img,
+video,
+svg {
   max-width: 100%;
+  height: auto;
   display: block;
 }
 
@@ -83,6 +94,9 @@ ul {
   list-style: none;
 }
 
+#the-story,
+#the-solution,
+#explore-platform,
 #do-and-outcome,
 #one-record-week,
 #why-avyro,
@@ -105,29 +119,27 @@ ul {
 
 @media (max-width: 1024px) {
   :root {
-    --mobile-page-top: 7.5rem;
-    --navbar-scroll-offset: 7.75rem;
+    --mobile-page-top: 6.75rem;
+    --navbar-scroll-offset: 6.5rem;
   }
 }
 
 @media (max-width: 768px) {
   :root {
-    --container-padding: 1.25rem;
-    --mobile-page-top: 8.25rem;
-    --navbar-scroll-offset: 8.5rem;
-  }
-
-  html,
-  body {
-    overflow-x: hidden;
-    max-width: 100%;
+    --container-padding: 1.125rem;
+    --section-gutter: 1.125rem;
+    --mobile-page-top: 6.5rem;
+    --navbar-scroll-offset: 6.25rem;
   }
 
   body {
     line-height: 1.65;
   }
+}
 
-  #root {
-    overflow-x: hidden;
+@media (max-width: 480px) {
+  :root {
+    --container-padding: 1rem;
+    --section-gutter: 1rem;
   }
 }

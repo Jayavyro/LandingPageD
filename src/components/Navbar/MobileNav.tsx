@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
 import {
   NAV_LINKS,
   PRODUCT_LINES_MENU,
@@ -8,7 +7,6 @@ import {
 } from '../../constants/navMenu'
 import { FEATURES_MENU_ITEMS } from '../../constants/featuresMenu'
 import LandingHashLink from '../LandingHashLink/LandingHashLink'
-import { RESOURCES_LINKS } from '../../constants/resourcesMenu'
 import './MobileNav.css'
 
 interface MobileNavProps {
@@ -52,7 +50,12 @@ function MobileNav({ isOpen, onClose }: MobileNavProps) {
                     className="mobile-nav__sublink"
                     onClick={onClose}
                   >
-                    {item.title}
+                    <span className="mobile-nav__sublink-title">
+                      {item.badge ?? item.title}
+                    </span>
+                    {item.badge ? (
+                      <span className="mobile-nav__sublink-desc">{item.title}</span>
+                    ) : null}
                   </LandingHashLink>
                 </li>
               ))}
@@ -85,47 +88,16 @@ function MobileNav({ isOpen, onClose }: MobileNavProps) {
         )}
       </div>
 
-      <div className="mobile-nav__section">
-        <button
-          type="button"
-          className="mobile-nav__section-toggle"
-          aria-expanded={expandedSection === 'resources'}
-          onClick={() => toggleSection('resources')}
+      {NAV_LINKS.map((link) => (
+        <LandingHashLink
+          key={link.label}
+          to={link.href}
+          className="mobile-nav__link"
+          onClick={onClose}
         >
-          Resources
-        </button>
-        {expandedSection === 'resources' && (
-          <div className="mobile-nav__section-panel">
-            <ul className="mobile-nav__sublist">
-              {RESOURCES_LINKS.map((item) => (
-                <li key={item.id}>
-                  <Link to={item.href} className="mobile-nav__sublink" onClick={onClose}>
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-      </div>
-
-      {NAV_LINKS.map((link) => {
-        const isInternalRoute = link.href.startsWith('/')
-
-        if (isInternalRoute) {
-          return (
-            <LandingHashLink key={link.label} to={link.href} className="mobile-nav__link" onClick={onClose}>
-              {link.label}
-            </LandingHashLink>
-          )
-        }
-
-        return (
-          <a key={link.label} href={link.href} className="mobile-nav__link" onClick={onClose}>
-            {link.label}
-          </a>
-        )
-      })}
+          {link.label}
+        </LandingHashLink>
+      ))}
 
       <LandingHashLink to={BOOK_DEMO_HREF} className="mobile-nav__cta" onClick={onClose}>
         Book a demo

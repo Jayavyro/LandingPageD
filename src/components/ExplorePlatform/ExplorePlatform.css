@@ -53,7 +53,7 @@
 .explore-platform__container {
   position: relative;
   z-index: 1;
-  width: min(72rem, calc(100% - 2.5rem));
+  width: min(72rem, calc(100% - (2 * var(--section-gutter))));
   margin-inline: auto;
 }
 

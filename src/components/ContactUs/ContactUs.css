@@ -60,7 +60,7 @@
 .contact-us__container {
   position: relative;
   z-index: 1;
-  width: min(88rem, calc(100% - 2.5rem));
+  width: min(88rem, calc(100% - (2 * var(--section-gutter))));
   margin-inline: auto;
 }
 
@@ -163,14 +163,10 @@
     padding: clamp(3rem, 6vw, 4rem) 0 clamp(3.5rem, 6vw, 4.5rem);
   }
 
-  .contact-us__container {
-    width: calc(100% - 2rem);
-  }
-
   .contact-us__hero {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
-    gap: 1rem;
+    gap: 1.25rem;
   }
 
   .contact-us__intro,
@@ -192,11 +188,12 @@
     margin-top: 0.75rem;
   }
 
-  .contact-us__subtitle {
+  .contact-us__subtitle,
+  .contact-us__outcome {
     max-width: none;
-    margin-top: 0.625rem;
-    font-size: 0.875rem;
-    line-height: 1.5;
+    margin-top: 0.75rem;
+    font-size: 0.9375rem;
+    line-height: 1.55;
   }
 
   .contact-us__badge {
@@ -210,18 +207,7 @@
     padding: 2.5rem 0 3rem;
   }
 
-  .contact-us__container {
-    width: calc(100% - 1.5rem);
-  }
-
   .contact-us__hero {
-    gap: 0.875rem;
-  }
-
-  .contact-us__subtitle {
-    display: -webkit-box;
-    overflow: hidden;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
+    gap: 1rem;
   }
 }

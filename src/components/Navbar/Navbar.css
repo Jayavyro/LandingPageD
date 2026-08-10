@@ -44,30 +44,17 @@
 .navbar__brand {
   display: flex;
   align-items: center;
-  gap: 0.625rem;
   flex-shrink: 0;
+  line-height: 0;
 }
 
-.navbar__logo--desktop {
-  width: 2rem;
-  height: 2rem;
-  border-radius: 0.5rem;
-  object-fit: cover;
-}
-
-.navbar__logo--mobile {
-  display: none;
+.navbar__logo {
+  display: block;
   width: auto;
-  height: 1.75rem;
-  max-width: min(8.5rem, 42vw);
+  height: 2rem;
+  max-width: min(10rem, 46vw);
   object-fit: contain;
-}
-
-.navbar__brand-name {
-  font-size: 1.125rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  color: var(--color-text);
+  object-position: left center;
 }
 
 .navbar__menu-toggle {
@@ -192,58 +179,60 @@
   }
 
   .navbar__bar {
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    padding: 0.75rem 1rem;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    column-gap: 0.75rem;
+    row-gap: 0;
+    padding: 0.7rem 0.85rem;
     border-radius: 1.25rem;
   }
 
-  .navbar__logo--desktop,
-  .navbar__brand-name {
-    display: none;
-  }
-
-  .navbar__logo--mobile {
-    display: block;
-  }
-
   .navbar__brand {
-    gap: 0;
+    grid-column: 1;
+    grid-row: 1;
     min-width: 0;
   }
 
+  .navbar__logo {
+    height: 1.625rem;
+    max-width: min(8.25rem, 52vw);
+  }
+
+  .navbar__menu-toggle {
+    display: inline-flex;
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: end;
+    margin-left: 0;
+    flex-shrink: 0;
+  }
+
   .navbar__bar--menu-open {
-    align-items: stretch;
-    align-content: flex-start;
-    gap: 0;
+    align-content: start;
     max-height: calc(100dvh - 1.25rem);
     overflow-x: hidden;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     border-radius: 1.25rem;
-    padding-bottom: 0.625rem;
+    padding-bottom: 0.75rem;
   }
 
-  .navbar__bar--menu-open .navbar__brand {
-    padding-bottom: 0.125rem;
-    border-bottom: 1px solid rgb(15 23 42 / 0.06);
-    margin-bottom: 0.25rem;
-    width: calc(100% - 3.25rem);
-  }
-
-  .navbar__menu-toggle {
-    display: inline-flex;
-    margin-left: auto;
-    flex-shrink: 0;
+  .navbar__bar--menu-open .navbar__brand,
+  .navbar__bar--menu-open .navbar__menu-toggle {
+    padding-bottom: 0.75rem;
+    margin-bottom: 0.15rem;
+    border-bottom: 1px solid rgb(15 23 42 / 0.07);
   }
 
   .navbar__bar--menu-open .navbar__menu-toggle {
-    align-self: flex-start;
-    margin-top: 0.125rem;
+    align-self: stretch;
   }
 
   #mobile-navigation {
+    grid-column: 1 / -1;
     width: 100%;
+    min-width: 0;
   }
 
   .navbar__nav--desktop,

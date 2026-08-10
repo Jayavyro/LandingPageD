@@ -6,7 +6,7 @@
   --story-accent: #2d8eff;
   --story-line: #dee4f0;
   background: var(--story-ink);
-  padding: 130px 0 120px;
+  padding: clamp(4.5rem, 10vw, 8.125rem) 0 clamp(4rem, 9vw, 7.5rem);
   border-bottom: 1px solid var(--story-line);
   color: #fff;
 }
@@ -14,7 +14,7 @@
 .story__wrap {
   max-width: 1120px;
   margin: 0 auto;
-  padding: 0 32px;
+  padding: 0 var(--section-gutter);
 }
 
 .story__tag {
@@ -191,29 +191,29 @@
 
 @media (max-width: 700px) {
   .story {
-    padding: 88px 0 80px;
+    padding: clamp(3.5rem, 10vw, 5.5rem) 0 clamp(3.25rem, 9vw, 5rem);
   }
 
   .story__wrap {
-    padding: 0 20px;
+    padding: 0 var(--section-gutter);
   }
 
   .story__intro {
-    margin-bottom: 80px;
-    font-size: 23px;
+    margin-bottom: clamp(3.5rem, 10vw, 5rem);
+    font-size: clamp(1.25rem, 5.5vw, 1.45rem);
   }
 
   .story__beat {
-    margin-bottom: 88px;
+    margin-bottom: clamp(3.5rem, 10vw, 5.5rem);
   }
 
   .story__beat-num {
     top: -36px;
-    font-size: 96px;
+    font-size: clamp(4.5rem, 22vw, 6rem);
   }
 
   .story__question {
-    font-size: 28px;
+    font-size: clamp(1.35rem, 5.5vw, 1.75rem);
   }
 
   .story__punch {

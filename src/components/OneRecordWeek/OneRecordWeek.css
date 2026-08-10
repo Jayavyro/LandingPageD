@@ -63,7 +63,7 @@
 .one-record__container {
   position: relative;
   z-index: 1;
-  width: min(70rem, calc(100% - 2.5rem));
+  width: min(70rem, calc(100% - (2 * var(--section-gutter))));
   margin-inline: auto;
 }
 
@@ -183,8 +183,14 @@
 }
 
 @media (max-width: 800px) {
+  .one-record {
+    padding: clamp(3rem, 8vw, 4rem) 0;
+  }
+
   .one-record__chips {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.625rem;
+    margin-top: 1.75rem;
   }
 
   .one-record__convergence {
@@ -192,12 +198,20 @@
   }
 
   .one-record__card {
-    padding: 1.6rem 1.35rem;
+    padding: 1.5rem 1.25rem;
+  }
+
+  .one-record__subtitle {
+    font-size: 0.9875rem;
   }
 }
 
 @media (max-width: 480px) {
   .one-record__chips {
     grid-template-columns: 1fr;
+  }
+
+  .one-record__chip {
+    padding: 0.8rem 0.75rem;
   }
 }

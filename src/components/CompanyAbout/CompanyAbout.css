@@ -43,7 +43,7 @@
 .company-about__container {
   position: relative;
   z-index: 1;
-  width: min(72rem, calc(100% - 2.5rem));
+  width: min(72rem, calc(100% - (2 * var(--section-gutter))));
   margin-inline: auto;
 }
 
@@ -154,7 +154,21 @@
 }
 
 @media (max-width: 640px) {
+  .company-about {
+    padding: clamp(3rem, 8vw, 4rem) 0;
+  }
+
+  .company-about__founder {
+    flex-direction: column;
+    gap: 0.875rem;
+    margin-bottom: 2.5rem;
+  }
+
   .company-about__advisory-grid {
     grid-template-columns: 1fr;
+  }
+
+  .company-about__advisory-card {
+    padding: 1.35rem 1.15rem;
   }
 }

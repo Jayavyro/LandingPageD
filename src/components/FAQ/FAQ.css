@@ -60,7 +60,7 @@
 .faq__container {
   position: relative;
   z-index: 1;
-  width: min(88rem, calc(100% - 2.5rem));
+  width: min(88rem, calc(100% - (2 * var(--section-gutter))));
   margin-inline: auto;
 }
 
@@ -121,8 +121,23 @@
 }
 
 @media (max-width: 1024px) {
+  .faq {
+    padding: clamp(3.5rem, 8vw, 5rem) 0;
+  }
+
   .faq__layout {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1.75rem;
+    margin-top: 2.25rem;
+  }
+
+  .faq__title {
+    margin-top: 1.25rem;
+    font-size: clamp(1.75rem, 6vw, 2.35rem);
+  }
+
+  .faq__subtitle {
+    margin-top: 0.875rem;
+    font-size: 0.9875rem;
   }
 }

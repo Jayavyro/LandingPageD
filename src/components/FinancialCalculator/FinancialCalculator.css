@@ -61,7 +61,7 @@
 .financial-calculator__container {
   position: relative;
   z-index: 1;
-  width: min(68rem, calc(100% - 2.5rem));
+  width: min(68rem, calc(100% - (2 * var(--section-gutter))));
   margin-inline: auto;
 }
 
@@ -376,6 +376,10 @@
 }
 
 @media (max-width: 900px) {
+  .financial-calculator {
+    padding: clamp(3rem, 7vw, 4rem) 0;
+  }
+
   .financial-calculator__panel {
     grid-template-columns: 1fr;
   }
@@ -387,11 +391,16 @@
 
   .financial-calculator__cta {
     justify-content: center;
+    width: 100%;
   }
 }
 
 @media (max-width: 560px) {
   .financial-calculator__results-grid {
     grid-template-columns: 1fr;
+  }
+
+  .financial-calculator__intro {
+    text-align: left;
   }
 }

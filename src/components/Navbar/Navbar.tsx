@@ -1,16 +1,15 @@
 import { Link, useLocation } from 'react-router-dom'
 import { useEffect, useRef, useState } from 'react'
-import { NAVBAR_LOGO_ICON, MOBILE_NAVBAR_LOGO } from '../../constants/brandAssets'
+import { NAVBAR_LOGO } from '../../constants/brandAssets'
 import { NAV_LINKS, WHY_AVYRO_LINK, BOOK_DEMO_HREF } from '../../constants/navMenu'
 import LandingHashLink from '../LandingHashLink/LandingHashLink'
 import ProductLinesMenu from '../ProductsMenu/ProductLinesMenu'
 import FeaturesMenu from '../FeaturesMenu/FeaturesMenu'
-import ResourcesMenu from '../ResourcesMenu/ResourcesMenu'
 import MobileNav from './MobileNav'
 import './Navbar.css'
 import './MobileNav.css'
 
-type ActiveMenu = 'products' | 'use-case' | 'resources' | null
+type ActiveMenu = 'products' | 'use-case' | null
 
 const SCROLL_DELTA_THRESHOLD = 8
 const TOP_VISIBLE_OFFSET = 48
@@ -125,20 +124,12 @@ function Navbar() {
       <div className={`navbar__bar${isMobileMenuOpen ? ' navbar__bar--menu-open' : ''}`}>
         <Link to="/" className="navbar__brand" aria-label="Avyro home" onClick={closeMenus}>
           <img
-            src={NAVBAR_LOGO_ICON}
-            alt=""
-            className="navbar__logo navbar__logo--desktop"
-            width={32}
-            height={32}
-          />
-          <img
-            src={MOBILE_NAVBAR_LOGO}
+            src={NAVBAR_LOGO}
             alt="Avyro"
-            className="navbar__logo navbar__logo--mobile"
-            width={132}
-            height={32}
+            className="navbar__logo"
+            width={148}
+            height={36}
           />
-          <span className="navbar__brand-name">Avyro</span>
         </Link>
 
         <button
@@ -194,21 +185,6 @@ function Navbar() {
             </button>
 
             {activeMenu === 'use-case' && <FeaturesMenu onNavigate={closeMenus} />}
-          </div>
-
-          <div className="navbar__dropdown">
-            {/* <button
-              type="button"
-              className={`navbar__nav-item navbar__nav-item--dropdown ${activeMenu === 'resources' ? 'navbar__nav-item--active' : ''}`}
-              aria-expanded={activeMenu === 'resources'}
-              aria-haspopup="true"
-              onClick={() => toggleMenu('resources')}
-            >
-              Resources
-              {renderChevron(activeMenu === 'resources')}
-            </button> */}
-
-            {activeMenu === 'resources' && <ResourcesMenu />}
           </div>
 
           {NAV_LINKS.map((link) => (
