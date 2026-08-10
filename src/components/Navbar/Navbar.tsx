@@ -9,7 +9,6 @@ import ResourcesMenu from '../ResourcesMenu/ResourcesMenu'
 import MobileNav from './MobileNav'
 import './Navbar.css'
 import './MobileNav.css'
-import './ProductLinesMenu.css'
 
 type ActiveMenu = 'products' | 'use-case' | 'resources' | null
 
