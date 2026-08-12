@@ -8,6 +8,7 @@ const EASE = [0.22, 1, 0.36, 1] as const
 interface ProductLineProps {
   id: string
   badge: string
+  categoryTitle?: string
   headline: string
   subtitle: string
   modules: ProductModuleCard[]
@@ -20,6 +21,7 @@ interface ProductLineProps {
 function ProductLine({
   id,
   badge,
+  categoryTitle = 'Avyro Project Management',
   headline,
   subtitle,
   modules,
@@ -52,9 +54,14 @@ function ProductLine({
 
       <div className="product-line__container">
         <header className="product-line__intro">
-          <motion.p className="product-line__badge" {...fadeUp(0)}>
-            {badge}
-          </motion.p>
+          <motion.div className="product-line__badge-container" {...fadeUp(0)}>
+            {categoryTitle && (
+              <span className="product-line-project-module">
+                {categoryTitle}
+              </span>
+            )}
+            <span className="product-line__badge">{badge}</span>
+          </motion.div>
 
           <motion.h2
             id={`${id}-heading`}

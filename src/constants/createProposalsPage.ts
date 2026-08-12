@@ -1,14 +1,14 @@
-import {
+o againimport {
   CheckCircle2,
-  FileText,
-  Layers3,
-  LayoutTemplate,
-  PencilLine,
-  Sparkles,
+    FileText,
+    Layers3,
+    LayoutTemplate,
+    PencilLine,
+    Sparkles,
 } from 'lucide-react'
 import type { ShortFeaturePageContent } from './shortFeaturePage'
 import { PRODUCT_ROUTES } from './productRoutes'
-import proposalsImage from '../Proposals.png'
+import proposalsImage from '../porposalCreate.png'
 import crmProposalsImage from '../avyro-crm-proposals.png'
 
 export const CREATE_PROPOSALS_ROUTE = PRODUCT_ROUTES['create-proposals']

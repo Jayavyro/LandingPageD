@@ -12,6 +12,7 @@ function ProductDrive() {
   return (
     <ProductLine
       id="avyro-drive"
+      categoryTitle="Avyro Project Management"
       badge={PRODUCT_DRIVE_BADGE}
       headline={PRODUCT_DRIVE_HEADLINE}
       subtitle={PRODUCT_DRIVE_SUBTITLE}

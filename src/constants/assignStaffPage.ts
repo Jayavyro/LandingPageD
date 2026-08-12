@@ -10,7 +10,7 @@ import type { ShortFeaturePageContent } from './shortFeaturePage'
 import { PRODUCT_ROUTES } from './productRoutes'
 import resourcingImage from '../assets/one-record/one-record-resourcing.png'
 import workplanHero from '../Workplan.png'
-
+import AssignTask from '../AssignTask copy.png';
 export const ASSIGN_STAFF_ROUTE = PRODUCT_ROUTES['assign-staff']
 
 export const ASSIGN_STAFF_PAGE: ShortFeaturePageContent = {
@@ -29,7 +29,7 @@ export const ASSIGN_STAFF_PAGE: ShortFeaturePageContent = {
       'Projects stay on track when the right people are assigned at the right time. Avyro helps you match team members to project phases based on role, availability, and planned hours—so work stays balanced.',
     cta: { label: 'Book a demo', href: '/#contact-us' },
     visual: {
-      src: resourcingImage,
+      src: AssignTask,
       alt: 'Avyro staffing view with people assigned across project phases',
     },
   },

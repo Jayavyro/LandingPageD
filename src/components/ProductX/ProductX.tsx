@@ -12,6 +12,7 @@ function ProductX() {
   return (
     <ProductLine
       id="avyro-x"
+      categoryTitle="Avyro Enterprise Management"
       badge={PRODUCT_X_BADGE}
       headline={PRODUCT_X_HEADLINE}
       subtitle={PRODUCT_X_SUBTITLE}

@@ -10,7 +10,7 @@ import type { ShortFeaturePageContent } from './shortFeaturePage'
 import { PRODUCT_ROUTES } from './productRoutes'
 import workPlansImage from '../assets/one-record/one-record-work-plans.png'
 import workplanHero from '../Workplan.png'
-
+import gantchart from '../gantt char.png'
 export const TRACK_PROJECTS_ROUTE = PRODUCT_ROUTES['track-projects']
 
 export const TRACK_PROJECTS_PAGE: ShortFeaturePageContent = {
@@ -29,7 +29,7 @@ export const TRACK_PROJECTS_PAGE: ShortFeaturePageContent = {
       'Managing multiple projects shouldn’t mean chasing status in chats and spreadsheets. Avyro shows progress, milestones, budgets, and project health in one place—so you spot risks early and keep delivery moving.',
     cta: { label: 'Book a demo', href: '/#contact-us' },
     visual: {
-      src: workPlansImage,
+      src: gantchart,
       alt: 'Avyro project tracking view with phases, milestones, and progress',
     },
   },
