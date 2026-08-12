@@ -4,17 +4,17 @@
   --pl-line: #e8edf3;
   --pl-accent: var(--color-accent, #1d4ed8);
   --pl-tint: var(--color-accent-bg, #eff6ff);
-  --pl-surface: #f8fafc;
+  --pl-surface: #ffffff;
 
   position: relative;
   overflow: hidden;
   padding: clamp(4rem, 8vw, 6rem) 0;
-  background: var(--pl-surface);
+  background: #ffffff;
   color: var(--pl-ink);
 }
 
 .product-line--tint {
-  background: var(--pl-tint);
+  background: #ffffff;
 }
 
 .product-line__ambient {
@@ -41,7 +41,7 @@
 .product-line__container {
   position: relative;
   z-index: 1;
-  width: min(72rem, calc(100% - (2 * var(--section-gutter))));
+  width: min(var(--container-max), calc(100% - (2 * var(--section-gutter))));
   margin-inline: auto;
 }
 

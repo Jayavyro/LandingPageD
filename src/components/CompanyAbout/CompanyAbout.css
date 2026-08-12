@@ -8,8 +8,7 @@
   position: relative;
   overflow-x: clip;
   padding: clamp(4.5rem, 9vw, 7rem) 0;
-  background:
-    linear-gradient(180deg, #f7f8fb 0%, #ffffff 18%, #ffffff 100%);
+  background: #ffffff;
   color: var(--ca-ink);
   font-family: var(--font-sans);
 }
@@ -17,13 +16,14 @@
 .company-about__container {
   position: relative;
   z-index: 1;
-  width: min(68rem, calc(100% - (2 * var(--section-gutter))));
+  width: min(var(--container-max), calc(100% - (2 * var(--section-gutter))));
   margin-inline: auto;
 }
 
 .company-about__intro {
-  max-width: 38rem;
-  margin: 0 0 clamp(2.5rem, 5vw, 3.5rem);
+  max-width: 70rem;
+  margin: 0 auto clamp(2.5rem, 5vw, 3.5rem);
+  text-align: center;
 }
 
 .company-about__badge {
@@ -57,7 +57,7 @@
   align-items: stretch;
   gap: 1.25rem 1.75rem;
   width: min(100%, 30rem);
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   list-style: none;
 }
@@ -297,6 +297,7 @@
   .company-about__founders {
     grid-template-columns: 1fr;
     width: min(100%, 16rem);
+    margin-inline: auto;
   }
 
   .company-about__modal-identity {

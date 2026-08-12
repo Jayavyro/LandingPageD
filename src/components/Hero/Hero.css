@@ -23,7 +23,7 @@
   align-items: center;
   gap: 40px;
   width: 100%;
-  max-width: 70rem;
+  max-width: var(--container-max);
   margin-inline: auto;
 }
 

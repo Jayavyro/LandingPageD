@@ -1,10 +1,9 @@
 .revenue-leaks {
-  --rl-ink: #0d1f4a;
-  --rl-ink-soft: #5b6478;
-  --rl-line: #dee4f0;
-  --rl-accent: #1a5fd4;
+  --rl-ink: #0f172a;
+  --rl-ink-soft: #4b5563;
+  --rl-line: #e5e7eb;
+  --rl-accent: #1d4ed8;
   --rl-mono: 'IBM Plex Mono', monospace;
-  --rl-display: 'Space Grotesk', var(--font-sans), sans-serif;
   --rl-grad: linear-gradient(
     97deg,
     #f5a15a 0%,
@@ -17,21 +16,21 @@
   position: relative;
   background: #ffffff;
   color: var(--rl-ink);
-  padding: 100px 0;
+  padding: clamp(4rem, 8vw, 6.25rem) 0;
   border-bottom: 1px solid var(--rl-line);
   font-family: var(--font-sans);
 }
 
 .revenue-leaks__container {
   position: relative;
-  width: min(70rem, calc(100% - (2 * var(--section-gutter))));
+  width: min(var(--container-max), calc(100% - (2 * var(--section-gutter))));
   margin-inline: auto;
 }
 
 .revenue-leaks__intro {
   max-width: none;
   margin: 0;
-  text-align: left;
+  text-align: center;
 }
 
 .revenue-leaks__tag {
@@ -49,12 +48,12 @@
 
 .revenue-leaks__title {
   max-width: 600px;
-  margin: 0;
-  font-family: var(--rl-display);
-  font-size: 36px;
+  margin: 0 auto;
+  font-family: var(--font-sans);
+  font-size: clamp(1.75rem, 3.6vw, 2.25rem);
   font-weight: 600;
   line-height: 1.15;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.03em;
   color: var(--rl-ink);
 }
 
@@ -66,11 +65,11 @@
 
 .revenue-leaks__bigstat-num {
   margin: 0;
-  font-family: var(--rl-display);
-  font-size: 140px;
+  font-family: var(--font-sans);
+  font-size: clamp(4.5rem, 12vw, 8.75rem);
   font-weight: 700;
   line-height: 1;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
   background: var(--rl-grad);
   -webkit-background-clip: text;
   background-clip: text;

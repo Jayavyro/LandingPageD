@@ -1,9 +1,8 @@
 .the-solution {
-  --sol-ink: #0d1f4a;
-  --sol-ink-soft: #5b6478;
-  --sol-line: #dee4f0;
+  --sol-ink: #0f172a;
+  --sol-ink-soft: #4b5563;
+  --sol-line: #e5e7eb;
   --sol-mono: 'IBM Plex Mono', monospace;
-  --sol-display: 'Space Grotesk', var(--font-sans), sans-serif;
 
   position: relative;
   background: #ffffff;
@@ -14,7 +13,7 @@
 }
 
 .the-solution__container {
-  width: min(70rem, calc(100% - (2 * var(--section-gutter))));
+  width: min(var(--container-max), calc(100% - (2 * var(--section-gutter))));
   margin-inline: auto;
 }
 
@@ -26,11 +25,11 @@
 
 .the-solution__title {
   margin: 0;
-  font-family: var(--sol-display);
-  font-size: 36px;
+  font-family: var(--font-sans);
+  font-size: clamp(1.75rem, 3.6vw, 2.25rem);
   font-weight: 600;
   line-height: 1.15;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.03em;
   color: var(--sol-ink);
 }
 
@@ -85,7 +84,7 @@
   margin: 0 auto 14px;
   border-radius: 50%;
   color: #fff;
-  font-family: var(--sol-display);
+  font-family: var(--font-sans);
   font-size: 16px;
   font-weight: 700;
   box-shadow: 0 6px 16px -4px rgb(13 31 74 / 0.35);
@@ -93,7 +92,7 @@
 
 .the-solution__flow-action {
   margin: 0 0 4px;
-  font-family: var(--sol-display);
+  font-family: var(--font-sans);
   font-size: 14px;
   font-weight: 600;
   line-height: 1.3;

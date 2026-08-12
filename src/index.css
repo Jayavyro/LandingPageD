@@ -24,7 +24,7 @@
   --color-accent: #1d4ed8;
   --color-accent-bg: #eff6ff;
   --color-accent-border: #bfdbfe;
-  --container-max: 80rem;
+  --container-max: 72rem;
   --container-padding: clamp(1.25rem, 4vw, 3rem);
   --section-gutter: clamp(1.25rem, 4vw, 2.5rem);
   --section-transition-h: clamp(5.5rem, 9vw, 7.5rem);

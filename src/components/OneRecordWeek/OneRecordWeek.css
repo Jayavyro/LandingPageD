@@ -13,7 +13,7 @@
     #8b5cf6 70%,
     #3b82f6 100%
   );
-  --or-display: 'Space Grotesk', var(--font-sans), sans-serif;
+  --or-display: var(--font-sans);
 
   position: relative;
   overflow: hidden;
@@ -63,7 +63,7 @@
 .one-record__container {
   position: relative;
   z-index: 1;
-  width: min(70rem, calc(100% - (2 * var(--section-gutter))));
+  width: min(var(--container-max), calc(100% - (2 * var(--section-gutter))));
   margin-inline: auto;
 }
 

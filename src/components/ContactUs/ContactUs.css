@@ -60,7 +60,7 @@
 .contact-us__container {
   position: relative;
   z-index: 1;
-  width: min(88rem, calc(100% - (2 * var(--section-gutter))));
+  width: min(var(--container-max), calc(100% - (2 * var(--section-gutter))));
   margin-inline: auto;
 }
 
