@@ -1,32 +1,22 @@
+import type { LegalHero, LegalSection } from './legalDocument'
+import { LEGAL_CONTACT_EMAIL } from './legalDocument'
+
 export const TERMS_ROUTE = '/terms'
 
-export const TERMS_HERO = {
+export const TERMS_HERO: LegalHero = {
   eyebrow: 'Legal',
   title: 'Terms and Conditions',
   subtitle:
     'These Terms govern your use of Avyro’s software and services for Architecture, Engineering, and Construction (AEC) firms. Please read them carefully before creating an account or accessing the platform.',
   updatedLabel: 'Last updated',
   updatedDate: 'August 12, 2026',
-} as const
-
-export const TERMS_CONTACT_EMAIL = 'manas@avyro.io'
-
-export interface TermsModule {
-  title: string
-  description: string
 }
 
-export interface TermsSection {
-  id: string
-  number: string
-  title: string
-  paragraphs?: string[]
-  bullets?: string[]
-  modules?: TermsModule[]
-  contactEmail?: string
-}
+export const TERMS_CONTACT_EMAIL = LEGAL_CONTACT_EMAIL
 
-export const TERMS_SECTIONS: TermsSection[] = [
+export type { LegalModule as TermsModule, LegalSection as TermsSection } from './legalDocument'
+
+export const TERMS_SECTIONS: LegalSection[] = [
   {
     id: 'acceptance',
     number: '01',
@@ -149,6 +139,6 @@ export const TERMS_SECTIONS: TermsSection[] = [
     paragraphs: [
       'For questions or concerns regarding these terms, please contact us at',
     ],
-    contactEmail: TERMS_CONTACT_EMAIL,
+    contactEmail: LEGAL_CONTACT_EMAIL,
   },
 ]

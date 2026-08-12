@@ -1,8 +1,6 @@
 import { motion, useReducedMotion } from 'framer-motion'
-import { Link } from 'react-router-dom'
 import {
   EXPLORE_PLATFORM_BADGE,
-  EXPLORE_PLATFORM_CTA_LABEL,
   EXPLORE_PLATFORM_HEADLINE,
   EXPLORE_PLATFORM_HEADLINE_ACCENT,
   EXPLORE_PLATFORM_MODULES,
@@ -69,24 +67,18 @@ function ExplorePlatform() {
                 className="explore-platform__item"
                 {...fadeUp(0.08 + index * 0.04)}
               >
-                <Link
-                  to={module.href}
-                  className="explore-platform__card"
-                  aria-label={`${module.name}: ${EXPLORE_PLATFORM_CTA_LABEL}`}
-                >
+                <article className="explore-platform__card">
                   <span className="explore-platform__icon" aria-hidden="true">
                     <Icon size={20} strokeWidth={1.75} />
                   </span>
 
-                  <span className="explore-platform__card-body">
-                    <span className="explore-platform__name">{module.name}</span>
-                    <span className="explore-platform__description">
+                  <div className="explore-platform__card-body">
+                    <h3 className="explore-platform__name">{module.name}</h3>
+                    <p className="explore-platform__description">
                       {module.description}
-                    </span>
-                  </span>
-
-      
-                </Link>
+                    </p>
+                  </div>
+                </article>
               </motion.li>
             )
           })}

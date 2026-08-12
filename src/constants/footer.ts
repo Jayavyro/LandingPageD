@@ -30,9 +30,9 @@ export const FOOTER_SOCIAL_LINKS: FooterLink[] = [
 ]
 
 export const FOOTER_LEGAL_LINKS: FooterLink[] = [
-  { label: 'Privacy Policy', href: '#privacy' },
+  { label: 'Privacy Policy', href: '/privacy' },
   { label: 'Terms & Conditions', href: '/terms' },
-  { label: 'Cookie Policy', href: '#cookies' },
+ 
 ]
 
 export const FOOTER_SECURITY_BADGES = ['ISO 27001'] as const
