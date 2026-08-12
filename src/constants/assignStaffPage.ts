@@ -8,7 +8,6 @@ import {
 } from 'lucide-react'
 import type { ShortFeaturePageContent } from './shortFeaturePage'
 import { PRODUCT_ROUTES } from './productRoutes'
-import resourcingImage from '../assets/one-record/one-record-resourcing.png'
 import workplanHero from '../Workplan.png'
 import AssignTask from '../AssignTask copy.png';
 export const ASSIGN_STAFF_ROUTE = PRODUCT_ROUTES['assign-staff']
