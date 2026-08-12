@@ -12,7 +12,7 @@
 }
 
 .pricing-section__intro {
-  max-width: 40rem;
+  max-width: 70rem;
   margin: 0 auto clamp(2.5rem, 5vw, 3.5rem);
   text-align: center;
 }
@@ -48,7 +48,7 @@
 }
 
 .pricing-section__subtitle {
-  max-width: 34rem;
+  max-width: 68rem;
   margin: 1rem auto 0;
   font-size: 1.0625rem;
   line-height: 1.65;

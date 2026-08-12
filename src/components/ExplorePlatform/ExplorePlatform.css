@@ -58,7 +58,7 @@
 }
 
 .explore-platform__intro {
-  max-width: 42rem;
+  max-width: 70rem;
   margin: 0 auto clamp(2.5rem, 5vw, 3.25rem);
   text-align: center;
 }
@@ -94,7 +94,7 @@
 }
 
 .explore-platform__subtitle {
-  max-width: 46rem;
+  max-width: 70rem;
   margin: 1.125rem auto 0;
   font-size: 1.0625rem;
   line-height: 1.65;

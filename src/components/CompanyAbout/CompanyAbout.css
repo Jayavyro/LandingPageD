@@ -7,7 +7,8 @@
 
   position: relative;
   overflow-x: clip;
-  padding: clamp(4.5rem, 9vw, 7rem) 0;
+  /* padding: clamp(4.5rem, 9vw, 7rem) 0; */
+  padding: 1rem 2rem;
   background: #ffffff;
   color: var(--ca-ink);
   font-family: var(--font-sans);

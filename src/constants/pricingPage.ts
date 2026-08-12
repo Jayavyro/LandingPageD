@@ -14,7 +14,7 @@ export const PRICING_HERO = {
   eyebrow: 'Pricing',
   title: 'Pricing built around your firm, not a price list.',
   subtitle:
-    "Both products are still early in their rollout, and we're pricing pilot partners individually rather than publishing a fixed rate card. Tell us your firm size and which modules matter most, and we'll put together a number that fits.",
+    "Both products are still early in their rollout, and we're pricing pilot partners individually rather than publishing a fixed rate card. Tell us your firm size and which modules matter most — Drive, X, or both — and we'll put together a number that fits. No setup fees. You don't pay until your team is up and running.",
 } as const
 
 export const PRICING_DISCLAIMER =
