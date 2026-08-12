@@ -8,7 +8,7 @@ import {
 } from 'lucide-react'
 import type { ShortFeaturePageContent } from './shortFeaturePage'
 import { PRODUCT_ROUTES } from './productRoutes'
-import budgetsWorkplanImage from '../Budget&Workplan.png'
+import budgetsWorkplanImage from '../Budget&Workplan copy.png'
 
 export const BUDGETS_WORKPLANS_ROUTE = PRODUCT_ROUTES['budgets-workplans']
 
