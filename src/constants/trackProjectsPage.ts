@@ -8,7 +8,6 @@ import {
 } from 'lucide-react'
 import type { ShortFeaturePageContent } from './shortFeaturePage'
 import { PRODUCT_ROUTES } from './productRoutes'
-import workPlansImage from '../assets/one-record/one-record-work-plans.png'
 import workplanHero from '../Workplan.png'
 import gantchart from '../gantt char.png'
 export const TRACK_PROJECTS_ROUTE = PRODUCT_ROUTES['track-projects']

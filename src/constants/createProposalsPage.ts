@@ -1,10 +1,10 @@
-o againimport {
+import {
   CheckCircle2,
-    FileText,
-    Layers3,
-    LayoutTemplate,
-    PencilLine,
-    Sparkles,
+  FileText,
+  Layers3,
+  LayoutTemplate,
+  PencilLine,
+  Sparkles,
 } from 'lucide-react'
 import type { ShortFeaturePageContent } from './shortFeaturePage'
 import { PRODUCT_ROUTES } from './productRoutes'
