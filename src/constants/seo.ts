@@ -13,6 +13,7 @@ import { getFeaturePage } from './featurePages'
 import { getIndustryPage, INDUSTRY_PAGE_LABELS } from './industryPages'
 import { OPERATIONS_LEADERS_HEADLINE, OPERATIONS_LEADERS_SUBTITLE } from './operationsLeaders'
 import { PRICING_HERO } from './pricingPage'
+import { TERMS_HERO, TERMS_ROUTE } from './termsPage'
 import { PRINCIPAL_OWNERS_HEADLINE, PRINCIPAL_OWNERS_SUBTITLE } from './principalOwners'
 import { getProductPage, PRODUCT_PAGE_LABELS } from './productPages'
 import { PROJECT_MANAGERS_HEADLINE, PROJECT_MANAGERS_SUBTITLE } from './projectManagers'
@@ -86,6 +87,14 @@ export function getPageSeo(pathname: string): PageSeo {
     return withDefaults({
       title: `${PRICING_HERO.title} | ${SITE_NAME}`,
       description: PRICING_HERO.subtitle,
+      path,
+    })
+  }
+
+  if (path === TERMS_ROUTE) {
+    return withDefaults({
+      title: `${TERMS_HERO.title} | ${SITE_NAME}`,
+      description: TERMS_HERO.subtitle,
       path,
     })
   }

@@ -2,6 +2,7 @@ import { INDUSTRY_ROUTES } from './industryRoutes'
 import { PRICING_ROUTE } from './pricingPage'
 import { PRODUCT_ROUTES } from './productRoutes'
 import type { ResourceTabId } from './resourcesPage'
+import { TERMS_ROUTE } from './termsPage'
 
 export const USE_CASE_ROUTES = [
   '/use-case/project-managers',
@@ -37,6 +38,7 @@ export function getPublicSiteRoutes(): SiteRouteEntry[] {
   return [
     { path: '/', changefreq: 'weekly', priority: 1 },
     { path: PRICING_ROUTE, changefreq: 'monthly', priority: 0.8 },
+    { path: TERMS_ROUTE, changefreq: 'monthly', priority: 0.3 },
     ...Object.values(PRODUCT_ROUTES).map((path) => ({
       path,
       changefreq: 'monthly' as const,

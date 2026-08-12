@@ -23,9 +23,11 @@ import LiveUtilizationPage from './pages/Features/LiveUtilizationPage'
 import GenerateRevenuePage from './pages/Features/GenerateRevenuePage'
 import IndustryPage from './pages/Industry/IndustryPage'
 import PricingPage from './pages/Pricing/PricingPage'
+import TermsPage from './pages/Legal/TermsPage'
 import { DEFAULT_RESOURCE_TAB } from './constants/resourcesPage'
 import { PRICING_ROUTE } from './constants/pricingPage'
 import { PRODUCT_ROUTES } from './constants/productRoutes'
+import { TERMS_ROUTE } from './constants/termsPage'
 
 function App() {
   return (
@@ -57,6 +59,7 @@ function App() {
         <Route path="/products/:productId" element={<ProductModulePage />} />
         <Route path="/industry/:industryId" element={<IndustryPage />} />
         <Route path={PRICING_ROUTE} element={<PricingPage />} />
+        <Route path={TERMS_ROUTE} element={<TermsPage />} />
       </Routes>
     </>
   )

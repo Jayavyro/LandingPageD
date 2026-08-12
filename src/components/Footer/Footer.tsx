@@ -1,4 +1,5 @@
 import { Shield } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import { FOOTER_LOGO } from '../../constants/brandAssets'
 import {
   FOOTER_COLUMNS,
@@ -12,6 +13,24 @@ import FooterColumnBlock from './FooterColumn'
 import FooterNewsletter from './FooterNewsletter'
 import FooterSocialIcon from './FooterSocialIcon'
 import './Footer.css'
+
+function FooterLegalLink({ label, href }: { label: string; href: string }) {
+  const isInternal = href.startsWith('/') && !href.startsWith('/#')
+
+  if (isInternal) {
+    return (
+      <Link className="footer__legal-link" to={href}>
+        {label}
+      </Link>
+    )
+  }
+
+  return (
+    <a className="footer__legal-link" href={href}>
+      {label}
+    </a>
+  )
+}
 
 function Footer() {
   return (
@@ -85,9 +104,7 @@ function Footer() {
           <div className="footer__legal">
             <nav className="footer__legal-nav" aria-label="Legal">
               {FOOTER_LEGAL_LINKS.map((link) => (
-                <a key={link.label} className="footer__legal-link" href={link.href}>
-                  {link.label}
-                </a>
+                <FooterLegalLink key={link.label} label={link.label} href={link.href} />
               ))}
             </nav>
             <p className="footer__copyright">{FOOTER_COPYRIGHT}</p>
