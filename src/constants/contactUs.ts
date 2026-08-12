@@ -19,7 +19,7 @@ export const CONTACT_CHANNELS: ContactChannel[] = [
   {
     id: 'founder',
     label: 'Founder',
-    value: 'Manas Mehrotra, Founder',
+    value: 'Manas Mehrotra, Co-Founder & CPO',
   },
   {
     id: 'company',

@@ -1,71 +1,46 @@
 .company-about {
-  --ca-ink: var(--color-text, #0f172a);
-  --ca-ink-soft: var(--color-text-muted, #4b5563);
-  --ca-line: var(--color-border, #e5e7eb);
+  --ca-ink: #12162a;
+  --ca-ink-soft: #4b5066;
+  --ca-line: #e6e8ef;
   --ca-accent: #1d4ed8;
-  --ca-tint: #eff6ff;
-  --ca-grad: linear-gradient(
-    90deg,
-    #f97316 0%,
-    #ec4899 35%,
-    #8b5cf6 70%,
-    #3b82f6 100%
-  );
+  --ca-surface: #f4f5f8;
 
   position: relative;
-  overflow: hidden;
-  padding: clamp(4rem, 8vw, 6rem) 0;
-  background: #fff;
+  overflow-x: clip;
+  padding: clamp(4.5rem, 9vw, 7rem) 0;
+  background:
+    linear-gradient(180deg, #f7f8fb 0%, #ffffff 18%, #ffffff 100%);
   color: var(--ca-ink);
-}
-
-.company-about__ambient {
-  pointer-events: none;
-  position: absolute;
-  inset: 0;
-}
-
-.company-about__glow {
-  position: absolute;
-  top: -4rem;
-  left: 50%;
-  width: min(48rem, 90vw);
-  height: 14rem;
-  transform: translateX(-50%);
-  background: radial-gradient(
-    ellipse at center,
-    rgb(59 130 246 / 0.08) 0%,
-    transparent 72%
-  );
-  filter: blur(32px);
+  font-family: var(--font-sans);
 }
 
 .company-about__container {
   position: relative;
   z-index: 1;
-  width: min(72rem, calc(100% - (2 * var(--section-gutter))));
+  width: min(68rem, calc(100% - (2 * var(--section-gutter))));
   margin-inline: auto;
 }
 
 .company-about__intro {
-  max-width: 44rem;
-  margin: 0 0 2.25rem;
+  max-width: 38rem;
+  margin: 0 0 clamp(2.5rem, 5vw, 3.5rem);
 }
 
 .company-about__badge {
-  margin: 0 0 1rem;
+  margin: 0 0 0.85rem;
+  font-family: 'IBM Plex Mono', monospace;
   font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
+  font-weight: 500;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--ca-ink-soft);
 }
 
 .company-about__title {
   margin: 0;
-  font-size: clamp(1.625rem, 3.8vw, 2.5rem);
-  font-weight: 500;
-  line-height: 1.15;
+  font-size: clamp(1.75rem, 3.6vw, 2.5rem);
+  font-weight: 600;
+  line-height: 1.12;
   letter-spacing: -0.03em;
 }
 
@@ -76,99 +51,272 @@
   color: var(--ca-ink-soft);
 }
 
-.company-about__founder {
-  display: flex;
-  gap: 1.25rem;
-  align-items: flex-start;
-  max-width: 44rem;
-  margin: 0 0 3.5rem;
-}
-
-.company-about__avatar {
-  display: flex;
-  flex-shrink: 0;
-  align-items: center;
-  justify-content: center;
-  width: 3.5rem;
-  height: 3.5rem;
-  border-radius: 50%;
-  background: var(--ca-tint);
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--ca-accent);
-}
-
-.company-about__founder-name {
-  margin: 0 0 0.125rem;
-  font-size: 1.0625rem;
-  font-weight: 600;
-}
-
-.company-about__founder-role {
-  margin: 0 0 0.625rem;
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: var(--ca-accent);
-}
-
-.company-about__founder-bio {
-  margin: 0;
-  font-size: 0.9375rem;
-  line-height: 1.6;
-  color: var(--ca-ink-soft);
-}
-
-.company-about__advisory-title {
-  margin: 0 0 0.75rem;
-  font-size: 1.375rem;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-}
-
-.company-about__advisory-subtitle {
-  max-width: 44rem;
-  margin: 0 0 1.5rem;
-  font-size: 0.975rem;
-  line-height: 1.6;
-  color: var(--ca-ink-soft);
-}
-
-.company-about__advisory-grid {
+.company-about__founders {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.25rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 1.25rem 1.75rem;
+  width: min(100%, 30rem);
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.company-about__advisory-card {
-  padding: 1.75rem 1.5rem;
-  text-align: center;
-  font-size: 0.875rem;
-  color: var(--ca-ink-soft);
-  border: 1px dashed var(--ca-line);
-  border-radius: 0.75rem;
-  background: #fff;
+.company-about__founder {
+  display: flex;
+  min-width: 0;
 }
 
-@media (max-width: 640px) {
-  .company-about {
-    padding: clamp(3rem, 8vw, 4rem) 0;
-  }
+.company-about__founder-btn {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: 0.65rem;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  text-align: left;
+  color: inherit;
+  cursor: pointer;
+  background: transparent;
+}
 
-  .company-about__founder {
-    flex-direction: column;
-    gap: 0.875rem;
-    margin-bottom: 2.5rem;
-  }
+.company-about__photo-wrap {
+  position: relative;
+  display: block;
+  flex-shrink: 0;
+  overflow: hidden;
+  width: 100%;
+  aspect-ratio: 1;
+  background: var(--ca-surface);
+}
 
-  .company-about__advisory-grid {
+.company-about__photo-wrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg,
+      transparent 62%,
+      rgb(18 22 42 / 0.16) 100%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.company-about__photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 18%;
+  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.company-about__founder-btn:hover .company-about__photo,
+.company-about__founder-btn:focus-visible .company-about__photo {
+  transform: scale(1.035);
+}
+
+.company-about__founder-btn:hover .company-about__photo-wrap::after,
+.company-about__founder-btn:focus-visible .company-about__photo-wrap::after {
+  opacity: 1;
+}
+
+.company-about__founder-btn:focus-visible {
+  outline: none;
+}
+
+.company-about__founder-btn:focus-visible .company-about__photo-wrap {
+  outline: 2px solid var(--ca-accent);
+  outline-offset: 3px;
+}
+
+.company-about__founder-meta {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  min-height: 5.25rem;
+  padding-bottom: 0.65rem;
+  border-bottom: 1px solid var(--ca-line);
+}
+
+.company-about__founder-name {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+.company-about__founder-role {
+  display: -webkit-box;
+  margin-top: 0.3rem;
+  min-height: 2.4em;
+  overflow: hidden;
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  color: var(--ca-ink-soft);
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+}
+
+.company-about__founder-action {
+  margin-top: auto;
+  padding-top: 0.7rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--ca-accent);
+  opacity: 0.72;
+  transition: opacity 0.2s ease;
+}
+
+.company-about__founder-btn:hover .company-about__founder-action,
+.company-about__founder-btn:focus-visible .company-about__founder-action {
+  opacity: 1;
+}
+
+.company-about__modal-root {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: grid;
+  place-items: center;
+  padding: clamp(1rem, 3vw, 1.75rem);
+}
+
+.company-about__modal-backdrop {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  background: rgb(10 14 28 / 0.58);
+  cursor: pointer;
+  backdrop-filter: blur(2px);
+}
+
+.company-about__modal {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  width: min(34rem, 100%);
+  max-height: min(88vh, 40rem);
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 36px 72px -36px rgb(8 12 28 / 0.7);
+  font-family: var(--font-sans);
+  color: var(--ca-ink);
+}
+
+.company-about__modal-head {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.9rem 1.15rem 0;
+}
+
+.company-about__modal-close {
+  padding: 0.2rem 0;
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1.65;
+  color: var(--ca-ink-soft);
+  border-bottom: 1px solid transparent;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.company-about__modal-close:hover,
+.company-about__modal-close:focus-visible {
+  color: var(--ca-ink);
+  border-bottom-color: var(--ca-ink);
+  outline: none;
+}
+
+.company-about__modal-identity {
+  display: flex;
+  align-items: center;
+  gap: 1.15rem;
+  padding: 0.35rem 1.5rem 1.35rem;
+  border-bottom: 1px solid var(--ca-line);
+}
+
+.company-about__modal-media {
+  flex-shrink: 0;
+  width: 5.75rem;
+  height: 5.75rem;
+  overflow: hidden;
+  background: var(--ca-surface);
+}
+
+.company-about__modal-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 18%;
+}
+
+.company-about__modal-identity-copy {
+  min-width: 0;
+}
+
+.company-about__modal-role {
+  margin: 0;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  line-height: 1.65;
+  color: var(--ca-ink-soft);
+}
+
+.company-about__modal-name {
+  margin: 0.35rem 0 0;
+  font-size: clamp(1.25rem, 2.4vw, 1.625rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.65;
+}
+
+.company-about__modal-bio {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: 0.95rem;
+  overflow: auto;
+  padding: 1.35rem 1.5rem 1.6rem;
+}
+
+.company-about__modal-bio p {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--ca-ink-soft);
+}
+
+@media (max-width: 560px) {
+  .company-about__founders {
     grid-template-columns: 1fr;
+    width: min(100%, 16rem);
   }
 
-  .company-about__advisory-card {
-    padding: 1.35rem 1.15rem;
+  .company-about__modal-identity {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .company-about__photo,
+  .company-about__photo-wrap::after,
+  .company-about__founder-action,
+  .company-about__modal-close {
+    transition: none;
+  }
+
+  .company-about__founder-btn:hover .company-about__photo,
+  .company-about__founder-btn:focus-visible .company-about__photo {
+    transform: none;
   }
 }

@@ -8,9 +8,9 @@ import {
 } from 'lucide-react'
 import type { ShortFeaturePageContent } from './shortFeaturePage'
 import { PRODUCT_ROUTES } from './productRoutes'
-import proposalsImage from '../Proposals.png'
-import crmProposalsImage from '../avyro-crm-proposals.png'
 
+import crmProposalsImage from '../avyro-crm-proposals.png'
+import digitalSignaturesImage from '../porposalDoc.png'
 export const DIGITAL_SIGNATURES_ROUTE = PRODUCT_ROUTES['digital-signatures']
 
 export const DIGITAL_SIGNATURES_PAGE: ShortFeaturePageContent = {
@@ -29,7 +29,7 @@ export const DIGITAL_SIGNATURES_PAGE: ShortFeaturePageContent = {
       'When a proposal is ready, send it for signature, collect approvals, and keep every client agreement in one place. Track progress as it happens, then move straight from win to kickoff.',
     cta: { label: 'Book a demo', href: '/#contact-us' },
     visual: {
-      src: proposalsImage,
+      src: digitalSignaturesImage,
       alt: 'Avyro proposal ready for digital signature and client agreement',
     },
   },

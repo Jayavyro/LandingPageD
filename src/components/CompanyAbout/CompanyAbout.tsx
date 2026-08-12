@@ -1,28 +1,31 @@
+import { useState } from 'react'
 import { motion, useReducedMotion } from 'framer-motion'
 import {
-  COMPANY_ADVISORY_HEADLINE,
-  COMPANY_ADVISORY_PLACEHOLDERS,
-  COMPANY_ADVISORY_SUBTITLE,
   COMPANY_BADGE,
-  COMPANY_FOUNDER,
+  COMPANY_FOUNDERS,
   COMPANY_HEADLINE,
   COMPANY_INTRO,
 } from '../../constants/companyAbout'
+import CompanyFounderModal from './CompanyFounderModal'
 import './CompanyAbout.css'
 
 const EASE = [0.22, 1, 0.36, 1] as const
 
 function CompanyAbout() {
   const prefersReducedMotion = useReducedMotion()
+  const [activeFounderId, setActiveFounderId] = useState<string | null>(null)
+
+  const activeFounder =
+    COMPANY_FOUNDERS.find((founder) => founder.id === activeFounderId) ?? null
 
   const fadeUp = (delay = 0) =>
     prefersReducedMotion
       ? {}
       : {
-          initial: { opacity: 0, y: 16 },
+          initial: { opacity: 0, y: 18 },
           whileInView: { opacity: 1, y: 0 },
-          viewport: { once: true, margin: '-64px' },
-          transition: { duration: 0.45, delay, ease: EASE },
+          viewport: { once: true, margin: '-72px' },
+          transition: { duration: 0.5, delay, ease: EASE },
         }
 
   return (
@@ -31,10 +34,6 @@ function CompanyAbout() {
       className="company-about"
       aria-labelledby="company-heading"
     >
-      <div className="company-about__ambient" aria-hidden="true">
-        <div className="company-about__glow" />
-      </div>
-
       <div className="company-about__container">
         <header className="company-about__intro">
           <motion.p className="company-about__badge" {...fadeUp(0)}>
@@ -52,36 +51,50 @@ function CompanyAbout() {
           </motion.p>
         </header>
 
-        <motion.div className="company-about__founder" {...fadeUp(0.14)}>
-          <div className="company-about__avatar" aria-hidden="true">
-            {COMPANY_FOUNDER.initials}
-          </div>
-          <div>
-            <p className="company-about__founder-name">{COMPANY_FOUNDER.name}</p>
-            <p className="company-about__founder-role">{COMPANY_FOUNDER.role}</p>
-            <p className="company-about__founder-bio">{COMPANY_FOUNDER.bio}</p>
-          </div>
-        </motion.div>
-
-        <motion.h3 className="company-about__advisory-title" {...fadeUp(0.18)}>
-          {COMPANY_ADVISORY_HEADLINE}
-        </motion.h3>
-        <motion.p className="company-about__advisory-subtitle" {...fadeUp(0.2)}>
-          {COMPANY_ADVISORY_SUBTITLE}
-        </motion.p>
-
-        <ul className="company-about__advisory-grid">
-          {COMPANY_ADVISORY_PLACEHOLDERS.map((label, index) => (
+        <ul className="company-about__founders">
+          {COMPANY_FOUNDERS.map((founder, index) => (
             <motion.li
-              key={`${label}-${index}`}
-              className="company-about__advisory-card"
-              {...fadeUp(0.22 + index * 0.04)}
+              key={founder.id}
+              className="company-about__founder"
+              {...fadeUp(0.14 + index * 0.08)}
             >
-              {label}
+              <button
+                type="button"
+                className="company-about__founder-btn"
+                onClick={() => setActiveFounderId(founder.id)}
+                aria-haspopup="dialog"
+                aria-label={`About ${founder.name}, ${founder.role}`}
+              >
+                <span className="company-about__photo-wrap">
+                  <img
+                    src={founder.photo}
+                    alt=""
+                    className="company-about__photo"
+                    width={480}
+                    height={600}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </span>
+                <span className="company-about__founder-meta">
+                  <span className="company-about__founder-name">{founder.name}</span>
+                  <span className="company-about__founder-role">{founder.role}</span>
+                  <span className="company-about__founder-action" aria-hidden="true">
+                    View profile
+                  </span>
+                </span>
+              </button>
             </motion.li>
           ))}
         </ul>
       </div>
+
+      {activeFounder ? (
+        <CompanyFounderModal
+          founder={activeFounder}
+          onClose={() => setActiveFounderId(null)}
+        />
+      ) : null}
     </section>
   )
 }
