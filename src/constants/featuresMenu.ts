@@ -23,28 +23,28 @@ export const FEATURES_MENU_SECTIONS: FeaturesMenuSection[] = [
         title: 'Capture lead',
         description:
           'Turn every inquiry into a tracked opportunity the moment it lands.',
-        href: PRODUCT_ROUTES.crm,
+        href: PRODUCT_ROUTES['capture-leads'],
         icon: 'crm',
       },
       {
         title: 'Build budgets & workplans',
         description:
           'Draft the phase-based budget and workplan the proposal will be built on.',
-        href: PRODUCT_ROUTES['gantt-chart'],
+        href: PRODUCT_ROUTES['budgets-workplans'],
         icon: 'project',
       },
       {
         title: 'Create proposal',
         description:
           'Turn the workplan straight into a client-ready proposal, no retyping.',
-        href: PRODUCT_ROUTES.proposals,
+        href: PRODUCT_ROUTES['create-proposals'],
         icon: 'analytics',
       },
       {
         title: 'Digital signature',
         description:
           'Get the proposal signed and countersigned in minutes — the project is won.',
-        href: `${PRODUCT_ROUTES.proposals}#signature`,
+        href: PRODUCT_ROUTES['digital-signatures'],
         icon: 'approval',
       },
     ],
@@ -56,21 +56,21 @@ export const FEATURES_MENU_SECTIONS: FeaturesMenuSection[] = [
         title: 'Assign staff',
         description:
           'Match the right people to the right phases against the plan.',
-        href: PRODUCT_ROUTES.resource,
+        href: PRODUCT_ROUTES['assign-staff'],
         icon: 'resource',
       },
       {
         title: 'Track Projects',
         description:
           'Get instant visibility over every project in your firm.',
-        href: PRODUCT_ROUTES.activity,
+        href: PRODUCT_ROUTES['track-projects'],
         icon: 'activity',
       },
       {
         title: 'Document Repository',
         description:
           'The signed contract and every project file land in one searchable home.',
-        href: PRODUCT_ROUTES['gantt-chart'],
+        href: PRODUCT_ROUTES['document-repository'],
         icon: 'approval',
       },
 
@@ -84,21 +84,21 @@ export const FEATURES_MENU_SECTIONS: FeaturesMenuSection[] = [
         title: 'Live timesheet',
         description:
           'Log hours against real phases and watch budgets update live.',
-        href: PRODUCT_ROUTES.timesheets,
+        href: PRODUCT_ROUTES['live-timesheets'],
         icon: 'timesheet',
       },
       {
         title: 'Live utilization & occupancy',
         description:
           "See who's overloaded and who's free, before it becomes a problem.",
-        href: PRODUCT_ROUTES.resource,
+        href: PRODUCT_ROUTES['live-utilization'],
         icon: 'activity',
       },
       {
         title: 'Generate revenue',
         description:
           'Drive revenue with Smart Billing and Invoicing solutions.',
-        href: PRODUCT_ROUTES.billing,
+        href: PRODUCT_ROUTES['generate-revenue'],
         icon: 'billing',
       },
     ],

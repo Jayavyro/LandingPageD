@@ -8,12 +8,37 @@ export const PRODUCT_ROUTES = {
   timesheets: '/products/timesheets',
   'auto-mapping': '/products/auto-mapping',
   'gantt-chart': '/products/gantt-chart',
+  'capture-leads': '/products/capture-leads',
+  'budgets-workplans': '/products/budgets-workplans',
+  'create-proposals': '/products/create-proposals',
+  'digital-signatures': '/products/digital-signatures',
+  'assign-staff': '/products/assign-staff',
+  'track-projects': '/products/track-projects',
+  'document-repository': '/products/document-repository',
+  'live-timesheets': '/products/live-timesheets',
+  'live-utilization': '/products/live-utilization',
+  'generate-revenue': '/products/generate-revenue',
   platform: '/products/platform',
 } as const
 
 export type ProductRouteId = keyof typeof PRODUCT_ROUTES
 
-export type ModuleProductId = Exclude<ProductRouteId, 'platform' | 'auto-mapping' | 'gantt-chart'>
+export type ModuleProductId = Exclude<
+  ProductRouteId,
+  | 'platform'
+  | 'auto-mapping'
+  | 'gantt-chart'
+  | 'capture-leads'
+  | 'budgets-workplans'
+  | 'create-proposals'
+  | 'digital-signatures'
+  | 'assign-staff'
+  | 'track-projects'
+  | 'document-repository'
+  | 'live-timesheets'
+  | 'live-utilization'
+  | 'generate-revenue'
+>
 
 export type RelatedModuleId = ModuleProductId | 'platform'
 

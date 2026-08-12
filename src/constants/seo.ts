@@ -1,4 +1,14 @@
 import { ACCOUNTANTS_CFOS_HEADLINE, ACCOUNTANTS_CFOS_SUBTITLE } from './accountantsCfos'
+import { BUDGETS_WORKPLANS_PAGE } from './budgetsWorkplansPage'
+import { CAPTURE_LEADS_PAGE } from './captureLeadsPage'
+import { CREATE_PROPOSALS_PAGE } from './createProposalsPage'
+import { DIGITAL_SIGNATURES_PAGE } from './digitalSignaturesPage'
+import { ASSIGN_STAFF_PAGE } from './assignStaffPage'
+import { TRACK_PROJECTS_PAGE } from './trackProjectsPage'
+import { DOCUMENT_REPOSITORY_PAGE } from './documentRepositoryPage'
+import { LIVE_TIMESHEETS_PAGE } from './liveTimesheetsPage'
+import { LIVE_UTILIZATION_PAGE } from './liveUtilizationPage'
+import { GENERATE_REVENUE_PAGE } from './generateRevenuePage'
 import { getFeaturePage } from './featurePages'
 import { getIndustryPage, INDUSTRY_PAGE_LABELS } from './industryPages'
 import { OPERATIONS_LEADERS_HEADLINE, OPERATIONS_LEADERS_SUBTITLE } from './operationsLeaders'
@@ -91,6 +101,87 @@ export function getPageSeo(pathname: string): PageSeo {
   const productMatch = path.match(/^\/products\/([^/]+)$/)
   if (productMatch) {
     const productId = productMatch[1]
+
+    if (productId === 'capture-leads') {
+      return withDefaults({
+        title: CAPTURE_LEADS_PAGE.seo.title,
+        description: CAPTURE_LEADS_PAGE.seo.description,
+        path,
+      })
+    }
+
+    if (productId === 'budgets-workplans') {
+      return withDefaults({
+        title: BUDGETS_WORKPLANS_PAGE.seo.title,
+        description: BUDGETS_WORKPLANS_PAGE.seo.description,
+        path,
+      })
+    }
+
+    if (productId === 'create-proposals') {
+      return withDefaults({
+        title: CREATE_PROPOSALS_PAGE.seo.title,
+        description: CREATE_PROPOSALS_PAGE.seo.description,
+        path,
+      })
+    }
+
+    if (productId === 'digital-signatures') {
+      return withDefaults({
+        title: DIGITAL_SIGNATURES_PAGE.seo.title,
+        description: DIGITAL_SIGNATURES_PAGE.seo.description,
+        path,
+      })
+    }
+
+    if (productId === 'assign-staff') {
+      return withDefaults({
+        title: ASSIGN_STAFF_PAGE.seo.title,
+        description: ASSIGN_STAFF_PAGE.seo.description,
+        path,
+      })
+    }
+
+    if (productId === 'track-projects') {
+      return withDefaults({
+        title: TRACK_PROJECTS_PAGE.seo.title,
+        description: TRACK_PROJECTS_PAGE.seo.description,
+        path,
+      })
+    }
+
+    if (productId === 'document-repository') {
+      return withDefaults({
+        title: DOCUMENT_REPOSITORY_PAGE.seo.title,
+        description: DOCUMENT_REPOSITORY_PAGE.seo.description,
+        path,
+      })
+    }
+
+    if (productId === 'live-timesheets') {
+      return withDefaults({
+        title: LIVE_TIMESHEETS_PAGE.seo.title,
+        description: LIVE_TIMESHEETS_PAGE.seo.description,
+        path,
+      })
+    }
+
+    if (productId === 'live-utilization') {
+      return withDefaults({
+        title: LIVE_UTILIZATION_PAGE.seo.title,
+        description: LIVE_UTILIZATION_PAGE.seo.description,
+        path,
+      })
+    }
+
+    if (productId === 'generate-revenue') {
+      return withDefaults({
+        title: GENERATE_REVENUE_PAGE.seo.title,
+        description: GENERATE_REVENUE_PAGE.seo.description,
+        path,
+      })
+    }
+
     const feature = getFeaturePage(productId)
     if (feature) {
       return withDefaults({

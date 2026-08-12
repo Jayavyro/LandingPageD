@@ -537,6 +537,16 @@ export const PRODUCT_PAGE_LABELS: Record<ProductRouteId, string> = {
   timesheets: 'Smart Timesheets',
   'auto-mapping': 'Auto-mapping',
   'gantt-chart': 'Gantt Chart',
+  'capture-leads': 'Capture Leads',
+  'budgets-workplans': 'Budgets & Workplans',
+  'create-proposals': 'Create Proposals',
+  'digital-signatures': 'Digital Signatures',
+  'assign-staff': 'Assign Staff',
+  'track-projects': 'Track Projects',
+  'document-repository': 'Document Repository',
+  'live-timesheets': 'Live Timesheets',
+  'live-utilization': 'Live Utilization & Occupancy',
+  'generate-revenue': 'Generate Revenue',
   platform: 'Platform',
 }
 
