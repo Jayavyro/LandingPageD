@@ -4,13 +4,11 @@
   --fc-ink-soft: #4b5066;
   --fc-line: #e8ebf4;
   --fc-surface: #f7f8fc;
-  --fc-grad: linear-gradient(
-    90deg,
-    #f97316 0%,
-    #ec4899 40%,
-    #8b5cf6 70%,
-    #3b82f6 100%
-  );
+  --fc-grad: linear-gradient(90deg,
+      #f97316 0%,
+      #ec4899 40%,
+      #8b5cf6 70%,
+      #3b82f6 100%);
 
   position: relative;
   z-index: 2;
@@ -50,12 +48,10 @@
   width: 48rem;
   height: 20rem;
   transform: translateX(-50%);
-  background: radial-gradient(
-    ellipse,
-    rgb(75 110 245 / 0.06) 0%,
-    rgb(168 85 247 / 0.03) 45%,
-    transparent 74%
-  );
+  background: radial-gradient(ellipse,
+      rgb(75 110 245 / 0.06) 0%,
+      rgb(168 85 247 / 0.03) 45%,
+      transparent 74%);
 }
 
 .financial-calculator__container {
@@ -94,8 +90,8 @@
 
 .financial-calculator__title {
   margin: 0;
-  font-size: clamp(1.625rem, 3.2vw, 2.35rem);
-  font-weight: 600;
+  font-size: clamp(1.621rem, 3.2vw, 2.35rem);
+  font-weight: 550;
   line-height: 1.15;
   letter-spacing: -0.035em;
 }
@@ -150,7 +146,7 @@
 .financial-calculator__panel-label {
   margin: 0 0 0.15rem;
   font-size: 0.6875rem;
-  font-weight: 650;
+  font-weight: 550;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--fc-ink-soft);
@@ -230,12 +226,10 @@
   gap: 0.75rem;
   padding: 1.2rem 1.25rem;
   border-radius: 1rem;
-  background: linear-gradient(
-    145deg,
-    rgb(75 110 245 / 0.1) 0%,
-    rgb(168 85 247 / 0.06) 55%,
-    rgb(255 101 132 / 0.05) 100%
-  );
+  background: linear-gradient(145deg,
+      rgb(75 110 245 / 0.1) 0%,
+      rgb(168 85 247 / 0.06) 55%,
+      rgb(255 101 132 / 0.05) 100%);
 }
 
 .financial-calculator__results-label {
@@ -254,7 +248,7 @@
   gap: 0.25rem;
   margin: 0.15rem 0 0;
   font-size: clamp(2rem, 3.5vw, 2.6rem);
-  font-weight: 650;
+  font-weight: 500;
   letter-spacing: -0.035em;
   line-height: 1.05;
   color: var(--fc-ink);
@@ -262,7 +256,7 @@
 
 .financial-calculator__results-primary-sub {
   font-size: 0.95rem;
-  font-weight: 550;
+  font-weight: 600;
   letter-spacing: -0.01em;
   color: var(--fc-ink-soft);
 }
@@ -300,7 +294,7 @@
 
 .financial-calculator__result-value {
   font-size: 1.05rem;
-  font-weight: 650;
+  font-weight: 600;
   letter-spacing: -0.02em;
   color: var(--fc-ink);
 }
