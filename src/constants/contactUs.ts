@@ -24,7 +24,7 @@ export const CONTACT_CHANNELS: ContactChannel[] = [
   {
     id: 'company',
     label: 'Company',
-    value: 'Avyro IT Solution Pvt. Ltd.',
+    value: 'Avyro',
   },
   {
     id: 'web',
