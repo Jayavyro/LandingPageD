@@ -29,3 +29,8 @@ scripts/.content-export/
 *.njsproj
 *.sln
 *.sw?
+
+# Firebase
+.firebase/
+*-firebase-*.json
+serviceAccountKey.json
