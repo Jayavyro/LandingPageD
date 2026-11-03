@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "avyro-landing-page"
-  }
+    "default": "project-627ece16-eacc-4e1d-934",
+    "production": "project-627ece16-eacc-4e1d-934"
+  },
+  "targets": {},
+  "etags": {}
 }
